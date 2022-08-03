@@ -28,9 +28,9 @@ from nltk.corpus import stopwords
 csv_file = 'uk_booker_products'
 # parameters
 country = 'uk'
+parent_chain_use = True # will be false when the complete set corresponds to a specific chain (also: no chain name variations)
 parent_chain = 'booker' # lower case and "clean"
 parent_chain_column = 'parent_chain_name'
-parent_chain_use = True # will be false when the complete set corresponds to a specific chain (also: no chain name variations)
 item_column = 'item_name'
 language_ = 'en'
 
@@ -223,7 +223,7 @@ def main():
     t_complete = gets_time() - t_initial
     print(f'Time to run the script: {round(t_complete/60, 3)} minutes!')
 
-    return groups_df, track_df
+    return groups_df, track_df, df_back_propagation
 
 if __name__ == "__main__":
     main()
