@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import re
+import time
+
 from scipy.sparse import csr_matrix
 import sparse_dot_topn.sparse_dot_topn as ct
 import nltk.corpus
@@ -11,6 +13,9 @@ from nltk.tokenize import word_tokenize
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 from nltk.stem import WordNetLemmatizer
+
+def gets_time():
+    return time.time()
 
 ## Name cleaning: NLP + Regex
 
@@ -162,22 +167,4 @@ def verify_and_concat_groups(groups_df, track_df, index_, applicants_list):
         groups_df = pd.concat([groups_df, tmp_group_df], axis=0).reset_index(drop=True)
         track_df = pd.concat([track_df, tmp_track_df], axis=0).reset_index(drop=True)
     return groups_df, track_df
-
-def group_selection(df, product):
-    """
-    Por a single product, identifies the products to which is related (all products in "candidate" column), and
-    remove duplicated rows. The ratio is also included to keep the knowledge of the similarity ratio that let 
-    them into the group.
-    
-    Inputs:
-    - df: dataframe with threshold 80, with all matches and links (for all products)
-    - product: the name of the product to work with
-    
-    Output: single product similarity group dataframe
-    """
-    # we select all the rows that match the product
-    df_temp = df[df['product_name'] == product].copy()
-    # remove duplicates: to see all the products to which a product is similar
-    group = df_temp.drop_duplicates(subset=['product_name', 'candidate']).reset_index(drop=True)
-    return group
 
