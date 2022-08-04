@@ -40,7 +40,7 @@ threshold_package = 75
 
 
 def read_and_select(csv_file):
-    logging.info('Reading file and selecting data to work on..')
+    print('Reading file and selecting data to work on..')
     # reading raw data
     data = pd.read_csv(f'data/{csv_file}.csv')
 
@@ -61,6 +61,7 @@ def read_and_select(csv_file):
     return df_nlp
 
 def nlp_regex_cleaning(language_, df_nlp):
+    print('NLP + Regex product name cleaning..')
 
     if language_ == 'en':
         stop_words = stopwords.words('english')
@@ -74,13 +75,15 @@ def nlp_regex_cleaning(language_, df_nlp):
 
     return df_nlp
 
-def raw_vs_clean_name_mapping(df_nlp):   
+def raw_vs_clean_name_mapping(df_nlp): 
+    print('Saving file to back propagate matches..')  
     df_back_propagation = df_nlp.loc[:, ['item_name', 'product_name']]
     df_back_propagation.to_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
     return df_back_propagation
 
 
 def tf_idf_method(df_nlp):
+    print('Applying TF-IDF method..')
     # preparing set for TF-IDF
     df_tf = df_nlp.loc[:, ['product_name']]
     df_tf = df_tf.drop_duplicates().reset_index(drop=True)
@@ -94,6 +97,7 @@ def tf_idf_method(df_nlp):
     return df_tf, tf_idf_matrix
 
 def cosine_similarity_calculation(df_tf, tf_idf_matrix):
+    print('Calculating Cosine Similarities..')
 
     matches = cosine_similarity(tf_idf_matrix, tf_idf_matrix.transpose(), 25, 0)
     
@@ -105,6 +109,7 @@ def cosine_similarity_calculation(df_tf, tf_idf_matrix):
     return matches_df
 
 def fuzzy_ratios(matches_df):
+    print('Fuzzy ratios calculation..')
     print(f'Product Threshold: {threshold_products}')
     # Fuzzy ratios calculation
     matches_df['fuzz_ratio'] = matches_df.apply(lambda x: fuzz.token_sort_ratio(x['product_name'], x['match']), axis=1)
@@ -118,6 +123,7 @@ def fuzzy_ratios(matches_df):
     return df_similars
 
 def extends_similarities(df_similars):
+    print('Extending product similarities..')
     # copy of dataframe
     df_similars_copy = df_similars.drop(columns=['similarity_score', 'fuzz_ratio'], axis=1).copy()
     df_similars_copy.rename(columns={'match': 'extended_match', 'product_name': 'match'}, inplace=True)
@@ -136,6 +142,7 @@ def extends_similarities(df_similars):
     return df_similars_ext
 
 def cleaning_by_package_similarity(df_similars_ext):
+    print('Filtering product matches by product fuzzy ratio similarity measure..')
     reg_package = r'(\d+x\d+\w+)|(\d+ x \d+\w+)|(\d+\.+\d+\w+)|(\d+\.+\d+ \w+)|(\d+ ml)|(\d+ g)|(\d+\w+)|(\d+ \w+)'
     # extracting package
     df_similars_ext['package'] = package_extract(df_similars_ext, 'product_name', reg_package)
@@ -163,6 +170,7 @@ def creating_product_index_name_mapping_dict(df_tf):
     return product_index_dict, index_product_dict
 
 def groups_concatenation(df_clean, df_similars, index_product_dict):
+    print('Concatenating groups to global DF..')
     # list of products
     clean_leaders = df_clean['product_name'].unique()
     print(f'Leaders: {len(clean_leaders)}; Similar products: {len(df_similars["match"].unique())}')
@@ -222,6 +230,7 @@ def main():
     # Complete run time
     t_complete = gets_time() - t_initial
     print(f'Time to run the script: {round(t_complete/60, 3)} minutes!')
+    print('Success!')
 
     return groups_df, track_df, df_back_propagation
 
