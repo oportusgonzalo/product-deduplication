@@ -24,12 +24,11 @@ from nltk.corpus import stopwords
 
 # DEFINITIONS
 
-# file to work on
-csv_file = 'uk_booker_products'
 # parameters (MUST DO! -- are used to specify the outputs name)
 country = 'uk'
 parent_chain_use = True # will be false when the complete set corresponds to a specific chain (also: no chain name variations)
 parent_chain = 'booker' # lower case and "clean"
+csv_file = f'{country}_{parent_chain}_uuid_name'
 parent_chain_column = 'parent_chain_name'
 item_column = 'item_name'
 language_ = 'en'
@@ -142,7 +141,7 @@ def extends_similarities(df_similars):
     return df_similars_ext
 
 def cleaning_by_package_similarity(df_similars_ext):
-    print('Filtering product matches by product fuzzy ratio similarity measure..')
+    print('Filtering product matches by package fuzzy ratio similarity measure..')
     reg_package = r'(\d+x\d+\w+)|(\d+ x \d+\w+)|(\d+\.+\d+\w+)|(\d+\.+\d+ \w+)|(\d+ ml)|(\d+ g)|(\d+\w+)|(\d+ \w+)'
     # extracting package
     df_similars_ext['package'] = package_extract(df_similars_ext, 'product_name', reg_package)
