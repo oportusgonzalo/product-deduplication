@@ -26,7 +26,7 @@ from nltk.corpus import stopwords
 
 # file to work on
 csv_file = 'uk_booker_products'
-# parameters
+# parameters (MUST DO! -- are used to specify the outputs name)
 country = 'uk'
 parent_chain_use = True # will be false when the complete set corresponds to a specific chain (also: no chain name variations)
 parent_chain = 'booker' # lower case and "clean"
@@ -76,7 +76,7 @@ def nlp_regex_cleaning(language_, df_nlp):
 
 def raw_vs_clean_name_mapping(df_nlp):   
     df_back_propagation = df_nlp.loc[:, ['item_name', 'product_name']]
-    df_back_propagation.to_csv(f'back_propagation/groups_{country}_back_propagation.csv', index=False)
+    df_back_propagation.to_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
     return df_back_propagation
 
 
@@ -217,7 +217,7 @@ def main():
 
     # Saving results
     groups_df = groups_df.sort_values(by=['leader', 'member']).reset_index(drop=True)
-    groups_df.to_csv(f'outputs/test_groups_{country}_{threshold_products}_{threshold_package}.csv', index=False)
+    groups_df.to_csv(f'outputs/groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
 
     # Complete run time
     t_complete = gets_time() - t_initial
