@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import re
 import time
+from fuzzywuzzy import fuzz
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 from scipy.sparse import csr_matrix
 import sparse_dot_topn.sparse_dot_topn as ct
@@ -167,4 +169,119 @@ def verify_and_concat_groups(groups_df, track_df, index_, applicants_list):
         groups_df = pd.concat([groups_df, tmp_group_df], axis=0).reset_index(drop=True)
         track_df = pd.concat([track_df, tmp_track_df], axis=0).reset_index(drop=True)
     return groups_df, track_df
+
+def tf_idf_method(df_nlp):
+    print('Applying TF-IDF method..')
+    # preparing set for TF-IDF
+    df_tf = df_nlp.loc[:, ['product_name']]
+    df_tf = df_tf.drop_duplicates().reset_index(drop=True)
+    df_tf['id'] = range(1, len(df_tf) + 1)
+
+    # create object
+    tfidf_vectorizer = TfidfVectorizer(ngram_range=(1,2), max_df=0.9, min_df=2, token_pattern='(\S+)')
+    # get tf-idf values
+    tf_idf_matrix = tfidf_vectorizer.fit_transform(df_tf['product_name'])
+
+    return df_tf, tf_idf_matrix
+
+def cosine_similarity_calculation(df_tf, tf_idf_matrix):
+    print('Calculating Cosine Similarities..')
+
+    matches = cosine_similarity(tf_idf_matrix, tf_idf_matrix.transpose(), 25, 0)
+    
+    # ### Create a match table to show the similarity scores
+    matches_df = pd.DataFrame()
+    matches_df = get_matches_df(matches, df_tf['product_name'], top=False)
+    matches_df = matches_df.drop_duplicates().reset_index(drop=True)
+
+    return matches_df
+
+def fuzzy_ratios(matches_df, threshold_products):
+    print('Fuzzy ratios calculation..')
+    print(f'Product Threshold: {threshold_products}')
+    # Fuzzy ratios calculation
+    matches_df['fuzz_ratio'] = matches_df.apply(lambda x: fuzz.token_sort_ratio(x['product_name'], x['match']), axis=1)
+
+    #  Keeping products with high similarity
+    df_similars = matches_df[matches_df['fuzz_ratio'] >= threshold_products].\
+                        drop_duplicates(subset=['product_name', 'match']).reset_index(drop=True)
+
+    df_similars = df_similars.sort_values(by=['product_name', 'match']).reset_index(drop=True)
+
+    return df_similars
+
+def extends_similarities(df_similars):
+    print('Extending product similarities..')
+    # copy of dataframe
+    df_similars_copy = df_similars.drop(columns=['similarity_score', 'fuzz_ratio'], axis=1).copy()
+    df_similars_copy.rename(columns={'match': 'extended_match', 'product_name': 'match'}, inplace=True)
+
+    # extending
+    df_similars_mrg = df_similars.merge(df_similars_copy, how='inner', on='match')
+    df_similars_mrg.drop('similarity_score', axis=1, inplace=True)
+
+    # melt dataframe
+    df_melt = df_similars_mrg.melt(id_vars=['product_name', 'fuzz_ratio'], var_name='which_match', value_name='candidate')
+    df_melt = df_melt.drop('which_match', axis=1)[['product_name', 'candidate', 'fuzz_ratio']]
+
+    df_similars_ext = df_melt.drop_duplicates(['product_name', 'candidate']).sort_values(by=['product_name', 'candidate'])\
+                .reset_index(drop=True)
+    
+    return df_similars_ext
+
+def cleaning_by_package_similarity(df_similars_ext, threshold_package):
+    print('Filtering product matches by package fuzzy ratio similarity measure..')
+    reg_package = r'(\d+x\d+\w+)|(\d+ x \d+\w+)|(\d+\.+\d+\w+)|(\d+\.+\d+ \w+)|(\d+ ml)|(\d+ g)|(\d+\w+)|(\d+ \w+)'
+    # extracting package
+    df_similars_ext['package'] = package_extract(df_similars_ext, 'product_name', reg_package)
+    df_similars_ext['package_candidate'] = package_extract(df_similars_ext, 'candidate', reg_package)
+    # package similarity
+    df_similars_ext['package_ratio'] = df_similars_ext.apply(lambda x: fuzz.token_sort_ratio(x['package'],\
+                                                                                x['package_candidate']), axis=1)
+                                                                                
+    # Package filter + Column selection
+    print(f'Package Threshold: {threshold_package}')
+    df_clean = df_similars_ext[df_similars_ext['package_ratio'] > threshold_package].reset_index(drop=True)
+    df_clean = df_clean.loc[:, ['product_name', 'candidate']]
+    
+    return df_clean
+
+def product_name_replacement(df, dic_):
+    df['product_name'] = df['product_name'].map(dic_)
+    df['candidate'] = df['candidate'].map(dic_)
+    return df
+
+def creating_product_index_name_mapping_dict(df_tf):
+    # To  tansform product names into integers (easier to compare)
+    product_index_dict = dict(zip(df_tf['product_name'], df_tf.index))
+    index_product_dict = dict(zip(df_tf.index, df_tf['product_name']))
+    return product_index_dict, index_product_dict
+
+def groups_concatenation(df_clean, df_similars, index_product_dict):
+    print('Concatenating groups to global DF..')
+    # list of products
+    clean_leaders = df_clean['product_name'].unique()
+    print(f'Leaders: {len(clean_leaders)}; Similar products: {len(df_similars["match"].unique())}')
+
+    # time before
+    t_bef_group = gets_time()
+
+    # dataframe definition
+    groups_df = pd.DataFrame(columns=['group_id', 'leader', 'member'])
+    track_df = pd.DataFrame(columns=['group_id', 'member'])
+
+    for leader in clean_leaders:
+        select_df = df_clean[df_clean['product_name'] == leader] 
+        applicants_list = list(pd.unique(select_df[['product_name', 'candidate']].values.ravel('K')))
+        groups_df, track_df = verify_and_concat_groups(groups_df, track_df, leader, applicants_list)
+
+    # replacing product names
+    groups_df['leader'] = groups_df['leader'].map(index_product_dict)
+    groups_df['member'] = groups_df['member'].map(index_product_dict)
+
+    # time run
+    t_run = gets_time() - t_bef_group
+    print(f'Time to run group concatenation: {round(t_run/60, 3)} minutes!')
+
+    return groups_df, track_df 
 
