@@ -113,6 +113,18 @@ def raw_vs_clean_name_mapping(df_nlp):
     df_back_propagation.to_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
     return df_back_propagation
 
+def leaders_lead(canonical_df, groups_df):
+    print(f'Making sure leaders are leaders..')
+    canonical_leaders = canonical_df['canonical_leader'].unique()
+    # identifying all groups where canonical members are present
+    canonical_leaders_group_df = groups_df.loc[groups_df['member'].isin(canonical_leaders)][['group_id', 'member']].drop_duplicates().reset_index(drop=True)
+    # dict to replace: group leader by canonical_leader
+    canonical_leader_replace_dict = dict(zip(canonical_leaders_group_df['group_id'], canonical_leaders_group_df['member']))
+    # replace canonical leaders in potential group leader column
+    for group_id, leader in canonical_leader_replace_dict.items():
+        groups_df.loc[groups_df['group_id'] == group_id, 'leader'] = leader
+    return groups_df
+
 
 def main():
     # Initial time
@@ -144,6 +156,8 @@ def main():
     # concatenating groups to global dataframe
     groups_df, track_df = groups_concatenation(df_clean, df_similars, index_product_dict)
 
+    # leaders lead
+    groups_df = leaders_lead(canonical_df, groups_df)
     
     # saving results
     groups_df.to_csv(f'bivariate_outputs/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
