@@ -146,8 +146,8 @@ def main():
 
     
     # saving results
-    groups_df.to_csv('bivariate_outputs/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
-    direct_matches_df.to_csv('bivariate_outputs/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    groups_df.to_csv(f'bivariate_outputs/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    direct_matches_df.to_csv(f'bivariate_outputs/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
 
 
     # Complete run time
