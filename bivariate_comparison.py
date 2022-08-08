@@ -120,9 +120,11 @@ def leaders_lead(canonical_df, groups_df):
     canonical_leaders_group_df = groups_df.loc[groups_df['member'].isin(canonical_leaders)][['group_id', 'member']].drop_duplicates().reset_index(drop=True)
     # dict to replace: group leader by canonical_leader
     canonical_leader_replace_dict = dict(zip(canonical_leaders_group_df['group_id'], canonical_leaders_group_df['member']))
+    # adding canonical leader lable: are we able to modify the leader?
+    groups_df['modify_leader'] = 'Yes'
     # replace canonical leaders in potential group leader column
     for group_id, leader in canonical_leader_replace_dict.items():
-        groups_df.loc[groups_df['group_id'] == group_id, 'leader'] = leader
+        groups_df.loc[groups_df['group_id'] == group_id, ['leader', 'modify_leader']] = leader, 'No'
     return groups_df
 
 
@@ -133,6 +135,8 @@ def main():
     data, canonical_df = read_and_select()
     # NLP + regex product name cleaning --> new column: product_name
     data_nlp = nlp_regex_cleaning(language_, data)
+    # saving raw product name - clean product name (post NLP + regex): mapping
+    df_back_propagation = raw_vs_clean_name_mapping(data_nlp)
     # Identifying direct matches: member --> canonical_member
     data_not_direct, canonical_df, direct_matches_df = direct_matches(data_nlp, canonical_df)
     # Preparing set to run grouping script
