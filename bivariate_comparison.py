@@ -109,7 +109,7 @@ def product_space_to_detect_similarities(data_not_direct, canonical_df):
 
 def raw_vs_clean_name_mapping(df_nlp): 
     print('Saving file to back propagate matches..')  
-    df_back_propagation = df_nlp.loc[:, ['item_name', 'product_name']]
+    df_back_propagation = df_nlp.loc[:, ['item_uuid', 'item_name', 'product_name']]
     df_back_propagation.to_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
     return df_back_propagation
 
@@ -142,7 +142,7 @@ def main():
     # Preparing set to run grouping script
     product_space = product_space_to_detect_similarities(data_not_direct, canonical_df)
     df_product_space = pd.DataFrame(data={'product_name': product_space})
-
+    
     # Appying TF-IDF method
     df_tf, tf_idf_matrix = tf_idf_method(df_product_space)
     # Applying cosine similarity to detect most similar products (potential group)
@@ -167,7 +167,7 @@ def main():
     groups_df.to_csv(f'bivariate_outputs/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
     direct_matches_df.to_csv(f'bivariate_outputs/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
 
-
+    
     # Complete run time
     t_complete = gets_time() - t_initial
     print(f'Time to run the script: {round(t_complete/60, 3)} minutes!')
