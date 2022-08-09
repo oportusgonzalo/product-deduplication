@@ -45,14 +45,20 @@ def direct_links():
 
 def add_leaders_to_canonical(df_merge):
     # reading canonical file
-    canonical_df = pd.read_csv(f'canonical_data/{canonical_file}.csv')
-    canonical_df = canonical_df.loc[:, ['leader', '']]
+    canonical_data = pd.read_csv(f'canonical_data/{canonical_file}.csv')
+    canonical_data.columns = canonical_data.columns.str.strip().str.lower()
+    canonical_data.rename(columns={'group_id': 'canonical_id'}, inplace=True)
+    canonical_data = canonical_data.loc[:, ['canonical_id', 'canonical_leader', 'brand', 'name', 'package', 'promotion']]
 
-    #canonical_df.rename(columns={'group_id': 'canonical_id', 'leader': 'canonical_leader', 'member': 'canonical_member'}, inplace=True)
+    # format to new products dataframe
+    df_merge_new = df_merge.loc[:, ['canonical_leader', 'brand', 'name', 'package', 'promotion']]
+    df_merge_new['canonical_id'] = range(int(canonical_data['canonical_id'].max()), int(canonical_data['canonical_id'].max()) + len(df_merge))
 
-    print(df_merge)
-    print(canonical_df)
-    print(canonical_df.columns)
+    # new canonical set
+    df_new_canonical = pd.concat([canonical_data, df_merge_new], axis=0).reset_index(drop=True)
+    df_new_canonical = df_new_canonical.drop_duplicates().reset_index(drop=True)
+    
+    return df_new_canonical
 
 
 def main():
@@ -69,10 +75,8 @@ def main():
         df_links = pd.concat([df_direct, df_new_links], axis=0).reset_index(drop=True)
         df_links = df_links.drop_duplicates().reset_index(drop=True)
 
-        #print(df_links)
-
         # adding new leaders to canonical database
-        add_leaders_to_canonical(df_merge)
+        df_new_canonical = add_leaders_to_canonical(df_merge)
 
     else:
         # creates dataframe with links
@@ -81,8 +85,11 @@ def main():
         df_links = df_links.drop_duplicates().reset_index(drop=True)
 
         # adding new leaders to canonical database
-        add_leaders_to_canonical(df_merge)
+        df_new_canonical = add_leaders_to_canonical(df_merge)
 
+
+    print(df_links)
+    print(df_new_canonical)
 
     '''
     NOTE: need to deliver two files.
