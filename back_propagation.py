@@ -7,36 +7,91 @@ threshold_products = 85
 threshold_package = 75
 exists_canonical_catalog = True
 
-def main():
-    if exists_canonical_catalog:
-        # reading file that has item_name and product_name (post NLP + regex cleaning)
-        df_back = pd.read_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv')
+# canonical file
+canonical_file = 'canonical_catalog'
 
-        # reading file with direct matches
-        df_direct = pd.read_csv(f'bivariate_outputs/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
-        print(df_direct)
+def classification_accuracy(df_clean):
+    print('Calculating the number of correct group assignments..')
+    df_true = df_clean[~df_clean['label'].isna()]
+    df_true.label = df_true.label.str.strip().str.lower()
+    print(f'Number of correct assignments: {round(df_true[df_true.label == "true"].shape[0]/len(df_true), 3)}')
 
-        # agents clean groups
-        df_clean = pd.read_csv(f'agents_clean/agents_clean_{country}_booker.csv') # add parameter parent_chain
-        df_clean.columns = df_clean.columns.str.strip().str.lower()
+def mapping_agents_cleaned_items_to_raw():
+    # reading file that has item_name and product_name (post NLP + regex cleaning)
+    df_back = pd.read_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv')
 
-        # Number of correct assignments
-        df_true = df_clean[~df_clean['label'].isna()]
-        df_true.label = df_true.label.str.strip().str.lower()
-        print(f'Number of correct assignments: {round(df_true[df_true.label == "true"].shape[0]/len(df_true), 3)}')
+    # agents cleaned groups
+    df_clean = pd.read_csv(f'agents_clean/agents_clean_{country}_booker.csv') # MODIFY WHEN POSSIBLE
+    df_clean.columns = df_clean.columns.str.strip().str.lower()
 
-        # useful columns
-        df_clean = df_clean.loc[: ,['member', 'canonical_leader', 'brand', 'name', 'package', 'promotion']]
+    # Number of correct assignments
+    classification_accuracy(df_clean)
 
-        # merging datasets
-        df_merge = df_back.merge(df_clean, how='inner', left_on='product_name', right_on='member')
-        df_merge.drop(['product_name', 'member'], axis=1, inplace=True)
+    # useful columns
+    df_clean = df_clean.loc[: ,['member', 'canonical_leader', 'brand', 'name', 'package', 'promotion']]
 
+    # merging datasets
+    df_merge = df_back.merge(df_clean, how='inner', left_on='product_name', right_on='member')
+    df_merge.drop(['product_name', 'member'], axis=1, inplace=True)
+    
+    return df_merge
 
-    print(df_back)
-    print(df_clean)
+def direct_links():
+    print('Reading file with products that have a direct link to the canonical catalog..')
+    # reading file with direct matches
+    df_direct = pd.read_csv(f'bivariate_outputs/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
+    df_direct = df_direct.loc[:, ['item_uuid', 'item_name', 'canonical_id', 'canonical_leader']]
+    return df_direct
+
+def add_leaders_to_canonical(df_merge):
+    # reading canonical file
+    canonical_df = pd.read_csv(f'canonical_data/{canonical_file}.csv')
+    canonical_df = canonical_df.loc[:, ['leader', '']]
+
+    #canonical_df.rename(columns={'group_id': 'canonical_id', 'leader': 'canonical_leader', 'member': 'canonical_member'}, inplace=True)
+
     print(df_merge)
-    pass
+    print(canonical_df)
+    print(canonical_df.columns)
+
+
+def main():
+    # mapping products cleaned by agents to raw item names / IDs
+    df_merge = mapping_agents_cleaned_items_to_raw()
+
+    if exists_canonical_catalog:
+        # reading direct links file
+        df_direct = direct_links()
+        # extract new links
+        df_new_links = df_merge.loc[:, ['item_uuid', 'item_name', 'canonical_leader']]
+        df_new_links['canonical_id'] = range(df_direct['canonical_id'].max(), df_direct['canonical_id'].max() + len(df_new_links))
+        # concatenate links
+        df_links = pd.concat([df_direct, df_new_links], axis=0).reset_index(drop=True)
+        df_links = df_links.drop_duplicates().reset_index(drop=True)
+
+        #print(df_links)
+
+        # adding new leaders to canonical database
+        add_leaders_to_canonical(df_merge)
+
+    else:
+        # creates dataframe with links
+        df_links = df_merge.loc[:, ['item_uuid', 'item_name', 'canonical_leader']]
+        df_links['canonical_id'] = range(0, + len(df_links))
+        df_links = df_links.drop_duplicates().reset_index(drop=True)
+
+        # adding new leaders to canonical database
+        add_leaders_to_canonical(df_merge)
+
+
+    '''
+    NOTE: need to deliver two files.
+
+    1) Map between raw item_name and canonical_id/canonical_leader: |item_uuid|item_name|canonical_id|canonical_leader| (READY)
+    2) Canonical catalog with all products (old + new): |canonical_id|canonical_leader|brand|name|package|promotion|
+
+    * Give better format to leaders: title(), etc.
+    '''
 
     
 if __name__ == "__main__":
