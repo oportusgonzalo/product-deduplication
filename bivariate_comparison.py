@@ -103,7 +103,7 @@ def product_space_to_detect_similarities(data_not_direct, canonical_df):
 
     applicants_not_direct = list(data_not_direct['product_name'].unique())
     # we use leaders as they reduce the space and represent the members
-    canonical_leaders = list(canonical_df['canonical_leader'].unique())
+    canonical_leaders = list(canonical_df[~canonical_df['canonical_leader'].isna()]['canonical_leader'].unique())
     # concatenation of: applicants with no direct match + canonical leaders
     product_space = list(set(applicants_not_direct + canonical_leaders))
     print(f'Number of products in the set: {len(product_space)}')
