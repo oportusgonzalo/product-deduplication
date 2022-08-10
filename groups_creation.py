@@ -26,8 +26,7 @@ from nltk.corpus import stopwords
 
 # parameters (MUST DO! -- are used to specify the outputs name)
 country = 'uk'
-parent_chain_use = True # will be false when the complete set corresponds to a specific chain (also: no chain name variations)
-parent_chain = 'booker' # lower case and "clean"
+parent_chain = 'nisa' # lower case and "clean"
 csv_file = f'{country}_{parent_chain}_uuid_name'
 parent_chain_column = 'parent_chain_name'
 item_column = 'item_name'
@@ -43,21 +42,14 @@ def read_and_select(csv_file):
     # reading raw data
     data = pd.read_csv(f'data/{csv_file}.csv')
 
-    if parent_chain_use:
-        # cleaning parent chain name as it has duplicated entries
-        df = clean_text(data, parent_chain_column, '{}_{}'.format(parent_chain_column, 'norm'))
-        # chain selection and columns to work on
-        df_nlp = df[df['parent_chain_name_norm'] == parent_chain]
-        df_nlp = df_nlp.loc[:, ['parent_chain_name_norm', item_column]].reset_index(drop=True)
-    else:
-        df_nlp = data.loc[:, [item_column]].drop_duplicates().reset_index(drop=True)
+    df_nlp = data.loc[:, [item_column]].drop_duplicates().reset_index(drop=True)
 
     # item name standardization
     df_nlp.rename(columns={'sku_name': 'item_name'}, inplace=True)
 
     print(f"Initial products: {len(list(set(df_nlp['item_name'].unique())))}")
 
-    return df_nlp
+    return df_nlp, data
 
 def nlp_regex_cleaning(language_, df_nlp):
     print('NLP + Regex product name cleaning..')
@@ -74,11 +66,19 @@ def nlp_regex_cleaning(language_, df_nlp):
 
     return df_nlp
 
-def raw_vs_clean_name_mapping(df_nlp): 
+def raw_vs_clean_name_mapping(df_nlp, data): 
     print('Saving file to back propagate matches..')  
-    df_back_propagation = df_nlp.loc[:, ['item_name', 'product_name']]
+    # dict to map cleaned product names --> raw item_name
+    raw_vs_clean_name_dict = dict(zip(df_nlp['item_name'], df_nlp['product_name']))
+    df_back_propagation = data.copy()
+    df_back_propagation['product_name'] = df_back_propagation['item_name'].map(raw_vs_clean_name_dict)
+    df_back_propagation = df_back_propagation.loc[:, ['item_uuid', 'item_name', 'product_name', 'image_url']]
+
+    # dict to map cleaned products with image (useful to map group members with images)
+    clean_product_image_dict = dict(zip(df_back_propagation['product_name'], df_back_propagation['image_url']))
+
     df_back_propagation.to_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
-    return df_back_propagation
+    return df_back_propagation, clean_product_image_dict
 
 
 def tf_idf_method(df_nlp):
@@ -200,11 +200,11 @@ def main():
     # Initial time
     t_initial = gets_time()
     # reading CSV file, cleaning parent_chain_name, and selecting data to work on
-    df_nlp = read_and_select(csv_file)
+    df_nlp, data = read_and_select(csv_file)
     # NLP + regex product name cleaning --> new column: product_name
     df_nlp = nlp_regex_cleaning(language_, df_nlp)
     # saving raw product name - clean product name (post NLP + regex) mapping
-    df_back_propagation = raw_vs_clean_name_mapping(df_nlp)
+    df_back_propagation, clean_product_image_dict = raw_vs_clean_name_mapping(df_nlp, data)
     # Appying TF-IDF method
     df_tf, tf_idf_matrix = tf_idf_method(df_nlp)
     # Applying cosine similarity to detect most similar products (potential group)
@@ -224,6 +224,7 @@ def main():
 
     # Saving results
     groups_df = groups_df.sort_values(by=['leader', 'member']).reset_index(drop=True)
+    groups_df['image_url'] = groups_df['member'].map(clean_product_image_dict)
     groups_df.to_csv(f'outputs/groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
 
     # Complete run time
