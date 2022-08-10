@@ -28,7 +28,6 @@ from nltk.corpus import stopwords
 country = 'uk'
 parent_chain = 'nisa' # lower case and "clean"
 csv_file = f'{country}_{parent_chain}_uuid_name'
-parent_chain_column = 'parent_chain_name'
 item_column = 'item_name'
 language_ = 'en'
 
