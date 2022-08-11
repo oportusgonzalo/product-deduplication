@@ -58,9 +58,9 @@ def assign_ids_to_candidates(canonical_df, df_canonical_candidate):
         df_canonical_candidate.loc[df_canonical_candidate['canonical_leader'] == canonical_name, 'canonical_id'] = id_
 
     # dictionary to assign IDs on link dataset
-    candidate__name_id_dict = dict(zip(df_canonical_candidate['canonical_leader'], df_canonical_candidate['canonical_id']))
+    candidate_name_id_dict = dict(zip(df_canonical_candidate['canonical_leader'], df_canonical_candidate['canonical_id']))
     
-    return df_canonical_candidate, candidate__name_id_dict
+    return df_canonical_candidate, candidate_name_id_dict
 
 def main():
 
@@ -71,7 +71,10 @@ def main():
     classification_accuracy(df)
 
     # canonical database structure
+    print(f'Initial number of members: {len(df["member"].unique())}')
     df_canonical_candidate = df.loc[:, ['canonical_leader', 'brand', 'name', 'package', 'promotion']]
+    df_canonical_candidate = df_canonical_candidate.drop_duplicates('canonical_leader').reset_index(drop=True)
+    print(f'Number of unique leaders: {len(df_canonical_candidate["canonical_leader"].unique())}')
     # links database structure
     df_links = df.loc[:, ['member', 'canonical_leader']]
 
@@ -83,7 +86,7 @@ def main():
         canonical_df = pd.read_csv('canonical_data/canonical_catalog.csv')
 
         # assign correct IDs to candidates
-        df_canonical_candidate, candidate__name_id_dict = assign_ids_to_candidates(canonical_df, df_canonical_candidate)
+        df_canonical_candidate, candidate_name_id_dict = assign_ids_to_candidates(canonical_df, df_canonical_candidate)
         print('Concatenating new canonical products with actual canonical products..')
         new_canonical_df = pd.concat([canonical_df, df_canonical_candidate], axis=0).reset_index(drop=True)
         new_canonical_df = new_canonical_df.drop_duplicates().reset_index(drop=True)
@@ -91,12 +94,13 @@ def main():
         # adds new links to global links file
         print('Reading canonical links file..')
         canonical_links_df = pd.read_csv('canonical_data/canonical_links.csv')
-        df_links['canonical_id'] = df_links['canonical_leader'].map(candidate__name_id_dict)
+        df_links['canonical_id'] = df_links['canonical_leader'].map(candidate_name_id_dict)
 
         # mapping members back to item_uuid: | item_uuid | item_name | canonical_id | canonical_leader | canonical_member |
         new_links_df = map_member_to_item_uuid(df_links)
         print('Concatenating new canonical links with actual canonical links..')
         new_canonical_links_df = pd.concat([canonical_links_df, new_links_df], axis=0).reset_index(drop=True)
+        new_canonical_links_df = new_canonical_links_df.drop_duplicates().reset_index(drop=True)
         
         # saving datasets
         print('Saving updated canonical files..')
@@ -107,10 +111,12 @@ def main():
         print('There is no canonical catalog..')
         # create canonical ID from scratch --> structure
         df_canonical_candidate.insert(0, 'canonical_id', range(0, len(df_canonical_candidate)))
-    
-        # create links
-        df_links.insert(1, 'canonical_id', range(0, len(df_canonical_candidate)))
 
+        # dictionary to assign IDs on link dataset
+        candidate_name_id_dict = dict(zip(df_canonical_candidate['canonical_leader'], df_canonical_candidate['canonical_id']))
+        df_links['canonical_id'] = df_links['canonical_leader'].map(candidate_name_id_dict)
+        df_links = df_links.loc[:, ['member', 'canonical_id', 'canonical_leader']]
+    
         # mapping members back to item_uuid: | item_uuid | item_name | canonical_id | canonical_leader | canonical_member |
         new_links_df = map_member_to_item_uuid(df_links)
 
