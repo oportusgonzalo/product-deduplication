@@ -26,7 +26,7 @@ from nltk.corpus import stopwords
 
 # parameters (MUST DO! -- are used to specify the outputs name)
 country = 'uk'
-parent_chain = 'nisa' # lower case and "clean"
+parent_chain = 'booker' # lower case and "clean"
 csv_file = f'{country}_{parent_chain}_uuid_name'
 item_column = 'item_name'
 language_ = 'en'
