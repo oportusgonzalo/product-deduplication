@@ -44,7 +44,7 @@ def read_and_select():
     data = pd.read_csv(f'data/{country}_{parent_chain}_uuid_name.csv')
     # dict to map item_name with image_url:
     item_name_image_dict = dict(zip(data['item_name'], data['image_url']))
-    data = data.loc[:, ['item_uuid', 'item_name']]
+    data = data.loc[:, ['item_uuid', 'item_name', 'number_sku_sold']]
 
     return data, item_name_image_dict
 
@@ -71,6 +71,26 @@ def raw_vs_clean_name_mapping(df_nlp, item_name_image_dict):
     clean_product_image_dict = dict(zip(df_back_propagation['product_name'], df_back_propagation['image_url']))
     df_back_propagation.to_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
     return df_back_propagation, clean_product_image_dict
+
+def pareto_products(data):
+    print(f'Identifying the products that represent the 80% of the sales..')
+
+    pareto_df = data.loc[:, ['product_name', 'number_sku_sold']]
+    pareto_df = pareto_df.drop_duplicates().reset_index(drop=True)
+
+    # grouping to aggregate units sold
+    pareto_df = pareto_df.groupby('product_name').agg({'number_sku_sold': sum}).reset_index()
+    pareto_df = pareto_df.sort_values(by='number_sku_sold', ascending=False).reset_index(drop=True)
+
+    # cumulative aggregations to filter 80/20
+    pareto_df['cumulate'] = pareto_df["number_sku_sold"].cumsum()
+    pareto_df["cum_percentage"] = (pareto_df['cumulate'] / pareto_df["number_sku_sold"].sum()) * 100
+
+    pareto_set = list(set(pareto_df[pareto_df['cum_percentage'] <= 80]['product_name']))
+    print(f'Number of products that represent Pareto 80/20: {len(pareto_set)}')
+    print(f'Percentage of products that represent Pareto 80/20: {round(len(pareto_set)/len(pareto_df["product_name"].unique()), 3)}')
+
+    return pareto_set
 
 def direct_matches(data_nlp):
     print('Identifying direct matches: member --> canonical_member')
@@ -99,7 +119,7 @@ def direct_matches(data_nlp):
         
     else:
         print(f'Number of existing matches: 0')
-        # just to keep structrue
+        # just to keep structure
         data_not_direct = data_nlp.copy()
         direct_matches_df = pd.DataFrame() # --> empty DF (PROBABLY NOT USEFUL TO RETURN IT)
 
@@ -134,6 +154,10 @@ def leaders_lead(canonical_links, groups_df):
     groups_df = groups_df[~groups_df['member'].isin(canonical_leaders)].copy()
     return groups_df
 
+def extracting_pareto_groups(groups_df, pareto_set):
+    print(f'Extracing groups where pareto members are assigned..')
+
+    pass
 
 def main():
     # Initial time
@@ -146,6 +170,8 @@ def main():
     df_back_propagation, clean_product_image_dict = raw_vs_clean_name_mapping(data_nlp, item_name_image_dict)
     # Identifying direct matches: member --> canonical_member
     data_not_direct, canonical_links, direct_matches_df = direct_matches(data_nlp)
+    # identifies the 20% of the products that represent the 80% of the sales
+    pareto_set = pareto_products(data)
     # Preparing set to run grouping script
     product_space = product_space_to_detect_similarities(data_not_direct, canonical_links)
     df_product_space = pd.DataFrame(data={'product_name': product_space})
@@ -183,7 +209,7 @@ def main():
     print(f'Time to run the script: {round(t_complete/60, 3)} minutes!')
     print('Success!')
 
-    #return groups_df, track_df, df_back_propagation
+    return groups_df, track_df, df_back_propagation
 
 if __name__ == "__main__":
     main()
