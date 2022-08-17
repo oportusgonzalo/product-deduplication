@@ -116,13 +116,15 @@ def direct_matches(data_nlp):
         data_not_direct = data_nlp[~data_nlp['product_name'].isin(direct_members)].reset_index(drop=True)
 
         # save link between: member --> canonical_member
-        direct_df.drop(['item_uuid', 'item_name'], axis=1, inplace=True)
-        direct_df = direct_df.merge(canonical_links, how='inner', left_on='product_name', right_on='canonical_member')
+        canonical_links_direct = canonical_links.copy()
+        canonical_links_direct.drop(['item_uuid', 'item_name'], axis=1, inplace=True)
+        canonical_links_direct = canonical_links_direct.drop_duplicates().reset_index(drop=True)
+        direct_df = direct_df.merge(canonical_links_direct, how='left', left_on='product_name', right_on='canonical_member')
         direct_matches_df = direct_df.loc[:, ['item_uuid', 'item_name', 'canonical_id', 'canonical_leader', 'canonical_member']]
         direct_matches_df = direct_matches_df.drop_duplicates().reset_index(drop=True)
 
         print(f'Validation - Number of direct matches: {len(direct_matches_df["canonical_member"].unique())}')
-        
+
     else:
         print(f'Number of direct matches: 0')
         # just to keep structure
@@ -216,6 +218,7 @@ def main():
     pareto_groups_df, non_pareto_groups_df = extracting_pareto_groups(groups_df, pareto_set)
 
     # saving results
+    groups_df.to_csv(f'bivariate_outputs/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
     pareto_groups_df.to_csv(f'bivariate_outputs/bivariate_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
     non_pareto_groups_df.to_csv(f'bivariate_outputs/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
     direct_matches_df.to_csv(f'bivariate_outputs/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
