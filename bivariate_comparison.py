@@ -45,6 +45,8 @@ def read_and_select():
     # dict to map item_name with image_url:
     item_name_image_dict = dict(zip(data['item_name'], data['image_url']))
     data = data.loc[:, ['item_uuid', 'item_name', 'number_sku_sold']]
+    print(f'Initial dataframe shape: {data.shape}')
+    print(f'Initial unique products - messy: {len(data["item_name"].unique())}')
 
     return data, item_name_image_dict
 
