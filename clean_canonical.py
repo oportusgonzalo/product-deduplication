@@ -39,7 +39,7 @@ def map_member_to_item_uuid(df_links):
     previous_links = df_links['member'].unique()
     new_links_df = df_links.merge(df_back_propagation, how='inner', left_on='member', right_on='product_name')
     new_links_df.rename(columns={'member': 'canonical_member'}, inplace=True)
-    new_links_df = new_links_df.loc[:, ['item_uuid', 'item_name', 'canonical_id', 'canonical_leader', 'canonical_member']]
+    new_links_df = new_links_df.loc[:, ['item_uuid', 'item_name', 'canonical_id', 'canonical_leader', 'canonical_member', 'agent_verified']]
 
     print(f'Number of links missing: {new_links_df[~new_links_df["canonical_member"].isin(previous_links)].shape[0]}')
 
@@ -62,6 +62,15 @@ def assign_ids_to_candidates(canonical_df, df_canonical_candidate):
     
     return df_canonical_candidate, candidate_name_id_dict
 
+def standardize_format(new_canonical_data, new_canonical_links):
+    for col in ['canonical_leader', 'brand', 'name']:
+        new_canonical_data[col] = new_canonical_data[col].str.title()
+    
+    for col in ['canonical_leader', 'canonical_member']:
+        new_canonical_links[col] = new_canonical_links[col].str.title()
+    
+    return new_canonical_data, new_canonical_links
+
 def main():
 
     df = pd.read_csv(f'agents_clean/agents_clean_{country}_{parent_chain}.csv')
@@ -71,12 +80,19 @@ def main():
     classification_accuracy(df)
 
     # canonical database structure
+    print(f'Agents output shape: {df.shape}')
     print(f'Initial number of members: {len(df["member"].unique())}')
+
     df_canonical_candidate = df.loc[:, ['canonical_leader', 'brand', 'name', 'package', 'promotion']]
     df_canonical_candidate = df_canonical_candidate.drop_duplicates('canonical_leader').reset_index(drop=True)
+    df_canonical_candidate['agent_verified'] = 1
+   
     print(f'Number of unique leaders: {len(df_canonical_candidate["canonical_leader"].unique())}')
+    print(f'Percentage of unique products: {round(len(df_canonical_candidate["canonical_leader"].unique())/len(df["member"].unique()), 3)}')
+    
     # links database structure
     df_links = df.loc[:, ['member', 'canonical_leader']]
+    df_links['agent_verified'] = 1
 
     # ask for existance of a canonical catalog file
     if os.path.exists('canonical_data/canonical_catalog.csv'):
@@ -101,6 +117,9 @@ def main():
         print('Concatenating new canonical links with actual canonical links..')
         new_canonical_links_df = pd.concat([canonical_links_df, new_links_df], axis=0).reset_index(drop=True)
         new_canonical_links_df = new_canonical_links_df.drop_duplicates().reset_index(drop=True)
+
+        # better format to dataframes
+        new_canonical_df, new_canonical_links_df = standardize_format(new_canonical_df, new_canonical_links_df)
         
         # saving datasets
         print('Saving updated canonical files..')
@@ -115,10 +134,13 @@ def main():
         # dictionary to assign IDs on link dataset
         candidate_name_id_dict = dict(zip(df_canonical_candidate['canonical_leader'], df_canonical_candidate['canonical_id']))
         df_links['canonical_id'] = df_links['canonical_leader'].map(candidate_name_id_dict)
-        df_links = df_links.loc[:, ['member', 'canonical_id', 'canonical_leader']]
+        df_links = df_links.loc[:, ['member', 'canonical_id', 'canonical_leader', 'agent_verified']]
     
         # mapping members back to item_uuid: | item_uuid | item_name | canonical_id | canonical_leader | canonical_member |
         new_links_df = map_member_to_item_uuid(df_links)
+
+        # better format to dataframes
+        df_canonical_candidate, new_links_df = standardize_format(df_canonical_candidate, new_links_df)
 
         # saving datasets
         print('Saving canonical files..')
