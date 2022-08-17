@@ -96,7 +96,11 @@ def direct_matches(data_nlp):
     print('Identifying direct matches: member --> canonical_member')
 
     # reading file with links between raw items and canonical data (when we run bivariate, this file has been already created)
-    canonical_links = pd.read_csv('canonical_data/canonical_links.csv')    
+    canonical_links = pd.read_csv('canonical_data/canonical_links.csv')
+
+    for col in ['canonical_leader', 'canonical_member']:
+        canonical_links[col] = canonical_links[col].str.lower()
+    
     canonical_members = list(set(canonical_links['canonical_member']))
 
     # dataframe with direct matches
@@ -104,7 +108,7 @@ def direct_matches(data_nlp):
 
     if direct_df.shape[0] > 0:
         direct_members = list(set(direct_df['product_name']))
-        print(f'Number of existing matches: {len(direct_members)}')
+        print(f'Number of direct matches: {len(direct_members)}')
 
         # removing products that don't have direct matches
         data_not_direct = data_nlp[~data_nlp['product_name'].isin(direct_members)].reset_index(drop=True)
@@ -115,10 +119,10 @@ def direct_matches(data_nlp):
         direct_matches_df = direct_df.loc[:, ['item_uuid', 'item_name', 'canonical_id', 'canonical_leader', 'canonical_member']]
         direct_matches_df = direct_matches_df.drop_duplicates().reset_index(drop=True)
 
-        print(f'Validation - Number of existing matches: {len(direct_matches_df["canonical_member"].unique())}')
+        print(f'Validation - Number of direct matches: {len(direct_matches_df["canonical_member"].unique())}')
         
     else:
-        print(f'Number of existing matches: 0')
+        print(f'Number of direct matches: 0')
         # just to keep structure
         data_not_direct = data_nlp.copy()
         direct_matches_df = pd.DataFrame() # --> empty DF (PROBABLY NOT USEFUL TO RETURN IT)
@@ -156,8 +160,15 @@ def leaders_lead(canonical_links, groups_df):
 
 def extracting_pareto_groups(groups_df, pareto_set):
     print(f'Extracing groups where pareto members are assigned..')
+    
+    groups_in_pareto = list(set(groups_df[(groups_df['leader'].isin(pareto_set))|(groups_df['member'].isin(pareto_set))]['group_id']))
+    
+    pareto_groups_df = groups_df[groups_df['group_id'].isin(groups_in_pareto)].reset_index(drop=True)
+    non_pareto_groups_df = groups_df[~groups_df['group_id'].isin(groups_in_pareto)].reset_index(drop=True)
 
-    pass
+    print(f'Pareto dataframe shape to be reviewed by agents: {pareto_groups_df.shape[0]}')
+
+    return pareto_groups_df, non_pareto_groups_df
 
 def main():
     # Initial time
@@ -196,11 +207,15 @@ def main():
     # leaders lead
     groups_df = leaders_lead(canonical_links, groups_df)
     
-    # saving results
+    # re-organizing and removing non pareto products
     groups_df = groups_df.sort_values(by=['leader', 'member']).reset_index(drop=True)
     groups_df['image_url'] = groups_df['member'].map(clean_product_image_dict)
 
-    groups_df.to_csv(f'bivariate_outputs/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    pareto_groups_df, non_pareto_groups_df = extracting_pareto_groups(groups_df, pareto_set)
+
+    # saving results
+    pareto_groups_df.to_csv(f'bivariate_outputs/bivariate_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    non_pareto_groups_df.to_csv(f'bivariate_outputs/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
     direct_matches_df.to_csv(f'bivariate_outputs/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
 
     
@@ -209,7 +224,7 @@ def main():
     print(f'Time to run the script: {round(t_complete/60, 3)} minutes!')
     print('Success!')
 
-    return groups_df, track_df, df_back_propagation
+    return pareto_groups_df, non_pareto_groups_df, df_back_propagation
 
 if __name__ == "__main__":
     main()
