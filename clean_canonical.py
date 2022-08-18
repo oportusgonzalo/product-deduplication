@@ -59,6 +59,7 @@ def assign_ids_to_candidates(canonical_df, df_canonical_candidate):
     return df_canonical_candidate, candidate_name_id_dict
 
 def standardize_format(new_canonical_data, new_canonical_links):
+    print(f'Standardizing strings on each dataframe..')
     for col in ['canonical_leader', 'brand', 'name']:
         new_canonical_data[col] = new_canonical_data[col].str.title()
     
@@ -69,6 +70,11 @@ def standardize_format(new_canonical_data, new_canonical_links):
 
 def new_leaders_to_canonical(df_canonical_candidate):
     pass
+
+def nan_members_to_name(df_links):
+    print('Replacing members with nan value but true assignment by leader..')
+    df_links.loc[(df_links['member'].isna())&(df_links['label'] == 'true'), 'member'] = df_links.loc[(df_links['member'].isna())&(df_links['label'] == 'true'), 'canonical_leader']
+    return df_links
 
 def main():
 
@@ -86,6 +92,7 @@ def main():
     print(f'Initial number of members: {len(df["member"].unique())}')
 
     df_canonical_candidate = df.loc[:, ['canonical_leader', 'brand', 'name', 'package', 'promotion']]
+    df_canonical_candidate = df_canonical_candidate[~df_canonical_candidate['canonical_leader'].isna()].copy()
     df_canonical_candidate = df_canonical_candidate.drop_duplicates('canonical_leader').reset_index(drop=True)
     df_canonical_candidate['agent_verified'] = 1
    
@@ -93,8 +100,12 @@ def main():
     print(f'Percentage of unique products: {round(len(df_canonical_candidate["canonical_leader"].unique())/len(df["member"].unique()), 3)}')
     
     # links database structure
-    df_links = df.loc[:, ['member', 'canonical_leader']]
+    df_links = df.loc[:, ['member', 'canonical_leader', 'label']]
     df_links['agent_verified'] = 1
+
+    # fixing members that have nan (after agents work)
+    df_links = nan_members_to_name(df_links)
+    df_links.drop('label', axis=1, inplace=True)
 
     # ask for existance of a canonical catalog file
     if os.path.exists('canonical_data/canonical_catalog.csv'):
