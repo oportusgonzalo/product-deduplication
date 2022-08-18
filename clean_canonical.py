@@ -5,15 +5,6 @@ import os
 import warnings
 warnings.filterwarnings("ignore")
 
-'''
-What I need to do?
-
-a) Open CSV file that stores work donde by agents, and:
-    * Create canonical catalog if it doesn't exist, or
-    * Append to canonical catalog
-b) Back propagate links created by agents to create: | item_uuid | item_name | canonical_id | canonical_leader | canonical_member |
-'''
-
 # parameters
 country = ''
 parent_chain = ''
@@ -71,10 +62,16 @@ def standardize_format(new_canonical_data, new_canonical_links):
     
     return new_canonical_data, new_canonical_links
 
+def new_leaders_to_canonical(df_canonical_candidate):
+    pass
+
 def main():
 
     df = pd.read_csv(f'agents_clean/agents_clean_{country}_{parent_chain}.csv')
     df.columns = df.columns.str.strip().str.lower()
+
+    for col in ['leader', 'member', 'label', 'canonical_leader', 'brand', 'name', 'package']:
+        df[col] = df[col].str.strip().str.lower()
 
     # Number of correct assignments
     classification_accuracy(df)
