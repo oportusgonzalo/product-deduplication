@@ -134,6 +134,13 @@ def direct_matches(data_nlp):
     # return case: no direct matches
     return data_not_direct, canonical_links, direct_matches_df
 
+def validate_products(data_nlp, direct_matches_df, data_not_direct):
+    print(f"Validating that we haven't lost products in the process..")
+    
+    added_products = list(set(direct_matches_df['canonical_member'])) + list(set(data_not_direct['product_name']))
+
+    number_products_not_added = len(list(set(data_nlp[~data_nlp['product_name'].isin(added_products)]['product_name'])))
+    print(f'Number of products lost after extracting direct matches: {number_products_not_added}')
 
 def product_space_to_detect_similarities(data_not_direct, canonical_links):
     print(f'Preparing set to identify similiarities by TF-IDF + Fuzzy..')
@@ -143,7 +150,7 @@ def product_space_to_detect_similarities(data_not_direct, canonical_links):
     canonical_leaders = list(canonical_links[~canonical_links['canonical_leader'].isna()]['canonical_leader'].unique())
     # concatenation of: applicants with no direct match + canonical leaders
     product_space = list(set(applicants_not_direct + canonical_leaders))
-    print(f'Number of products to match and group: {len(product_space)}')
+    print(f'Number of products to match and group (not_direct + canonical_leaders): {len(product_space)}')
     return product_space
 
 def leaders_lead(canonical_links, groups_df):
@@ -174,6 +181,14 @@ def extracting_pareto_groups(groups_df, pareto_set):
 
     return pareto_groups_df, non_pareto_groups_df
 
+def validate_products_missing(data_nlp, pareto_groups_df, non_pareto_groups_df, direct_matches_df):
+    print(f"Validating that we haven't lost products in the process..")
+    
+    added_products = list(set(pareto_groups_df['member'])) + list(set(non_pareto_groups_df['member'])) + list(set(direct_matches_df['canonical_member']))
+
+    number_products_not_added = len(list(set(data_nlp[~data_nlp['product_name'].isin(added_products)]['product_name'])))
+    print(f'Number of products lost in the process: {number_products_not_added}')
+
 def main():
     # Initial time
     t_initial = gets_time()
@@ -185,6 +200,7 @@ def main():
     df_back_propagation, clean_product_image_dict = raw_vs_clean_name_mapping(data_nlp, item_name_image_dict)
     # Identifying direct matches: member --> canonical_member
     data_not_direct, canonical_links, direct_matches_df = direct_matches(data_nlp)
+    validate_products(data_nlp, direct_matches_df, data_not_direct)
     # identifies the 20% of the products that represent the 80% of the sales
     pareto_set = pareto_products(data)
     # Preparing set to run grouping script
@@ -223,6 +239,8 @@ def main():
     non_pareto_groups_df.to_csv(f'bivariate_outputs/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
     direct_matches_df.to_csv(f'bivariate_outputs/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
 
+    # verifying if products were lost in the process
+    validate_products_missing(data_nlp, pareto_groups_df, non_pareto_groups_df, direct_matches_df)
     
     # Complete run time
     t_complete = gets_time() - t_initial
