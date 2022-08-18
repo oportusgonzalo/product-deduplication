@@ -26,13 +26,18 @@ def map_member_to_item_uuid(df_links):
     df_back_propagation = pd.read_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv')
     df_back_propagation.drop('image_url', axis=1, inplace=True)
 
-    # merge back propagation with links to have: | item_uuid | item_name | canonical_id | canonical_leader | canonical_member |
-    previous_links = df_links['member'].unique()
+    # cleaning the set
+    df_links = df_links.drop_duplicates('member').reset_index(drop=True)
+
+    # merge back propagation with links to have: | item_uuid | item_name | canonical_id | canonical_leader | canonical_member |   
     new_links_df = df_links.merge(df_back_propagation, how='inner', left_on='member', right_on='product_name')
     new_links_df.rename(columns={'member': 'canonical_member'}, inplace=True)
     new_links_df = new_links_df.loc[:, ['item_uuid', 'item_name', 'canonical_id', 'canonical_leader', 'canonical_member', 'agent_verified']]
-
-    print(f'Number of links missing: {new_links_df[~new_links_df["canonical_member"].isin(previous_links)].shape[0]}')
+    
+    # stats
+    new_links = new_links_df.canonical_member.unique()
+    print(f'Number of links missing: {len(df_links[~df_links["member"].isin(new_links)]["member"].unique())}')
+    print(f'Number of unique members at this stage of the process (mapping members to uuid): {df_links.drop_duplicates("member").shape[0]}')
 
     return new_links_df
 
@@ -132,7 +137,7 @@ def main():
         candidate_name_id_dict = dict(zip(df_canonical_candidate['canonical_leader'], df_canonical_candidate['canonical_id']))
         df_links['canonical_id'] = df_links['canonical_leader'].map(candidate_name_id_dict)
         df_links = df_links.loc[:, ['member', 'canonical_id', 'canonical_leader', 'agent_verified']]
-    
+
         # mapping members back to item_uuid: | item_uuid | item_name | canonical_id | canonical_leader | canonical_member |
         new_links_df = map_member_to_item_uuid(df_links)
 
