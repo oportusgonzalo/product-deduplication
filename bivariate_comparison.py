@@ -192,9 +192,6 @@ def validate_products_missing(data_nlp, pareto_groups_df, non_pareto_groups_df, 
 def remove_duplication_for_uuid(data):
     print(f"UUIDs may be assigned to more than a single product; Fixing this issue..")
 
-    # saving unique uuid's to verify correct cleaning
-    unique_uuid_list = list(set(data['item_uuid']))
-    
     # identifies the existance of uuids assigned to more than 1 item name
     identify_duplication_df = data.groupby('item_uuid').agg({'item_name': 'count'}).reset_index().sort_values(by='item_name', ascending=False).reset_index(drop=True)
     number_uuids_more_than_1 = identify_duplication_df[identify_duplication_df['item_name'] > 1].drop_duplicates('item_uuid').reset_index(drop=True).shape[0]
