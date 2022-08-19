@@ -189,11 +189,38 @@ def validate_products_missing(data_nlp, pareto_groups_df, non_pareto_groups_df, 
     number_products_not_added = len(list(set(data_nlp[~data_nlp['product_name'].isin(added_products)]['product_name'])))
     print(f'Number of products lost in the process: {number_products_not_added}')
 
+def remove_duplication_for_uuid(data):
+    print(f"UUIDs may be assigned to more than a single product; Fixing this issue..")
+
+    # saving unique uuid's to verify correct cleaning
+    unique_uuid_list = list(set(data['item_uuid']))
+    
+    # identifies the existance of uuids assigned to more than 1 item name
+    identify_duplication_df = data.groupby('item_uuid').agg({'item_name': 'count'}).reset_index().sort_values(by='item_name', ascending=False).reset_index(drop=True)
+    number_uuids_more_than_1 = identify_duplication_df[identify_duplication_df['item_name'] > 1].drop_duplicates('item_uuid').reset_index(drop=True).shape[0]
+    print(f"Number of UUIDs assigned to more than 1 product: {number_uuids_more_than_1}")
+
+    # aggregates and sorts values
+    duplicated_df = data.groupby(['item_uuid', 'item_name']).agg({'number_sku_sold': sum}).reset_index()
+    duplicated_df = duplicated_df.sort_values(by=['item_uuid', 'number_sku_sold'], ascending=False).reset_index(drop=True)
+
+    # removes duplicated item names --> idea: keep the item name with the higher number of sales
+    duplicated_df = duplicated_df.drop_duplicates('item_uuid').reset_index(drop=True)
+
+    duplicated_unique_uuids_list = list(set(duplicated_df['item_uuid']))
+    print(f'Missing UUIDs after removing duplicated assingments: {len(list(set(data[~data["item_uuid"].isin(duplicated_unique_uuids_list)]["item_uuid"])))}')
+    
+    print(f'Dataframe shape at this stage of the process (remove duplicated uuids): {duplicated_df.shape}')
+    
+    return duplicated_df
+
 def main():
     # Initial time
     t_initial = gets_time()
     # reading CSV files: canonical & applicnats
     data, item_name_image_dict = read_and_select()
+    # fixing issue: existance of uuid's assigned to more than 1 item name
+    data = remove_duplication_for_uuid(data)
     # NLP + regex product name cleaning --> new column: product_name
     data_nlp = nlp_regex_cleaning(language_, data)
     # saving raw product name - clean product name (post NLP + regex): mapping
