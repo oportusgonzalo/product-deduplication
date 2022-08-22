@@ -283,5 +283,30 @@ def groups_concatenation(df_clean, df_similars, index_product_dict):
     t_run = gets_time() - t_bef_group
     print(f'Time to run group concatenation: {round(t_run/60, 3)} minutes!')
 
-    return groups_df, track_df 
+    return groups_df, track_df
+
+def remove_duplication_for_uuid(data):
+    print(f"UUIDs may be assigned to more than a single product; Fixing this issue..")
+    
+    # identifies the existance of uuids assigned to more than 1 item name
+    identify_duplication_df = data.groupby('item_uuid').agg({'item_name': 'count'}).reset_index().sort_values(by='item_name', ascending=False).reset_index(drop=True)
+    number_uuids_more_than_1 = identify_duplication_df[identify_duplication_df['item_name'] > 1].drop_duplicates('item_uuid').reset_index(drop=True).shape[0]
+    print(f"Number of UUIDs assigned to more than 1 product: {number_uuids_more_than_1}")
+
+    # aggregates and sorts values
+    data['number_sku_sold'] = 1
+    duplicated_df = data.groupby(['item_uuid', 'item_name']).agg({'number_sku_sold': sum}).reset_index()
+    duplicated_df = duplicated_df.sort_values(by=['item_uuid', 'number_sku_sold'], ascending=False).reset_index(drop=True)
+
+    # removes duplicated item names --> idea: keep the item name with the higher number of sales
+    duplicated_df = duplicated_df.drop_duplicates('item_uuid').reset_index(drop=True)
+
+    duplicated_unique_uuids_list = list(set(duplicated_df['item_uuid']))
+    print(f'Missing UUIDs after removing duplicated assingments: {len(list(set(data[~data["item_uuid"].isin(duplicated_unique_uuids_list)]["item_uuid"])))}')
+    
+    print(f'Dataframe shape at this stage of the process (remove duplicated uuids): {duplicated_df.shape}')
+
+    # print number of duplicated (same as initial of function)
+    
+    return duplicated_df
 
