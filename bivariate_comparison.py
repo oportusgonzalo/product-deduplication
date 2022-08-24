@@ -137,10 +137,11 @@ def direct_matches(data_nlp):
 def validate_products(data_nlp, direct_matches_df, data_not_direct):
     print(f"Validating that we haven't lost products in the process..")
     
-    added_products = list(set(direct_matches_df['canonical_member'])) + list(set(data_not_direct['product_name']))
+    if direct_matches_df.shape[0] > 0:
+        added_products = list(set(direct_matches_df['canonical_member'])) + list(set(data_not_direct['product_name']))
 
-    number_products_not_added = len(list(set(data_nlp[~data_nlp['product_name'].isin(added_products)]['product_name'])))
-    print(f'Number of products lost after extracting direct matches: {number_products_not_added}')
+        number_products_not_added = len(list(set(data_nlp[~data_nlp['product_name'].isin(added_products)]['product_name'])))
+        print(f'Number of products lost after extracting direct matches: {number_products_not_added}')
 
 def product_space_to_detect_similarities(data_not_direct, canonical_links):
     print(f'Preparing set to identify similiarities by TF-IDF + Fuzzy..')
@@ -184,7 +185,10 @@ def extracting_pareto_groups(groups_df, pareto_set):
 def validate_products_missing(data_nlp, pareto_groups_df, non_pareto_groups_df, direct_matches_df):
     print(f"Validating that we haven't lost products in the process..")
     
-    added_products = list(set(pareto_groups_df['member'])) + list(set(non_pareto_groups_df['member'])) + list(set(direct_matches_df['canonical_member']))
+    if direct_matches_df.shape[0] > 0:
+        added_products = list(set(pareto_groups_df['member'])) + list(set(non_pareto_groups_df['member'])) + list(set(direct_matches_df['canonical_member']))
+    else:
+        added_products = list(set(pareto_groups_df['member'])) + list(set(non_pareto_groups_df['member']))
 
     number_products_not_added = len(list(set(data_nlp[~data_nlp['product_name'].isin(added_products)]['product_name'])))
     print(f'Number of products lost in the process: {number_products_not_added}')
