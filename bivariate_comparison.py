@@ -1,5 +1,6 @@
 
 import pandas as pd
+import os
 import numpy as np
 import re
 import time
@@ -262,10 +263,13 @@ def main():
     pareto_groups_df, non_pareto_groups_df = extracting_pareto_groups(groups_df, pareto_set)
 
     # saving results
-    groups_df.to_csv(f'bivariate_outputs/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
-    pareto_groups_df.to_csv(f'bivariate_outputs/bivariate_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
-    non_pareto_groups_df.to_csv(f'bivariate_outputs/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
-    direct_matches_df.to_csv(f'bivariate_outputs/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    if not os.path.isdir(f'bivariate_outputs/{parent_chain}'):
+        os.mkdir(f'bivariate_outputs/{parent_chain}')
+
+    groups_df.to_csv(f'bivariate_outputs/{parent_chain}/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    pareto_groups_df.to_csv(f'bivariate_outputs/{parent_chain}/bivariate_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    non_pareto_groups_df.to_csv(f'bivariate_outputs/{parent_chain}/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    direct_matches_df.to_csv(f'bivariate_outputs/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
 
     # verifying if products were lost in the process
     validate_products_missing(data_nlp, pareto_groups_df, non_pareto_groups_df, direct_matches_df)

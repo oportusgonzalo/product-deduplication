@@ -159,7 +159,7 @@ def links_concatenation(canonical_links_df, df_direct, df_back, df_non_pareto, d
 def main():
 
     df = pd.read_csv(f'agents_clean/agents_clean_{country}_{parent_chain}.csv')
-    df.columns = df.columns.str.strip().str.lower()
+    df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
 
     for col in ['leader', 'member', 'label', 'canonical_leader', 'brand', 'name', 'package']:
         df[col] = df[col].str.strip().str.lower()
@@ -194,7 +194,7 @@ def main():
         # appending data to the canonical catalog
         print('Reading canonical file..')
         canonical_df = pd.read_csv('canonical_data/canonical_catalog.csv')
-        df_non_pareto = pd.read_csv(f'bivariate_outputs/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
+        df_non_pareto = pd.read_csv(f'bivariate_outputs/{parent_chain}/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
         new_canonical_df, candidate_name_id_dict = canonical_catalog_concatenation(df_canonical_candidate, df_non_pareto, canonical_df)
 
         # dict to map leaders while building on canonical links
@@ -203,7 +203,7 @@ def main():
         # appending data to the item canonical links DB; uses: canonical_links_df, df_direct, df_back, df_non_pareto, and df_links
         print('Reading canonical links file..')
         canonical_links_df = pd.read_csv('canonical_data/canonical_links.csv')
-        df_direct = pd.read_csv(f'bivariate_outputs/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
+        df_direct = pd.read_csv(f'bivariate_outputs//{parent_chain}direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
         df_back = pd.read_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv')
         
         new_canonical_links_df = links_concatenation(canonical_links_df, df_direct, df_back, df_non_pareto, df_links, updated_canonical_dict)
