@@ -118,13 +118,16 @@ def canonical_catalog_concatenation(df_canonical_candidate, df_non_pareto, canon
 def links_concatenation(canonical_links_df, df_direct, df_back, df_non_pareto, df_links, updated_canonical_dict):
     print('Adding new links to canonical links table..')
 
-    # concatenating direct DF to canonical links
-    df_direct['agent_verified'] = 1
-    for col in ['canonical_leader', 'canonical_member']:
-        df_direct[col] = df_direct[col].str.title()
-    new_canonical_links_df = pd.concat([canonical_links_df, df_direct], axis=0).reset_index(drop=True)
-    # OJO: porque al concatenar eliminariamos duplicados?
-    new_canonical_links_df = new_canonical_links_df.drop_duplicates('item_uuid').reset_index(drop=True)
+    # concatenating direct DF to canonical links (only if is not empty)
+    if df_direct.shape[0] > 0:
+        df_direct['agent_verified'] = 1
+        for col in ['canonical_leader', 'canonical_member']:
+            df_direct[col] = df_direct[col].str.title()
+        new_canonical_links_df = pd.concat([canonical_links_df, df_direct], axis=0).reset_index(drop=True)
+        # OJO: porque al concatenar eliminariamos duplicados?
+        new_canonical_links_df = new_canonical_links_df.drop_duplicates('item_uuid').reset_index(drop=True)
+    else:
+        new_canonical_links_df = canonical_links_df.copy()
 
     # selecting useful columns (more clarity of the join)
     df_back = df_back.drop('image_url', axis=1)
@@ -160,6 +163,7 @@ def main():
 
     df = pd.read_csv(f'agents_clean/agents_clean_{country}_{parent_chain}.csv')
     df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
+    df['label'] = df['label'].astype(str)
 
     for col in ['leader', 'member', 'label', 'canonical_leader', 'brand', 'name', 'package']:
         df[col] = df[col].str.strip().str.lower()
@@ -203,7 +207,11 @@ def main():
         # appending data to the item canonical links DB; uses: canonical_links_df, df_direct, df_back, df_non_pareto, and df_links
         print('Reading canonical links file..')
         canonical_links_df = pd.read_csv('canonical_data/canonical_links.csv')
-        df_direct = pd.read_csv(f'bivariate_outputs//{parent_chain}direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
+        # when there are no direct matches, the file isn't created
+        if os.path.exists(f'bivariate_outputs/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv'):
+            df_direct = pd.read_csv(f'bivariate_outputs/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
+        else:
+            df_direct = pd.DataFrame()
         df_back = pd.read_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv')
         
         new_canonical_links_df = links_concatenation(canonical_links_df, df_direct, df_back, df_non_pareto, df_links, updated_canonical_dict)

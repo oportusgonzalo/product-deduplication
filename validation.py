@@ -2,10 +2,14 @@
 import pandas as pd
 
 
-stores_to_review = ['booker', 'nisa']
+stores_to_review = {
+    'booker': 'uk', 
+    'nisa':'uk', 
+    'dp&az': 'cr'
+    }
 
-def read_back_propagation_file(store):
-    return pd.read_csv(f'back_propagation/raw_vs_clean_uk_{store}_products_85_75.csv')
+def read_back_propagation_file(store, country):
+    return pd.read_csv(f'back_propagation/raw_vs_clean_{country}_{store}_products_85_75.csv')
 
 def number_uuids_involved(df_raw):
     print(f'Number of unique UUIDs processed: {len(list(set(df_raw["item_uuid"])))}')
@@ -31,8 +35,8 @@ def main():
     canonical_links_df = pd.read_csv('canonical_data/canonical_links.csv')
 
     df_raw = pd.DataFrame()
-    for store in stores_to_review:
-        df_temp = read_back_propagation_file(store)
+    for store, country in stores_to_review.items():
+        df_temp = read_back_propagation_file(store, country)
         df_raw = pd.concat([df_raw, df_temp], axis=0).reset_index(drop=True)
 
     # total number of unique UUIDs processed
@@ -46,7 +50,7 @@ def main():
 
     # products that haven't been verified by agents
     agent_unverified(canonical_links_df)
-    
+
 
 if __name__ == "__main__":
     main()
