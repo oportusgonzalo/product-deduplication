@@ -269,7 +269,8 @@ def main():
     groups_df.to_csv(f'bivariate_outputs/{parent_chain}/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
     pareto_groups_df.to_csv(f'bivariate_outputs/{parent_chain}/bivariate_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
     non_pareto_groups_df.to_csv(f'bivariate_outputs/{parent_chain}/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
-    direct_matches_df.to_csv(f'bivariate_outputs/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    if direct_matches_df.shape[0] != 0:
+        direct_matches_df.to_csv(f'bivariate_outputs/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
 
     # verifying if products were lost in the process
     validate_products_missing(data_nlp, pareto_groups_df, non_pareto_groups_df, direct_matches_df)
