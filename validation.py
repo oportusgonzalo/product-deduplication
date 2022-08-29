@@ -13,6 +13,7 @@ def read_back_propagation_file(store, country):
 
 def number_uuids_involved(df_raw):
     print(f'Number of unique UUIDs processed: {len(list(set(df_raw["item_uuid"])))}')
+    print(f'Number of unique item names processed: {len(list(set(df_raw["item_name"])))}')
 
 def uuids_not_added(canonical_links_df, df_raw):
     # list of all unique UUIDs
