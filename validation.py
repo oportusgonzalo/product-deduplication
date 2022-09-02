@@ -4,7 +4,8 @@ import pandas as pd
 
 stores_to_review = {
     'booker': 'uk', 
-    'nisa':'uk', 
+    'nisa':'uk',
+    'costcutter': 'uk', 
     'dp&az': 'cr'
     }
 
