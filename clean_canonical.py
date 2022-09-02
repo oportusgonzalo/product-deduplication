@@ -24,7 +24,7 @@ def classification_accuracy(df_clean):
 def map_member_to_item_uuid(df_links):
     print('Mapping backwards each member to the UUID..')
     # open back propagation file
-    df_back_propagation = pd.read_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv')
+    df_back_propagation = pd.read_csv(f'back_propagation/{country}/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv')
     df_back_propagation.drop('image_url', axis=1, inplace=True)
 
     # cleaning the set
@@ -161,7 +161,7 @@ def links_concatenation(canonical_links_df, df_direct, df_back, df_non_pareto, d
 
 def main():
 
-    df = pd.read_csv(f'agents_clean/agents_clean_{country}_{parent_chain}.csv')
+    df = pd.read_csv(f'agents_clean/{country}/agents_clean_{country}_{parent_chain}.csv')
     df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
     df['label'] = df['label'].astype(str)
 
@@ -198,7 +198,7 @@ def main():
         # appending data to the canonical catalog
         print('Reading canonical file..')
         canonical_df = pd.read_csv('canonical_data/canonical_catalog.csv')
-        df_non_pareto = pd.read_csv(f'bivariate_outputs/{parent_chain}/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
+        df_non_pareto = pd.read_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
         new_canonical_df, candidate_name_id_dict = canonical_catalog_concatenation(df_canonical_candidate, df_non_pareto, canonical_df)
 
         # dict to map leaders while building on canonical links
@@ -208,11 +208,11 @@ def main():
         print('Reading canonical links file..')
         canonical_links_df = pd.read_csv('canonical_data/canonical_links.csv')
         # when there are no direct matches, the file isn't created
-        if os.path.exists(f'bivariate_outputs/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv'):
-            df_direct = pd.read_csv(f'bivariate_outputs/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
+        if os.path.exists(f'bivariate_outputs/{country}/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv'):
+            df_direct = pd.read_csv(f'bivariate_outputs/{country}/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
         else:
             df_direct = pd.DataFrame()
-        df_back = pd.read_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv')
+        df_back = pd.read_csv(f'back_propagation/{country}/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv')
         
         new_canonical_links_df = links_concatenation(canonical_links_df, df_direct, df_back, df_non_pareto, df_links, updated_canonical_dict)
 

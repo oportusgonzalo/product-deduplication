@@ -41,7 +41,7 @@ def read_and_select():
     print('Reading file and selecting data to work on..')
     
     # reading raw data
-    data = pd.read_csv(f'data/{country}_{parent_chain}_uuid_name.csv')
+    data = pd.read_csv(f'data/{country}/{country}_{parent_chain}_uuid_name.csv')
     # dict to map item_name with image_url:
     item_name_image_dict = dict(zip(data['item_name'], data['image_url']))
     data = data.loc[:, ['item_uuid', 'item_name']]
@@ -71,7 +71,7 @@ def raw_vs_clean_name_mapping(df_nlp, item_name_image_dict):
     # adding image_url column
     df_back_propagation['image_url'] = df_back_propagation['item_name'].map(item_name_image_dict)
     clean_product_image_dict = dict(zip(df_back_propagation['product_name'], df_back_propagation['image_url']))
-    df_back_propagation.to_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
+    df_back_propagation.to_csv(f'back_propagation/{country}/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
     return df_back_propagation, clean_product_image_dict
     
 

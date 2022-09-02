@@ -10,7 +10,7 @@ stores_to_review = {
     }
 
 def read_back_propagation_file(store, country):
-    return pd.read_csv(f'back_propagation/raw_vs_clean_{country}_{store}_products_85_75.csv')
+    return pd.read_csv(f'back_propagation/{country}/raw_vs_clean_{country}_{store}_products_85_75.csv')
 
 def number_uuids_involved(df_raw):
     print(f'Number of unique UUIDs processed: {len(list(set(df_raw["item_uuid"])))}')

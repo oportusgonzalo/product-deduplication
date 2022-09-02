@@ -42,7 +42,7 @@ threshold_package = 75
 def read_and_select():
     print('Reading canonical and applicants files..')
     
-    data = pd.read_csv(f'data/{country}_{parent_chain}_uuid_name.csv')
+    data = pd.read_csv(f'data/{country}/{country}_{parent_chain}_uuid_name.csv')
     # dict to map item_name with image_url:
     item_name_image_dict = dict(zip(data['item_name'], data['image_url']))
     data = data.loc[:, ['item_uuid', 'item_name', 'number_sku_sold']]
@@ -72,7 +72,7 @@ def raw_vs_clean_name_mapping(df_nlp, item_name_image_dict):
     # adding image_url column
     df_back_propagation['image_url'] = df_back_propagation['item_name'].map(item_name_image_dict)
     clean_product_image_dict = dict(zip(df_back_propagation['product_name'], df_back_propagation['image_url']))
-    df_back_propagation.to_csv(f'back_propagation/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
+    df_back_propagation.to_csv(f'back_propagation/{country}/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
     return df_back_propagation, clean_product_image_dict
 
 def pareto_products(data):
@@ -266,11 +266,11 @@ def main():
     if not os.path.isdir(f'bivariate_outputs/{parent_chain}'):
         os.mkdir(f'bivariate_outputs/{parent_chain}')
 
-    groups_df.to_csv(f'bivariate_outputs/{parent_chain}/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
-    pareto_groups_df.to_csv(f'bivariate_outputs/{parent_chain}/bivariate_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
-    non_pareto_groups_df.to_csv(f'bivariate_outputs/{parent_chain}/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    groups_df.to_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    pareto_groups_df.to_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    non_pareto_groups_df.to_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
     if direct_matches_df.shape[0] != 0:
-        direct_matches_df.to_csv(f'bivariate_outputs/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+        direct_matches_df.to_csv(f'bivariate_outputs/{country}/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
 
     # verifying if products were lost in the process
     validate_products_missing(data_nlp, pareto_groups_df, non_pareto_groups_df, direct_matches_df)
