@@ -7,8 +7,8 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # parameters
-country = 'uk'
-parent_chain = 'booker'
+country = ''
+parent_chain = ''
 
 # hiperparameters
 threshold_products = 85
