@@ -1,0 +1,615 @@
+canonical_id,canonical_leader,brand,name,package,promotion,agent_verified
+0,Dos Pinos Leche Homogenizada 3.8 L,Dos Pinos,Leche Homogenizada,botella 3.8 l,0.0,1
+1,Dos Pinos Leche Semidescremada Uht 1 L,Dos Pinos,Leche Semidescremada Uht 1 L,cartón 1 l,0.0,1
+2,Dos Pinos Leche Delactomy 1 L,Dos Pinos,Leche Delactomy,cartón 1 l,0.0,1
+3,Dos Pinos Leche Descremada 1 L,Dos Pinos,Leche Descremada,cartón 1 l,0.0,1
+4,Coronado Leche Descremada Uht 0% 12 Unids X 1 L C/U,Coronado,Leche Descremada Uht 0%,12 unids x 1 l c/u,0.0,1
+5,Coronado Leche Semidescremada Uht 2% 12 Unids X 1 L C/U,Coronado,Leche Semidescremada Uht 2%,12 unids x 1 l c/u,0.0,1
+6,Dos Pinos Leche Semidescremada Uht 2% 12 Unids X 1 L C/U,Dos Pinos,Leche Semidescremada Uht 2%,12 unids x 1 l c/u,0.0,1
+7,Cinta Azul Salchicha 480 G,Cinta Azul,Salchicha,cartón 480 g,0.0,1
+8,Jack'S Picaritas Sabor Bbq 75 G,Jack'S,Picaritas Sabor Bbq,bolsa 75 g,0.0,1
+9,Dos Pinos Leche Doble Proteína 500 Ml,Dos Pinos,Leche Doble Proteína,cartón 500 ml,0.0,1
+10,Del Luca Jamón Serrano 85 G,Del Luca,Jamón Serrano,empaque 85 g,0.0,1
+11,Pack Queque La Estación 760 G + Guaraná Cotuba  2 L,La Estación,Pack Queque + Guaraná Cotuba,760 g + 2 l,1.0,1
+12,Gallito Tapita Cajeta De Coco 2 Unids X 40 G C/U,Gallito,Tapita Cajeta De Coco,2 unids x 40 g c/u,1.0,1
+13,Dos Pinos Yogurt Top Fresa 170 G,Dos Pinos,Yogurt Top Fresa,pote 170 g,0.0,1
+14,Imperial Cerveza Light 12 Unids X 350 Ml C/U,Imperial,Cerveza Light,12 unids x 350 ml c/u,1.0,1
+15,Combo 2 Cinta Azul Jamón Cocido 125 G Dos Pinos Queso Americano 1 Unid Dos Pinos Jugo De Naranja 1 L Baguettes 2 Unids,Cinta Azul,Combo 2 Jamón Cocido + Dos Pinos Queso Americano + Dos Pinos Jugo De Naranja + Baguettes,5 unids,0.0,1
+16,Combo 3 Dos Pinos Lactocrema 115 G Cinta Azul Patecito 100 G Tropical Jugo 2.5 L,Dos Pinos,Combo 3 Lactocrema + Cinta Azul Patecito + Tropical Jugo,3 unids,0.0,1
+17,Dos Pinos Pinito Leche Entera En Polvo 2 Unids X 400 G C/U,Dos Pinos,Pinito Leche Entera En Polvo,2 unids x 400 g c/u,0.0,1
+18,Dos Pinos Té Melocotón Cero 2 Unids X 2.5 L C/U,Dos Pinos,Té Melocotón Cero,2 unids x 2.5 l c/u,1.0,1
+19,La Estación Pastel 2 Unids Copas Helado 2 Unids Sushi 2 Unids,La Estación,Pastel + Copas Helado + Sushi,6 unids,0.0,1
+20,Brasso Antigrasa Limón 500 Ml,Brasso,Antigrasa Limón,atomizador 500 ml,1.0,1
+21,Gallito Chocolate Tapita Tiramisú 144 G,Gallito,Chocolate Tapita Tiramisú,bolsa 144 g,1.0,1
+22,Pack La Estación 2 Unids Lula 2 Unids,La Estación,Pack Copas De Helado + Lula Copa De Helado,4 unids,1.0,1
+23,Pack La Estación Queque 1.37 Kg Dos Pinos Té Blanco Cero 2.5 L,La Estación,Pack Queque + Té Blanco Cero Dos Pinos,1.37 kg + 2.5 l,1.0,1
+24,Numar Margarina 500 G,Numar,Margarina,caja 500 g,0.0,1
+25,Dos Pinos Leche Descremada En Polvo 400 G,Dos Pinos,Leche Descremada En Polvo,bolsa 400 g,0.0,1
+26,Dos Pinos Pinito Leche En Polvo 400 G,Dos Pinos,Leche En Polvo Pinito,bolsa 400 g,0.0,1
+27,Dos Pinos Leche Delactomy En Polvo 400 G,Dos Pinos,Leche Delactomy En Polvo,bolsa 400 g,0.0,1
+28,Pampers Pañales Baby Dry Talla 2 112 Unids,Pampers,Pañales Baby Dry Talla 2,caja 112 unids,0.0,1
+29,Dos Pinos Yogurt Deligurt Fresa 750 Ml,Dos Pinos,Yogurt Deligurt Fresa,botella 750 ml,0.0,1
+30,Pampers Pañales Baby Dry Talla 5 78 Unids,Pampers,Pañales Baby Dry Talla 5,caja 78 unids,1.0,1
+31,Coronado Yogurt Líquido Fresa 2 Unids X 1.8 L C/U,Coronado,Yogurt Líquido Fresa,2 unids x 1.8 l c/u,1.0,1
+32,Gallito Consentite Con Amor Chocolate Surtida 330 G,Gallito,Consentite Con Amor Chocolate Surtida,caja 330 g,1.0,1
+33,Roland Leche De Coco 414 Ml,Roland,Leche De Coco,lata 414 ml,0.0,1
+34,Monteverde Queso Light 250 G,Monteverde,Queso Light,empaque 250 g,0.0,1
+35,Gallito Chocolate Guayabita 2 Unids,Gallito,Chocolate Guayabita,bolsa 2 unids,1.0,1
+36,Gallito Chocolate Guayabita 2 Unids X 35 G C/U,Gallito,Chocolate Guayabita,2 unids x 35 g c/u,0.0,1
+37,Dos Pinos Jugo De Naranja 100% 3 Unids X 1 L C/U,Dos Pinos,Jugo De Naranja 100%,3 unids x 1 l c/u,0.0,1
+38,Gallito Chocolate Corazones 100 G,Gallito,Chocolate Corazones,bolsa 100 g,1.0,1
+39,Numar Margarina Suave 250 G,Numar,Margarina Suave,pote 250 g,0.0,1
+40,Zarcero Natilla Con Sal 2 Unids X 750 G C/U,Zarcero,Natilla Con Sal,2 unids x 750 g c/u,1.0,1
+41,Gallito Tabletas Chocolate Variado 3 Unids X 35 G C/U,Gallito,Tabletas Chocolate Variado,3 unids x 35 g c/u,1.0,1
+42,Rumba Patacones 250 G,Rumba,Patacones,bolsa 250 g,0.0,1
+43,Coronado Leche Saborizada Choco Banano 4 Unids X 180 Ml C/U,Coronado,Leche Saborizada Choco Banano,4 unids x 180 ml c/u,1.0,1
+44,Coronado Leche Saborizada Fresa 4 Unids X 180 Ml C/U,Coronado,Leche Saborizada Fresa,4 unids x 180 ml c/u,1.0,1
+45,Coronado Leche Saborizada Galleta María 4 Unids X 180 Ml C/U,Coronado,Leche Saborizada Galleta María,4 unids x 180 ml c/u,1.0,1
+46,Seed Avena Integral 300 G,Seed,Avena Integral,bolsa 300 g,0.0,1
+47,Snickers Chocolate 52 G,Snickers,Chocolate,barra 52 g,0.0,1
+48,Fanta Refresco Sabor Naranja 2.5 L,Fanta,Refresco Sabor Naranja,botella 2.5 l,0.0,1
+49,Twix Chocolate 51 G,Twix,Chocolate,barra 51 g,0.0,1
+50,Johnsonville Salchicha Ahumada 396 G,Johnsonville,Salchicha Ahumada,empaque 396 g,0.0,1
+51,Tropical Limonada Coco 500 Ml,Tropical,Limonada Coco,botella 500 ml,0.0,1
+52,Tropical Limonada Coco 2.5 L,Tropical,Limonada Coco,botella 2.5 l,0.0,1
+53,Tropical Limonada Hierbabuena 500 Ml,Tropical,Limonada Hierbabuena,botella 500 ml,0.0,1
+54,Dos Pinos Crema Dulce 250 Ml,Dos Pinos,Crema Dulce,caja 250 ml,0.0,1
+55,Tropical Limonadada Hierbabuena 2.5 L,Tropical,Limonada Hierbabuena,botella 2.5 l,0.0,1
+56,Tropical Limonada Fresandía 500 Ml,Tropical,Limonada Fresandía,botella 500 ml,0.0,1
+57,Tropical Limonada Fresandía 2.5 L,Tropical,Limonada Fresandía,botella 2.5 l,0.0,1
+58,Dos Pinos Helado Krunchy 4 Unids,Dos Pinos,Helado Krunchy,4 unids,0.0,1
+59,Dos Pinos Paleta Choco Snack 4 Unids X 60 G C/U,Dos Pinos,Paleta Choco Snack,4 unids x 60 g c/u,0.0,1
+60,Dos Pinos Mantequilla 115 G,Dos Pinos,Mantequilla,barra 115 g,0.0,1
+61,Dos Pinos Helado Caramelo Deleite 565 G,Dos Pinos,Helado Caramelo Deleite,pote 565 g,0.0,1
+62,Kimby Salchicha Ahumada 250 G,Kimby,Salchicha Ahumada,empaque 250 g,0.0,1
+63,San Rafael Chorizo Con Cebolla Y Hongos 600 G,San Rafael,Chorizo Con Cebolla Y Hongos,empaque 600 g,0.0,1
+64,Kimby Tocineta 300 G,Kimby,Tocineta,empaque 300 g,0.0,1
+65,Dos Pinos Queso Procesado Americano 128 G,Dos Pinos,Queso Procesado Americano,,0.0,1
+66,Coronado Leche Entera 3.5% 6 Unids X 1 L C/U,Coronado,Leche Entera 3.5%,6 unids x 1 l c/u,0.0,1
+67,Coronado Leche Descremada 0% 6 Unids X 1 L C/U,Coronado,Leche Descremada 0%,6 unids x 1 l c/u,0.0,1
+68,Coronado Leche Semidescremada 2% 6 Unids X 1 L C/U,Coronado,Leche Semidescremada 2%,6 unids x 1 l c/u,0.0,1
+69,Coronado Leche Semidescremada Sin Lactosa 2% 6 Unids X 1 L C/U,Coronado,Leche Semidescremada Sin Lactosa 2%,6 unids x 1 l c/u,0.0,1
+70,Dos Pinos Néctar Light Surtido 6 Unids X 200 Ml C/U,Dos Pinos,Néctar Light Surtido,6 unids x 200 ml c/u,1.0,1
+71,Coronado Néctar Surtido 6 Unids X 180 Ml C/U,Coronado,Néctar Surtido,6 unids x 180 ml c/u,0.0,1
+72,Queques A Elegir 3 Unids,,Queques A Elegir,3 unids,1.0,1
+73,Dos Pinos Queso Crema Delactomy 210 G,Dos Pinos,Queso Crema Delactomy,pote 210 g,0.0,1
+74,Dos Pinos Dip Sabor Jamón Serrano 210 G,Dos Pinos,Dip Sabor Jamón Serrano,pote 210 g,0.0,1
+75,San Rafael Chorizo De Cerdo Con Chile Chipotle 600 G,San Rafael,Chorizo De Cerdo Con Chile Chipotle,empaque 600 g,0.0,1
+76,Kimby Salchichón Criollo 500 G,Kimby,Salchichón Criollo,500 g,0.0,1
+77,Dos Pinos Queso Pizzero 225 G,Dos Pinos,Queso Pizzero,bolsa 225 g,0.0,1
+78,Dos Pinos Queso Turrialba 500 G,Dos Pinos,Queso Turrialba,empaque 500 g,0.0,1
+79,Dos Pinos Queso Crema 210 G,Dos Pinos,Queso Crema,pote 210 g,0.0,1
+80,El Pozo Chorizo Nobleza 100 G,El Pozo,Chorizo Nobleza,empaque 100 g,0.0,1
+81,Dos Pinos Queso Crema Light 210 G,Dos Pinos,Queso Crema Light,pote 210 g,0.0,1
+82,Dos Pinos Leche Condensada Pinito 397 G,Dos Pinos,Leche Condensada Pinito,lata 397 g,0.0,1
+83,Tutto Chocolate Oscuro 20 G,Tutto,Chocolate Oscuro,barra 20 g,0.0,1
+84,Dos Pinos Dip De Cebolla Francesa 230 G,Dos Pinos,Dip De Cebolla Francesa,pote 230 g,0.0,1
+85,Kern'S Jugo Tomate Chile 157 Ml,Kern'S,Jugo Tomate Chile,lata 157 ml,0.0,1
+86,Dos Pinos Natilla La Granja 400 G,Dos Pinos,Natilla La Granja,doypack 400 g,0.0,1
+87,Dos Pinos Leche Descremada Deslactosada 1 L,Dos Pinos,Leche Descremada Deslactosada,cartón 1 l,0.0,1
+88,Dos Pinos Natilla Con Sal La Granja 300 G,Dos Pinos,Natilla Con Sal La Granja,bolsa 300 g,0.0,1
+89,Tosty Papiolas Queso 75 G,Tosty,Papiolas Queso,bolsa 75 g,0.0,1
+90,Dos Pinos Jugo De Naranja 1 L,Dos Pinos,Jugo De Naranja 100%,cartón 1 l,0.0,1
+91,Del Prado Queso Fresco 500 G,Del Prado,Queso Fresco,empaque 500 g,0.0,1
+92,Dos Pinos Jugo De Naranja 100 % 1.8 L,Dos Pinos,Jugo De Naranja 100%,botella 1.8 l,0.0,1
+93,Ideal Leche Evaporada 315 Ml,Ideal,Leche Evaporada,lata 315 ml,0.0,1
+94,Dos Pinos Jugo De Naranja 1.8 L,Dos Pinos,Jugo De Naranja,cartón 1.8 l,0.0,1
+95,Okf Bebida Aloe Natural 500 Ml,Okf,Bebida Aloe Natural,botella 500 ml,0.0,1
+96,Castillo Del Roble Chorizo Cheddar Jalapeño 600 G,Castillo Del Roble,Chorizo Cheddar Jalapeño,empaque 600 g,0.0,1
+97,Dos Pinos Helado Fresa/Vainilla/Limón 499 Ml,Dos Pinos,Helado Fresa/Vainilla/Limón,pote 499 ml,0.0,1
+98,Dos Pinos Helado Vainilla Con Chips Chocolate 499 Ml,Dos Pinos,Helado Vainilla Con Chips Chocolate,pote 499 ml,0.0,1
+99,Zarcero Queso 1 Unid,Zarcero,Queso,1 unid,0.0,1
+100,Silla Saltarina Estacionaria Azul 1 Unid,,Silla Saltarina Estacionaria Azul,1 unid,0.0,1
+101,Atacand 16 Mg 14 Tabletas,Atacand,Candesartán Cilexetilo 16 Mg,14 tabletas,0.0,1
+102,Atacand 8 Mg 14 Tabletas,Atacand,Candesartán Cilexetilo 16 Mg,14 tabletas,0.0,1
+103,Atacand Plus 16 Mg/12.5 Mg 14 Tabletas,Atacand,Candesartán Cilexetilo 16 Mg/12.5 Mg,14 tabletas,0.0,1
+104,Atacand Plus 32 Mg/12.5 Mg 14 Tabletas,Atacand,Candesartán Cilexetilo 32 Mg/12.5 Mg,14 tabletas,0.0,1
+105,Atacand Plus 32 Mg/25 Mg 14 Tabletas,Atacand,Candesartán Cilexetilo 32 Mg/25 Mg,14 tabletas,0.0,1
+106,Dos Pinos Bebida De Aloe 500 Ml,Dos Pinos,Bebida De Aloe,botella 500 ml,0.0,1
+107,Dos Pinos Bebida Iced Capuccino Britt 250 Ml,Dos Pinos,Bebida Iced Capuccino Britt,cartón 250 ml,0.0,1
+108,Dos Pinos Bebida Iced Mocca Britt 250 Ml,Dos Pinos,Bebida Iced Mocca Britt,cartón 250 ml,0.0,1
+109,Dos Pinos Bebida Iced Vainilla Britt 250 Ml,Dos Pinos,Bebida Iced Vainilla Britt,cartón 250 ml,0.0,1
+110,C. El Gallito,,C. El Gallito,,0.0,1
+111,El Gallito Refresco Natural 1 Unid,El Gallito,Refresco Natural,1 unid,0.0,1
+112,Nescafé Capuchino 355 Ml,Nescafé,Capuchino,vaso 355 ml,0.0,1
+113,Nescafé Latte Vainilla 355 Ml,Nescafé,Latte Vainilla,vaso 355 ml,0.0,1
+114,Café Olé Cappuccino Irlandés 281 Ml,Café Olé,Cappuccino Irlandés,botella 281 ml,0.0,1
+115,Café Olé Cappuccino Clásico Light 281 Ml,Café Olé,Cappuccino Clásico Light,botella 281 ml,0.0,1
+116,Café Olé Cappuccino Vainilla 281 Ml,Café Olé,Cappuccino Vainilla,botella 281 ml,0.0,1
+117,Nescafé Chocolate Caliente 355 Ml,Nescafé,Chocolate Caliente,vaso 355 ml,0.0,1
+118,Gallito Corazones Chocolate Con Almendra 100 G,Gallito,Corazones Chocolate Con Almendra,bolsa 100 g,0.0,1
+119,Gallito Corazones Chocolate 100 G,Gallito,Corazones Chocolate,bolsa 100 g,0.0,1
+120,Gallito Chocolate Surtido 330 G,Gallito,Chocolate Surtido,caja 330 g,0.0,1
+121,Gallito Consentite Con Amor Surtida 330 G,Gallito,Consentite Con Amor Surtida,caja 330 g,0.0,1
+122,Gallito Chocolate Crunch Jockey 180 G,Gallito,Chocolate Crunch Jockey,barra 180 g,0.0,1
+123,Gallito Chocolate Classic Jockey 180 G,Gallito,Chocolate Classic Jockey,barra 180 g,0.0,1
+124,Gallito Chocolate Relleno De Menta Milán 192 G,Gallito,Chocolate Relleno De Menta Milán,bolsa 192 g,0.0,1
+125,Gallito Chocolate De Leche 138 G,Gallito,Chocolate De Leche,barra 138 g,0.0,1
+126,Gallito Chocolate Guayabita 35 G,Gallito,Chocolate Guayabita,barra 35 g,0.0,1
+127,Gallito Chocolate Tapita 102 G,Gallito,Chocolate Tapita,bolsa 102 g,0.0,1
+128,Gallito Chocolate Selva Negra Tapita 144 G,Gallito,Chocolate Selva Negra Tapita,bolsa 144 g,0.0,1
+129,Gallito Chocolate Tiramisú Tapita 144 G,Gallito,Chocolate Tiramisú Tapita,bolsa 144 g,0.0,1
+130,Gallito Chocolate Guayabita 117 G,Gallito,Chocolate Guayabita,bolsa 117 g,0.0,1
+131,Gallito Chocolate Milán 112.8 G,Gallito,Chocolate Milán,bolsa 112.8 g,0.0,1
+132,Gallito Chocolate Milán Menta 35 G,Gallito,Chocolate Milán Menta,barra 35 g,0.0,1
+133,Gallito Chocolate Milán Menta 192 G,Gallito,Chocolate Milán Menta,bolsa 192 g,0.0,1
+134,Gallito Chocolate Morenito 200 G,Gallito,Chocolate Morenito,barra 200 g,0.0,1
+135,Gallito Cookies & Cream Jockey 45 G,Gallito,Cookies & Cream Jockey,barra 45 g,0.0,1
+136,Gallito Chocolate Crunch Jockey 45 G,Gallito,Chocolate Crunch Jockey,barra 45 g,0.0,1
+137,Gallito Chocolate Classic Jockey 45 G,Gallito,Chocolate Classic Jockey,barra 45 g,0.0,1
+138,Gallito Chocolate Pinito 35 G,Gallito,Chocolate Pinito,barra 35 g,0.0,1
+139,Choripan Break 1 Unid,,Choripan Break,1 unid,0.0,1
+140,Gallito Confite Morenito 210 G,Gallito,Confite Morenito,bolsa 210 g,0.0,1
+141,Gallito Confite Milán Menta 210 G,Gallito,Confite Milán Menta,bolsa 210 g,0.0,1
+142,La Estación Copa 1 Unid,La Estación,Copa,1 unid,0.0,1
+143,La Estación Copa Protena 1 Unid,La Estación,Copa Protena,1 unid,0.0,1
+144,Pack Casas Patronales Vino Tinto Merlot 750 Ml Gallito Chocolate Tapita 102 G,Casas Patronales,Pack Vino Tinto Merlot + Chocolate Tapita Gallito 102 G,botella 750 ml + 102 g,1.0,1
+145,Crestor 10 Mg 30 Tabletas,Crestor,Rosuvastatina 10 Mg,30 tabletas,0.0,1
+146,Crestor 20 Mg 30 Tabletas,Crestor,Rosuvastatina 20 Mg,30 tabletas,0.0,1
+147,Crestor 40 Mg 30 Tabletas,Crestor,Rosuvastatina 40 Mg,30 tabletas,0.0,1
+148,Dos Pinos Deligurt Arándano 750 Ml,Dos Pinos,Deligurt Arándano,botella 750 ml,0.0,1
+149,Dos Pinos Deligurt In Line Arándanos 200 Ml,Dos Pinos,Deligurt In Line Arándanos,botella 200 ml,0.0,1
+150,Dos Pinos Deligurt In Line De Fresa 125 G,Dos Pinos,Deligurt In Line De Fresa,pote 125 g,0.0,1
+151,Dos Pinos Deligurt In Line Fresa 750 Ml,Dos Pinos,Deligurt In Line Fresa,botella 750 ml,0.0,1
+152,Dos Pinos Deligurt Frutas 750 Ml,Dos Pinos,Deligurt Frutas,botella 750 ml,0.0,1
+153,Dos Pinos Deligurt Topping Coco 150 G,Dos Pinos,Deligurt Topping Coco,pote 150 g,0.0,1
+154,Dos Pinos Deligurt Topping Con Coco 150 G,Dos Pinos,Deligurt Topping Con Coco,pote 150 g,0.0,1
+155,Dos Pinos Dip Sabor Chipotle 210 G,Dos Pinos,Dip Sabor Chipotle,pote 210 g,0.0,1
+156,Dos Pinos Dip Cebolla Francesa 230 G,Dos Pinos,Dip Cebolla Francesa,pote 230 g,0.0,1
+157,Dos Pinos Dip Jamónn Serrano 210 G,Dos Pinos,Dip Jamónn Serrano,pote 210 g,0.0,1
+158,Dos Pinos Dip Salmón Ahumado 210 G,Dos Pinos,Dip Salmón Ahumado,pote 210 g,0.0,1
+159,Dislep 25 1 Comprimido,Dislep,Dislep 25,1 comprimido,0.0,1
+160,Pack Dos Pinos Queso 300 G Leche Protena 1 L  Helados Coco 252 G +Proteína,Dos Pinos,Pack Queso + Leche + Helados Coco +Proteína,300 g + 1 l + 252 g,0.0,1
+161,Dos Pinos Bebida Aloe Light 500 Ml,Dos Pinos,Bebida Aloe Light,botella 500 ml,0.0,1
+162,Dos Pinos Café Iced Capuccino Britt 250 Ml,Dos Pinos,Café Iced Capuccino Britt,cartón 250 ml,0.0,1
+163,Dos Pinos Café Iced Mocha Britt 250 Ml,Dos Pinos,Café Iced Mocha Britt,cartón 250 ml,0.0,1
+164,Dos Pinos Café Iced Vainilla Britt 250 Ml,Dos Pinos,Café Iced Vainilla Britt,cartón 250 ml,0.0,1
+165,Dos Pinos Paleta Cero Grados 75 G,Dos Pinos,Paleta Cero Grados,75 g,0.0,1
+166,Dos Pinos Helado Fresa/Vainilla/Limón 499 G,Dos Pinos,Helado Fresa/Vainilla/Limón,pote 499 g,0.0,1
+167,Dos Pinos Paleta Chocoleta 75 G,Dos Pinos,Paleta Chocoleta,75 g,0.0,1
+168,Dos Pinos Paleta Cremoleta 75 G,Dos Pinos,Paleta Cremoleta,75 g,0.0,1
+169,Dos Pinos Deligurt Batido Fresa 125 G,Dos Pinos,Deligurt Batido Fresa,pote 125 g,0.0,1
+170,Dos Pinos Deligurt Fresa 200 Ml,Dos Pinos,Deligurt Fresa,botella 200 ml,0.0,1
+171,Dos Pinos Deligurt Frutas 200 Ml,Dos Pinos,Deligurt Frutas,botella 200 ml,0.0,1
+172,Dos Pinos Deligurt Con Frutas 200 Ml,Dos Pinos,Deligurt Frutas,botella 200 ml,0.0,1
+173,Dos Pinos Topping Sabor Vainilla Tapita 150 G,Dos Pinos,Topping Sabor Vainilla Tapita,pote 150 g,0.0,1
+174,Dos Pinos Más Té Blanco Sabor Arándano 3 L,Dos Pinos,Más Té Blanco Sabor Arándano,botella 3 l,0.0,1
+175,Dos Pinos Más Té Sabor Melocotón 3 L,Dos Pinos,Más Té Sabor Melocotón,botella 3 l,0.0,1
+176,Dos Pinos Fresco Leche Sabor Chocolate 236 Ml,Dos Pinos,Fresco Leche Sabor Chocolate,cartón 236 ml,0.0,1
+177,Dos Pinos Fresco Leche Fresa Sabor Fresa 236 Ml,Dos Pinos,Fresco Leche Fresa Sabor Fresa,cartón 236 ml,0.0,1
+178,Dos Pinos Fresco Leche Sabor Fresa 1 L,Dos Pinos,Fresco Leche Fresa Sabor Fresa,cartón 1 l,0.0,1
+179,Dos Pinos Fresco Leche Milán Menta 250 Ml,Dos Pinos,Fresco Leche Milán Menta,cartón 250 ml,0.0,1
+180,Dos Pinos Fresco Leche Sabor Vainilla 236 Ml,Dos Pinos,Fresco Leche Sabor Vainilla,cartón 236 ml,0.0,1
+181,Dos Pinos Fresco Leche Sabor Vainilla 1 L,Dos Pinos,Fresco Leche Sabor Vainilla,cartón 1 l,0.0,1
+182,Gallito Tiramisú Tapita 144 G,Gallito,Tiramisú Tapita,bolsa 144 g,0.0,1
+183,Dos Pinos Helado Guayabita 540 G,Dos Pinos,Helado Guayabita,pote 540 g,0.0,1
+184,Dos Pinos Paleta Capricho 1 Unid,Dos Pinos,Paleta Capricho,1 unid,0.0,1
+185,Dos Pinos Helado Coco 540 G,Dos Pinos,Helado Coco,pote 540 g,0.0,1
+186,Dos Pinos Helado Krunchy 1 Unid,Dos Pinos,Helado Krunchy,1 unid,0.0,1
+187,Dos Pinos Helado Sabor Avellana Deleite 200 G,Dos Pinos,Helado Sabor Avellana Deleite,caja 200 g,0.0,1
+188,Dos Pinos Helado Galleta 540 G,Dos Pinos,Helado Galleta,pote 570 g,0.0,1
+189,Dos Pinos Helado Krunchy 500 G,Dos Pinos,Helado Krunchy,pote 500 g,0.0,1
+190,Dos Pinos Helado Mini Sandwich 570 G,Dos Pinos,Helado Mini Sandwich,pote 570 g,0.0,1
+191,Dos Pinos Helado Mini Sandwich 1 Unid,Dos Pinos,Helado Mini Sandwich,1 unid,0.0,1
+192,Dos Pinos Helado Mmmio 1 Unid,Dos Pinos,Helado Mmmio,1 unid,0.0,1
+193,Dos Pinos Helado Morenito 540 G,Dos Pinos,Helado Morenito,pote 540 g,0.0,1
+194,Dos Pinos Helado Napolitano 500 G,Dos Pinos,Helado Napolitano,pote 500 g,0.0,1
+195,Dos Pinos Helado Super Cono 1 Unid,Dos Pinos,Helado Super Cono,1 unid,0.0,1
+196,Dos Pinos Helado Trits 100 G,Dos Pinos,Helado Trits,pote 100 g,0.0,1
+197,Dos Pinos Helado Naranja Holandesa Trits 100 G,Dos Pinos,Helado Naranja Holandesa Trits,pote 100 g,0.0,1
+198,Dos Pinos Helado Veteado Chocolate Trits 540 G,Dos Pinos,Helado Veteado Chocolate Trits,pote 540 g,0.0,1
+199,Dos Pinos Helado Veteado Chocolate 946 G,Dos Pinos,Helado Veteado Chocolate,pote 946 g,0.0,1
+200,Dos Pinos Jugo De Naranja 12 L,Dos Pinos,Jugo De Naranja,cartón 12 l,0.0,1
+201,Dos Pinos Jugo De Naranja 14 L,Dos Pinos,Jugo De Naranja,cartón 14 l,0.0,1
+202,Dos Pinos Helado Krunchy 540 G,Dos Pinos,Helado Krunchy,pote 540 g,0.0,1
+203,Dos Pinos Leche Deslactosada Delactomy 1 L,Dos Pinos,Leche Deslactosada Delactomy,cartón 1 l,0.0,1
+204,Dos Pinos Leche Descremada In Line 1 L,Dos Pinos,Leche Descremada In Line,cartón 1 l,0.0,1
+205,Dos Pinos Leche Semidescremada 1 L,Dos Pinos,Leche Semidescremada,cartón 1 l,0.0,1
+206,Dos Pinos Leche Entera 3.5% 1 L,Dos Pinos,Leche Entera 3.5%,cartón 1 l,0.0,1
+207,Dos Pinos Mini Sandwich Chocolate 48 G,Dos Pinos,Mini Sandwich Chocolate,caja 48 g,0.0,1
+208,Dos Pinos Mini Sandwich Limón 48 G,Dos Pinos,Mini Sandwich Limón,caja 48 g,0.0,1
+209,Dos Pinos Mini Sandwich Vainilla 48 G,Dos Pinos,Mini Sandwich Vainilla,caja 48 g,0.0,1
+210,Dos Pinos Helado Mmmio 70 G,Dos Pinos,Helado Mmmio,empaque 70 g,0.0,1
+211,La Granja Mortadela Criolla 375 G,La Granja,Mortadela Criolla,empaque 375 g,0.0,1
+212,La Granja Mortadela Pollo 250 G,La Granja,Mortadela Pollo,empaque 250 g,0.0,1
+213,Dos Pinos Paleta Choco Snack 1 Unid,Dos Pinos,Paleta Choco Snack,1 unid,0.0,1
+214,Pack Dos Pinos 1 Paleta Choco Bigger Y Té Melocotón 500 Ml,Dos Pinos,Pack Paleta Choco Bigger + Té Melocotón 500,1 unid + botella 500 ml,0.0,1
+215,Dos Pinos Paleta Choco Bigger 1 Unid,Dos Pinos,Paleta Choco Bigger,1 unid,0.0,1
+216,Dos Pinos Paleta Chocoleta 1 Unid,Dos Pinos,Paleta Chocoleta,1 unid,0.0,1
+217,Dos Pinos Paleta Cremoleta 1 Unid,Dos Pinos,Paleta Cremoleta,1 unid,0.0,1
+218,Dos Pinos Paleta Cremoleta Limón 1 Unid,Dos Pinos,Paleta Cremoleta Limón,1 unid,0.0,1
+219,Dos Pinos Paleta Helado Cero Grados 1 Unid,Dos Pinos,Paleta Helado Cero Grados,1 unid,0.0,1
+220,Dos Pinos Paleta Parejita Chocolate 1 Unid,Dos Pinos,Paleta Parejita Chocolate,1 unid,0.0,1
+221,Dos Pinos Rompope 1 L,Dos Pinos,Rompope,cartón 1 l,0.0,1
+222,Dos Pinos Sundae Caramelo 130 G,Dos Pinos,Sundae Caramelo,vaso 130 g,0.0,1
+223,Dos Pinos Sundae Churchill 140 G,Dos Pinos,Sundae Churchill,vaso 140 g,0.0,1
+224,Dos Pinos Bebida De Té Azul 500 Ml,Dos Pinos,Bebida De Té Azul,botella 500 ml,0.0,1
+225,Dos Pinos Té Blanco Frutal 500 Ml,Dos Pinos,Té Blanco Frutal,botella 500 ml,0.0,1
+226,Dos Pinos Té Negro 500 Ml,Dos Pinos,Té Negro,botella 500 ml,0.0,1
+227,Dos Pinos Té Reducción Arándano 500 Ml,Dos Pinos,Té Reducción Arándano,botella 500 ml,0.0,1
+228,Dos Pinos Helado Trits 560 G,Dos Pinos,Helado Trits,pote 560 g,0.0,1
+229,Dos Pinos Yogurt Sabor Guayabita 170 G,Dos Pinos,Yogurt Sabor Guayabita,pote 170 g,0.0,1
+230,Dos Pinos Yogurt Natural Doble Topping 170 G,Dos Pinos,Yogurt Natural Doble Topping,pote 170 g,0.0,1
+231,Forxiga 10 Mg 30 Comprimidos,Forxiga,Dapagliflozina 10 Mg,30 comprimidos,0.0,1
+232,Dos Pinos Fresco Leche Sabor Chocolate 250 Ml,Dos Pinos,Fresco Leche Sabor Chocolate,cartón 250 ml,0.0,1
+233,Dos Pinos Fresco Leche Sabor Fresa 250 Ml,Dos Pinos,Fresco Leche Sabor Fresa,cartón 250 ml,0.0,1
+234,Dos Pinos Fresco Leche Sabor Vainilla 250 Ml,Dos Pinos,Fresco Leche Sabor Vainilla,cartón 250 ml,0.0,1
+235,Frescoleche! Leche Sabor Fresa Caja 250 Ml,Frescoleche!,Leche Sabor Fresa,caja 250 ml,0.0,1
+236,Frescoleche! Leche Sabor Vainilla Caja 250 Ml,Frescoleche!,Leche Sabor Vainilla,caja 250 ml,0.0,1
+237,Gallito Frutini Chiclosos Sobre 150 G,Gallito,Frutini Chiclosos,sobre 150 g,0.0,1
+238,Gallito Chocolates Guayabita Sobre 117 G,Gallito,Chocolates Guayabita,sobre 117 g,0.0,1
+239,Gallito Chocolate Milán Sobre 112.8 G,Gallito,Chocolate Milán,sobre 112.8 g,0.0,1
+240,Gallito Chocolate Milán Relleno Menta Sobre 192 G,Gallito,Chocolate Milán Relleno Menta,sobre 192 g,0.0,1
+241,Gallito Chocolate Morenito Almendras Y Sal Marina Tableta 200 G,Gallito,Chocolate Morenito Almendras Y Sal Marina,tableta 200 g,0.0,1
+242,Gallito Chocolate Morenito Tableta 100 G,Gallito,Chocolate Morenito,tableta 100 g,0.0,1
+243,Gallito Chocolate Organics 70% Cacao Sin Azúcar Doypack 120 G,Gallito,Chocolate Organics 70% Cacao Sin Azúcar,doypack 120 g,0.0,1
+244,Gallito Chocolate Guayabita Tableta 35 G,Gallito,Chocolate Guayabita,tableta 35 g,0.0,1
+245,Gallito Chocolate Milán Menta Tableta 35 G,Gallito,Chocolate Milán Menta,tableta 35 g,0.0,1
+246,Gallito Chocolate Mini Tapitas  Bolsa 49 G,Gallito,Chocolate Mini Tapitas,bolsa 49 g,0.0,1
+247,Gallito Tapita Navideña Bolsa 40 G,Gallito,Tapita Navideña,bolsa 40 g,0.0,1
+248,Gallitos 1 Unid,,Gallitos,1 unid,0.0,1
+249,Gallitos De Plátano 1 Unid,,Gallitos De Plátano,1 unid,0.0,1
+250,Gallitos Para Picar Cerdo 1 Unid,,Gallitos Para Picar Cerdo,1 unid,0.0,1
+251,Gallitos Para Picar Chorizo 1 Unid,,Gallitos Para Picar Chorizo,1 unid,0.0,1
+252,Gallitos Para Picar Pollo 1 Unid,,Gallitos Para Picar Pollo,1 unid,0.0,1
+253,Gallitos Para Picar Res 1 Unid,,Gallitos Para Picar Res,1 unid,0.0,1
+254,Gallitos Para Picar Salchichón 1 Unid,,Gallitos Para Picar Salchichón,1 unid,0.0,1
+255,Gallos De Papa 5 Unids,,Gallos De Papa,5 unids,0.0,1
+256,Hamburguesa Especial Queso Zarcero Y Papas Fritas 1 Unid,,Hamburguesa Especial Queso Zarcero Y Papas Fritas,1 unid,0.0,1
+257,Hamburguesa Especial Tocineta Queso Zarcero Y Papas Fritas 1 Unid,,Hamburguesa Especial Tocineta Queso Zarcero Y Papas Fritas,1 unid,0.0,1
+258,Harburguesa La Estación Con Papas 1 Unid,,Harburguesa La Estación Con Papas,1 unid,0.0,1
+259,Dos Pinos Helado Baileys Pote 540 G,Dos Pinos,Helado Baileys,pote 540 g,0.0,1
+260,Dos Pinos Helado Vainilla Caramelo Pote 1.028 Kg,Dos Pinos,Helado Vainilla Caramelo,pote 1.028 kg,0.0,1
+261,Dos Pinos Helado Vainilla Caramelo Pote 499 G,Dos Pinos,Helado Vainilla Caramelo,pote 499 g,0.0,1
+262,Dos Pinos Choco Snack Coco 60 G,Dos Pinos,Choco Snack Coco,60 g,0.0,1
+263,Dos Pinos Helado Chocolate Almendra Pote 530 G,Dos Pinos,Helado Chocolate Almendra,pote 530 g,0.0,1
+264,Dos Pinos Chocoleta Cookies And Cream 98 G,Dos Pinos,Chocoleta Cookies And Cream,98 g,0.0,1
+265,Dos Pinos Chocoleta  75 G,Dos Pinos,Chocoleta,75 g,0.0,1
+266,Dos Pinos Helado Churchill Pote 130 G,Dos Pinos,Helado Churchill,pote 130 g,0.0,1
+267,Dos Pinos Helado Coco Pote 500 G,Dos Pinos,Helado Coco,pote 500 g,0.0,1
+268,Dos Pinos Helado Vainilla Fresa Y Limón Pote 131 G,Dos Pinos,Helado Vainilla Fresa Y Limón,pote 131 g,0.0,1
+269,Dos Pinos Helado Caramelo Vainilla Cono 75 G,Dos Pinos,Helado Caramelo Vainilla,cono 75 g,0.0,1
+270,Coronado Helado Cajeta  Pote 500 G,Coronado,Helado Cajeta,pote 500 g,0.0,1
+271,Coronado Helado Frutas Pote 500 G,Coronado,Helado Frutas,pote 500 g,0.0,1
+272,Coronado Helado Natilla Con Fresa Pote 500 G,Coronado,Helado Natilla Con Fresa,pote 500 g,0.0,1
+273,Dos Pinos Helado Vainilla Chips De Chocolate Pote 1.028 Kg,Dos Pinos,Helado Vainilla Chips De Chocolate,pote 1.028 kg,0.0,1
+274,Dos Pinos Helado Vainilla Chips De Chocolate Pote 272 G,Dos Pinos,Helado Vainilla Chips De Chocolate,pote 272 g,0.0,1
+275,Dos Pinos Helado Vainilla Chips Pote 131 G,Dos Pinos,Helado Vainilla Chips,pote 131 g,0.0,1
+276,Dos Pinos Helado Vainilla Pote 131 G,Dos Pinos,Helado Vainilla,pote 131 g,0.0,1
+277,Dos Pinos Helado Vainilla Fresa Limón Pote 499 G,Dos Pinos,Helado Vainilla Fresa Limón,pote 499 g,0.0,1
+278,Dos Pinos Helado Vainilla Chips De Chocolate Pote 499 G,Dos Pinos,Helado Vainilla Chips De Chocolate,pote 499 g,0.0,1
+279,Dos Pinos Helado Vainilla Pote 499 G,Dos Pinos,Helado Vainilla,pote 499 g,0.0,1
+280,Dos Pinos Cremoleta Naranja Piña 75 G,Dos Pinos,Cremoleta Naranja Piña,75 g,0.0,1
+281,Dos Pinos Helado Delactomy Vainilla Pote 550 G,Dos Pinos,Helado Delactomy Vainilla,pote 550 g,0.0,1
+282,Dos Pinos Helado Deleite Caramel Fudge Pote 550 G,Dos Pinos,Helado Deleite Caramel Fudge,pote 550 g,0.0,1
+283,Dos Pinos Helado Deleite Caramel Fudge Pote 565 G,Dos Pinos,Helado Deleite Caramel Fudge,pote 565 g,0.0,1
+284,Dos Pinos Helado Deleite Chocobon Pote 565 G,Dos Pinos,Helado Deleite Chocobon,pote 565 g,0.0,1
+285,Dos Pinos Helado Deleite Caramelo Vainilla Cono 75 G,Dos Pinos,Helado Deleite Caramelo Vainilla,cono 75 g,0.0,1
+286,Dos Pinos Helado Deleite Fantasía De Higo Pote 565 G,Dos Pinos,Helado Deleite Fantasía De Higo,pote 565 g,0.0,1
+287,Dos Pinos Helado Deleite Naranja Holandesa Pote 565 G,Dos Pinos,Helado Deleite Naranja Holandesa,pote 565 g,0.0,1
+288,Dos Pinos Helado Deleite Pie De Limón Pote 555 G,Dos Pinos,Helado Deleite Pie De Limón,pote 555 g,0.0,1
+289,Dos Pinos Helado Vainilla Chips Pote 499 G,Dos Pinos,Helado Vainilla Chips,pote 499 g,0.0,1
+290,Dos Pinos Helado Vainilla Chocolate Pote 499 G,Dos Pinos,Helado Vainilla Chocolate,pote 499 g,0.0,1
+291,Dos Pinos Helado Vainilla Fresa Limón 1 Unid,Dos Pinos,Helado Vainilla Fresa Limón,1 unid,0.0,1
+292,Dos Pinos Helado Vainilla Fresa Limón Pote 272 G,Dos Pinos,Helado Vainilla Fresa Limón,pote 272 g,0.0,1
+293,Dos Pinos Helado Guayabita Pote 540 G,Dos Pinos,Helado Guayabita,pote 540 g,0.0,1
+294,Dos Pinos Helado Krunchy Pote 540 G,Dos Pinos,Helado Krunchy,pote 540 g,0.0,1
+295,Dos Pinos Helado Krunchy Torta Chilena  Cono 75 G,Dos Pinos,Helado Krunchy Torta Chilena,cono 75 g,0.0,1
+296,Dos Pinos Helado Sundae Caramelo Pote 130 G,Dos Pinos,Helado Sundae Caramelo,pote 130 g,0.0,1
+297,Dos Pinos Helado Vainilla Pote 272 G,Dos Pinos,Helado Vainilla,pote 272 g,0.0,1
+298,Dos Pinos Helado Vainilla Chips Pote 272 G,Dos Pinos,Helado Vainilla Chips,pote 272 g,0.0,1
+299,Dos Pinos Helado Vainilla Chips Pote 1.028 Kg,Dos Pinos,Helado Vainilla Chips,pote 1.028 kg,0.0,1
+300,Dos Pinos Helado Guayabita  Pote 530 G,Dos Pinos,Helado Guayabita,pote 530 g,0.0,1
+301,Dos Pinos Helado Krunchy Cono 75 G,Dos Pinos,Helado Krunchy,cono 75 g,0.0,1
+302,Dos Pinos Helado Krunchy Pote 500 G,Dos Pinos,Helado Krunchy,pote 500 g,0.0,1
+303,Dos Pinos Helado Milán Menta Pote 540 G,Dos Pinos,Helado Milán Menta,pote 540 g,0.0,1
+304,Dos Pinos Helado Mini Sandwich Pote 570 G,Dos Pinos,Helado Mini Sandwich,pote 570 g,0.0,1
+305,Dos Pinos Helado Mini Sandwich 48 G,Dos Pinos,Helado Mini Sandwich,48 g,0.0,1
+306,Dos Pinos Helado Mini Sandwich Limón 48 G,Dos Pinos,Helado Mini Sandwich Limón,48 g,0.0,1
+307,Dos Pinos Mm Mio Barra 70 G,Dos Pinos,Mm Mio,barra 70 g,0.0,1
+308,Dos Pinos Helado Napolitano Pote 500 G,Dos Pinos,Helado Napolitano,pote 500 g,0.0,1
+309,Dos Pinos Paleta Cero Grados 76 G,Dos Pinos,Paleta Cero Grados,76 g,0.0,1
+310,Dos Pinos Paleta Corazón 65 G,Dos Pinos,Paleta Corazón,65 g,0.0,1
+311,Dos Pinos Paleta In Line Yogurt 50 G,Dos Pinos,Paleta In Line Yogurt,50 g,0.0,1
+312,Dos Pinos Helado Piña Colada Pote 540 G,Dos Pinos,Helado Piña Colada,pote 540 g,0.0,1
+313,Dos Pinos Helado Queque Vainilla Caja 100 G,Dos Pinos,Helado Queque Vainilla,caja 100 g,0.0,1
+314,Dos Pinos Helado Rompope Pote 500 G,Dos Pinos,Helado Rompope,pote 500 g,0.0,1
+315,Dos Pinos Helado Ron Con Pasas Pote 499 G,Dos Pinos,Helado Ron Con Pasas,pote 499 g,0.0,1
+316,Dos Pinos Helado Sundae Caramelo Pote 136 G,Dos Pinos,Helado Sundae Caramelo,pote 136 g,0.0,1
+317,Dos Pinos Helado Sundae Pote 110 G,Dos Pinos,Helado Sundae,pote 110 g,0.0,1
+318,Dos Pinos Helado Súper Cono 1 Unid,Dos Pinos,Helado Súper Cono,1 unid,0.0,1
+319,Dos Pinos Helado Trits Original Pote 100 G,Dos Pinos,Helado Trits Original,pote 100 g,0.0,1
+320,Dos Pinos Helado Tapita Pote 540 G,Dos Pinos,Helado Tapita,pote 540 g,0.0,1
+321,Dos Pinos Helado Trits Pote 540 G,Dos Pinos,Helado Trits,pote 540 g,0.0,1
+322,Dos Pinos Pack Helado Trits 3 X 100 G,Dos Pinos,Pack Helado Trits,3 x 100 g,0.0,1
+323,Dos Pinos Helado Trits Naranja Holandesa Pote 100 G,Dos Pinos,Helado Trits Naranja Holandesa,pote 100 g,0.0,1
+324,Dos Pinos Helado Trits Pie De Limón Pote 100 G,Dos Pinos,Helado Trits Pie De Limón,pote 100 g,0.0,1
+325,Dos Pinos Pack Helado Guayabita + Choco Risas Pote 540 G + Caja 330 G,Dos Pinos,Pack Helado Guayabita + Choco Risas,pote 540 g + caja 330 g,1.0,1
+326,Cinta Azul Jamón Pechuga Pavo Light Resellable 250 G,Cinta Azul,Jamón Pechuga Pavo Light,resellable 250 g,0.0,1
+327,Dos Pinos Jugo De Manzana Caja 1 L,Dos Pinos,Jugo De Manzana,caja 1 l,0.0,1
+328,Dos Pinos Jugo De Manzana Caja 250 Ml,Dos Pinos,Jugo De Manzana,caja 250 ml,0.0,1
+329,Dos Pinos Jugo Naranja Con Zanahoria Caja 1 L,Dos Pinos,Jugo Naranja Con Zanahoria,caja 1 l,0.0,1
+330,Dos Pinos Jugo De Naranja Caja 1 L,Dos Pinos,Jugo De Naranja,caja 1 l,0.0,1
+331,Dos Pinos Jugo De Naranja Botella 2.2 L,Dos Pinos,Jugo De Naranja,botella 2.2 l,0.0,1
+332,Dos Pinos Jugo Naranja Con Zanahoria Caja 1.8 L,Dos Pinos,Jugo Naranja Con Zanahoria,caja 1.8 l,0.0,1
+333,Dos Pinos Jugo Manzana Y Mora Con Jengibre Caja 946 Ml,Dos Pinos,Jugo Manzana Y Mora Con Jengibre,caja 946 ml,0.0,1
+334,Dos Pinos Jugo De Naranja Caja 250 Ml,Dos Pinos,Jugo De Naranja,caja 250 ml,0.0,1
+335,Dos Pinos Jugo Naranja 100% Natural Botella 1.8 L,Dos Pinos,Jugo Naranja 100% Natural,botella 1.8 l,0.0,1
+336,Dos Pinos Jugo De Naranja Con Zanahoria Caja 250 Ml,Dos Pinos,Jugo De Naranja Con Zanahoria,caja 250 ml,0.0,1
+337,Dos Pinos Jugo De Naranja Caja 1.8 L,Dos Pinos,Jugo De Naranja,caja 1.8 l,0.0,1
+338,Dos Pinos Jugo De Naranja Caja 500 Ml,Dos Pinos,Jugo De Naranja,caja 500 ml,0.0,1
+339,Dos Pinos Jugo De Naranja 6 X 250 Ml,Dos Pinos,Jugo De Naranja,6 x 250 ml,0.0,1
+340,Dos Pinos Jugo De Naranja Y Maracuyá Con Ginseng Caja 946 Ml,Dos Pinos,Jugo De Naranja Y Maracuyá Con Ginseng,caja 946 ml,0.0,1
+341,La Estación Hamburguesa 1 Unid,La Estación,Hamburguesa,1 unid,0.0,1
+342,Dos Pinos Lactocrema 1 Unit,Dos Pinos,Lactocrema,1 unit,0.0,1
+343,Dos Pinos Lactocrema 115 G,Dos Pinos,Lactocrema,115 g,0.0,1
+344,Dos Pinos Lactocrema Pote 115 G,Dos Pinos,Lactocrema,pote 115 g,0.0,1
+345,Dos Pinos Lactocrema Pote 210 G,Dos Pinos,Lactocrema,pote 210 g,0.0,1
+346,Dos Pinos Leche +Proteína Caja 1 L,Dos Pinos,Leche +Proteína,caja 1 l,0.0,1
+347,Dos Pinos Leche Semidescremada Caja 1 L,Dos Pinos,Leche Semidescremada,caja 1 l,0.0,1
+348,Dos Pinos Leche Con Avena Caja 250 Ml,Dos Pinos,Leche Con Avena,caja 250 ml,0.0,1
+349,Dos Pinos Lula Leche Chocolate Caja 200 Ml,Dos Pinos,Lula Leche Chocolate,caja 200 ml,0.0,1
+350,Dos Pinos Leche Condensada Pinito Lata 397 G,Dos Pinos,Leche Condensada Pinito,lata 397 g,0.0,1
+351,Coronado Leche Caja 1 L,Coronado,Leche,caja 1 l,0.0,1
+352,Coronado Leche Caja 500 Ml,Coronado,Leche,caja 500 ml,0.0,1
+353,Coronado Leche Descremada Caja 1 L,Coronado,Leche Descremada,caja 1 l,0.0,1
+354,Coronado Leche Semidescremada Caja 1 L,Coronado,Leche Semidescremada,caja 1 l,0.0,1
+355,Coronado Leche Semidescremada Sin Lactosa Caja 1 L,Coronado,Leche Semidescremada Sin Lactosa,caja 1 l,0.0,1
+356,Dos Pinos Leche Delactomy Deslactosada Caja 250 Ml,Dos Pinos,Leche Delactomy Deslactosada,caja 250 ml,0.0,1
+357,Dos Pinos Leche Delactomy Caja 1 L,Dos Pinos,Leche Delactomy,caja 1 l,0.0,1
+358,Dos Pinos Leche Delactomy Semidescremada Caja 1 L,Dos Pinos,Leche Delactomy Semidescremada,caja 1 l,0.0,1
+359,Dos Pinos Leche Delactomy Fresa Caja 250 Ml,Dos Pinos,Leche Delactomy Fresa,caja 250 ml,0.0,1
+360,Dos Pinos Leche Delactomy Vainilla Caja 250 Ml,Dos Pinos,Leche Delactomy Vainilla,caja 250 ml,0.0,1
+361,Dos Pinos Leche Descremada Caja 1 L,Dos Pinos,Leche Descremada,caja 1 l,0.0,1
+362,Dos Pinos Leche Descremada Caja 250 Ml,Dos Pinos,Leche Descremada,caja 250 ml,0.0,1
+363,Dos Pinos Leche Descremada En Polvo Bolsa 400 G,Dos Pinos,Leche Descremada En Polvo,bolsa 400 g,0.0,1
+364,Dos Pinos Leche Delactomy Descremada Caja 1 L,Dos Pinos,Leche Delactomy Descremada,caja 1 l,0.0,1
+365,Dos Pinos Leche Delactomy Entera Caja 1 L,Dos Pinos,Leche Delactomy Entera,caja 1 l,0.0,1
+366,Dos Pinos Leche Caja 1 L,Dos Pinos,Leche,caja 1 l,0.0,1
+367,Dos Pinos Leche Caja 1.8 L,Dos Pinos,Leche,caja 1.8 l,0.0,1
+368,Dos Pinos Leche Botella 3.78 L,Dos Pinos,Leche,botella 3.78 l,0.0,1
+369,Dos Pinos Leche In Line Descremada Caja 1 L,Dos Pinos,Leche In Line Descremada,caja 1 l,0.0,1
+370,Dos Pinos Leche Pinito Enteral Caja 1 L,Dos Pinos,Leche Pinito Enteral,caja 1 l,0.0,1
+371,Dos Pinos Leche +Proteína Plus Caja 500 Ml,Dos Pinos,Leche +Proteína Plus,caja 500 ml,0.0,1
+372,Coronado Leche Entera En Polvo Bolsa 120 G,Coronado,Leche Entera En Polvo,bolsa 120 g,0.0,1
+373,Dos Pinos Leche Entera En Polvo Bolsa 350 G,Dos Pinos,Leche Entera En Polvo,bolsa 350 g,0.0,1
+374,Coronado Leche En Polvo Bolsa 350 G,Coronado,Leche En Polvo,bolsa 350 g,0.0,1
+375,Dos Pinos Leche Delactomy En Polvo Bolsa 400 G,Dos Pinos,Leche Delactomy En Polvo,bolsa 400 g,0.0,1
+376,Dos Pinos Leche In Line Descremada En Polvo Bolsa 400 G,Dos Pinos,Leche In Line Descremada En Polvo,bolsa 400 g,0.0,1
+377,Dos Pinos Leche Evaporada Caja 250 Ml,Dos Pinos,Leche Evaporada,caja 250 ml,0.0,1
+378,Dos Pinos Leche Botella 3.75 L,Dos Pinos,Leche,botella 3.75 l,0.0,1
+379,Dos Pinos Leche Semidescremada Caja 250 Ml,Dos Pinos,Leche Semidescremada,caja 250 ml,0.0,1
+380,Dos Pinos Choco Leche Caja 1 L,Dos Pinos,Choco Leche,caja 1 l,0.0,1
+381,Dos Pinos Leche Pasteurizada Caja 1.8 L,Dos Pinos,Leche Pasteurizada,caja 1.8 l,0.0,1
+382,Dos Pinos Leche Pinito Entera En Polvo Bolsa 400 G,Dos Pinos,Leche Pinito Entera En Polvo,bolsa 400 g,0.0,1
+383,Dos Pinos Leche Pinito Caja 1 L,Dos Pinos,Leche Pinito,caja 1 l,0.0,1
+384,Dos Pinos Leche Pinito Entera En Polvo Bolsa 1.5 Kg,Dos Pinos,Leche Pinito Entera En Polvo,bolsa 1.5 kg,0.0,1
+385,Coronado Leche Choco Banano Caja 180 Ml,Coronado,Leche Choco Banano,caja 180 ml,0.0,1
+386,Coronado Leche Fresa Caja 180 Ml,Coronado,Leche Fresa,caja 180 ml,0.0,1
+387,Coronado Leche Galleta María Caja 180 Ml,Coronado,Leche Galleta María,caja 180 ml,0.0,1
+388,Dos Pinos Fresco Leche! Fresa Caja 1 L,Dos Pinos,Fresco Leche! Fresa,caja 1 l,0.0,1
+389,Dos Pinos Fresco Leche! Milán Menta Caja 250 Ml,Dos Pinos,Fresco Leche! Milán Menta,caja 250 ml,0.0,1
+390,Dos Pinos Delactomy Leche Semidescremada Caja 1 L,Dos Pinos,Delactomy Leche Semidescremada,caja 1 l,0.0,1
+391,Eskimo Leche Semidescremada Caja 1 L,Eskimo,Leche Semidescremada,caja 1 l,0.0,1
+392,Coronado Leche Entera Caja 1 L,Coronado,Leche Entera,caja 1 l,0.0,1
+393,Coronado Leche Sin Lactosa Caja 1 L,Coronado,Leche Sin Lactosa,caja 1 l,0.0,1
+394,Dos Pinos  Leche Sabor Vainilla Caja 250 Ml,Dos Pinos,Leche Sabor Vainilla,caja 250 ml,0.0,1
+395,Lomo Zarcero Trocitos De Res Con Queso Mozzarella Arroz Ensalada Molidos 1 Unid,,Lomo Zarcero Trocitos De Res Con Queso Mozzarella Arroz Ensalada Molidos,1 unid,0.0,1
+396,Dos Pinos Mnatequilla Con Sal  Barra 62.5 G,Dos Pinos,Mnatequilla Con Sal,barra 62.5 g,0.0,1
+397,Dos Pinos Mantequilla Barra 115 G,Dos Pinos,Mantequilla,barra 115 g,0.0,1
+398,Dos Pinos Mantequilla En Barra Barra 62.5 G,Dos Pinos,Mantequilla En Barra,barra 62.5 g,,1
+399,Dos Pinos Mantequilla Con Sal Barra 115 G,Dos Pinos,Mantequilla Con Sal,barra 115 g,,1
+400,Dos Pinos Mantequilla Light Pote 210 G,Dos Pinos,Mantequilla Light,pote 210 g,,1
+401,Dos Pinos Mantequilla Sin Sal Barra 115 G,Dos Pinos,Mantequilla Sin Sal,barra 115 g,,1
+402,Numar Margarina Suave Pote 250 G,Numar,Margarina Suave,pote 250 g,,1
+403,Gallito Chocolate En Polvo Tapita,Gallito,Chocolate En Polvo Tapita,,,1
+404,Dos Pinos Natilla Liviana Con Sal Delactomy Doypack 400 G,Dos Pinos,Natilla Liviana Con Sal Delactomy,doypack 400 g,,1
+405,Zarcero Natilla Liviana Con Sal Bolsa 500 G,Zarcero,Natilla Liviana Con Sal,bolsa 500 g,,1
+406,Zarcero Natilla Liviana Con Sal Bolsa 115 G,Zarcero,Natilla Liviana Con Sal,bolsa 115 g,,1
+407,Del Prado Natilla Con Sal Bolsa 300 G,Del Prado,Natilla Con Sal,bolsa 300 g,,1
+408,Del Prado Natilla Con Sal Bolsa 400 G,Del Prado,Natilla Con Sal,bolsa 400 g,,1
+409,Dos Pinos Natilla Liviana Delactomy Doypack 400 G,Dos Pinos,Natilla Liviana Delactomy,doypack 400 g,,1
+410,Dos Pinos Natilla Liviana Con Sal La Granja Bolsa 115 G,Dos Pinos,Natilla Liviana Con Sal La Granja,bolsa 115 g,,1
+411,Dos Pinos Natilla Liviana Con Sal La Granja Bolsa 300 G,Dos Pinos,Natilla Liviana Con Sal La Granja,bolsa 300 g,,1
+412,Dos Pinos Natilla Liviana Con Sal La Granja Bolsa 500 G,Dos Pinos,Natilla Liviana Con Sal La Granja,bolsa 500 g,,1
+413,Dos Pinos Natilla Liviana La Granja Bolsa 300 G,Dos Pinos,Natilla Liviana La Granja,bolsa 300 g,,1
+414,Dos Pinos Natilla Liviana La Granja Doypack 400 G,Dos Pinos,Natilla Liviana La Granja,doypack 400 g,,1
+415,Dos Pinos Natilla Liviana Pote 220 G,Dos Pinos,Natilla Liviana,pote 220 g,,1
+416,Zarcero Natilla Liviana Bolsa 300 G,Zarcero,Natilla Liviana,bolsa 300 g,,1
+417,Zarcero Natilla 300 G,Zarcero,Natilla,300 g,,1
+418,Zarcero Natilla Liviana Con Sal Bolsa 300 G,Zarcero,Natilla Liviana Con Sal,bolsa 300 g,,1
+419,Zarcero Natilla Con Sal Bolsa 500 G,Zarcero,Natilla Con Sal,bolsa 500 g,,1
+420,Zarcero Natilla Con Sal Doypack 650 G,Zarcero,Natilla Con Sal,doypack 650 g,,1
+421,Zarcero Natilla Liviana Con Sal Bolsa 750 G,Zarcero,Natilla Liviana Con Sal,bolsa 750 g,,1
+422,Zarcero Natilla Con Sal 750 G,Zarcero,Natilla Con Sal,750 g,,1
+423,Zarcero Natilla Liviana Con Sal Doypack 400 G,Zarcero,Natilla Liviana Con Sal,doypack 400 g,,1
+424,Zarcero Natilla Con Sal Doypack 400 G,Zarcero,Natilla Con Sal,doypack 400 g,,1
+425,Zarcero Natilla Liviana Con Sal 300 G,Zarcero,Natilla Liviana Con Sal,300 g,,1
+426,Dos Pinos Néctar De Pera 1 L,Dos Pinos,Néctar De Pera,1 l,,1
+427,Dos Pinos Néctar De Mango Cartón 1 L,Dos Pinos,Néctar De Mango,cartón 1 l,,1
+428,Dos Pinos Néctar De Manzana Cartón 1 L,Dos Pinos,Néctar De Manzana,cartón 1 l,,1
+429,Dos Pinos Néctar De Manzana Cartón 200 Ml,Dos Pinos,Néctar De Manzana,cartón 200 ml,,1
+430,Dos Pinos Néctar De Melocotón Cartón 1 L,Dos Pinos,Néctar De Melocotón,cartón 1 l,,1
+431,Dos Pinos Néctar De Melocotón Cartón 200 Ml,Dos Pinos,Néctar De Melocotón,cartón 200 ml,,1
+432,Dos Pinos Néctar Mixto De Frutas Cartón 1 L,Dos Pinos,Néctar Mixto De Frutas,cartón 1 l,,1
+433,Dos Pinos Néctar Mixto De Frutas Cartón 200 Ml,Dos Pinos,Néctar Mixto De Frutas,cartón 200 ml,,1
+434,Dos Pinos Néctar De Pera Cartón 1 L,Dos Pinos,Néctar De Pera,cartón 1 l,,1
+435,Dos Pinos Néctar De Pera Cartón 200 Ml,Dos Pinos,Néctar De Pera,cartón 200 ml,,1
+436,Dos Pinos Néctar De Maracuyá Bienestar Cartón 1 L,Dos Pinos,Néctar De Maracuyá Bienestar,cartón 1 l,1.0,1
+437,Dos Pinos Néctar De Frutas 1 L,Dos Pinos,Néctar De Frutas,1 l,,1
+438,Coronado Néctar De Manzana 200 Ml,Coronado,Néctar De Manzana,200 ml,,1
+439,Coronado Néctar De Melocotón 200 Ml,Coronado,Néctar De Melocotón,200 ml,,1
+440,Nexium Esomeprazol 10 Mg 1 Sobre,Nexium,Esomeprazol 10 Mg,1 sobre,,1
+441,Nexium Esomeprazol 10 Mg 28 Sobres,Nexium,Esomeprazol 10 Mg,28 sobres,,1
+442,Nexium Esomeprazol 20 Mg 14 Tabletas,Nexium,Esomeprazol 20 Mg,14 tabletas,,1
+443,Nexium Esomeprazol 20 Mg 28 Tabletas,Nexium,Esomeprazol 20 Mg,28 tabletas,,1
+444,Nexium Esomeprazol 40 Mg 14 Tabletas,Nexium,Esomeprazol 40 Mg,14 tabletas,,1
+445,Nexium Esomeprazol 40 Mg 28 Tabletas,Nexium,Esomeprazol 40 Mg,28 tabletas,,1
+446,Nexium Esomeprazol 40 Mg 1 Tableta,Nexium,Esomeprazol 40 Mg,1 tableta,,1
+447,Omelette Con Jamón Y Queso Zarcero,,Omelette Con Jamón Y Queso Zarcero,,,1
+448,Dos Pinos Paleta Chocoleta De Chocolate Bolsa 85 G,Dos Pinos,Paleta Chocoleta De Chocolate,bolsa 85 g,,1
+449,Dos Pinos Paleta Cremoleta De Fresa Bolsa 75 G,Dos Pinos,Paleta Cremoleta De Fresa,bolsa 75 g,,1
+450,Gallitos 3 Unids,,Gallitos,3 unids,,1
+451,Pack Pastel Explosion Chocolate + Helado Combinado Dos Pinos + Gaseosa Pepsi +  Barquillo Chocolate Jack 4 Unids,,Pack Pastel Explosion Chocolate + Helado Combinado Dos Pinos + Gaseosa Pepsi +  Barquillo Chocolate Jack,4 unids,,1
+452,Pack Pastel Explosion Chocolate + Helado De Chocochips Dos Pinos + Gaseosa Pepsi +  Barquillo Chocolate Jack 4 Unids,,Pack Pastel Explosion Chocolate + Helado De Chocochips Dos Pinos + Gaseosa Pepsi +  Barquillo Chocolate Jack,4 unids,,1
+453,Pack Pastel Rectangular Break + Helado Combinado Dos Pinos + Gaseosa Pepsi + Barquillo Chocolate Jack 4 Unids,,Pack Pastel Rectangular Break + Helado Combinado Dos Pinos + Gaseosa Pepsi + Barquillo Chocolate Jack,4 unids,,1
+454,Pastello Caramelle Y Vainilla Break + Helado Combinado Doa Pinos + Gaseosa Pepsi + Barquillo Chocolate Jack,,Pack Pastello Caramelle Y Vainilla Break + Helado Combinado Dos Pinos + Gaseosa Pepsi + Barquillo Chocolate Jack,4 unids,,1
+455,Pack Pastello Caramelle Y Vainilla Break + Helado Chocochips Dos Pinos + Gaseosa Pepsi + Barquillo Chocolate Jack 4 Unids,,Pack Pastello Caramelle Y Vainilla Break + Helado Chocochips Dos Pinos + Gaseosa Pepsi + Barquillo Chocolate Jack,4 unids,,1
+456,Pizza Las Cuatro Estaciones 1 Unid,,Pizza Las Cuatro Estaciones,1 unid,,1
+457,Dos Pinos Leche Descremada Choco Almendras +Proteína Cartón 250 Ml,Dos Pinos,Leche Descremada Choco Almendras +Proteína,cartón 250 ml,,1
+458,Dos Pinos Leche Descremada Coco +Proteína Cartón 250 Ml,Dos Pinos,Leche Descremada Coco +Proteína,cartón 250 ml,,1
+459,Dos Pinos Leche Descremada +Proteína Cartón 250 Ml,Dos Pinos,Leche Descremada +Proteína,cartón 250 ml,,1
+460,Dos Pinos Leche Descremada Vainilla +Proteína Cartón 250 Ml,Dos Pinos,Leche Descremada Vainilla +Proteína,cartón 250 ml,,1
+461,Pulmicort Budesonida 0.5 Mg 5 Unids,Pulmicort,Budesonida 0.5 Mg,5 unids,,1
+462,Pulmicort Budesonida 2 Ml 1 Unid,Pulmicort,Budesonida 2 Ml,1 unid,,1
+463,Pulmicort Budesonida 2 Ml 20 Unids,Pulmicort,Budesonida 2 Ml,20 unids,,1
+464,Pulmicort Budesonida 2 Ml 5 Unids,Pulmicort,Budesonida 2 Ml,5 unids,,1
+465,Dos Pinos Queque Con Helado Caja 100 G,Dos Pinos,Queque Con Helado,caja 100 g,,1
+466,La Estación Queque 1 Unid,La Estación,Queque,1 unid,,1
+467,La Estación Queque 1.370 Kg,La Estación,Queque,1.370 kg,,1
+468,La Estación Pack Queque + Té Melocotón Zero Dos Pinos 1.370 Kg + Botella 2.5 L,La Estación,Pack Queque + Té Melocotón Zero Dos Pinos,1.370 kg + botella 2.5 l,,1
+469,La Estación Queque Caja 760 G,La Estación,Queque,caja 760 g,,1
+470,La Estación Queque Pequeño Caja 760 G,La Estación,Queque Pequeño,caja 760 g,,1
+471,La Estación Pack Queque Pequeño + Té Melocotón Zero Dos Pinos,La Estación,Pack Queque Pequeño + Té Melocotón Zero Dos Pinos,,,1
+472,Dos Pinos Queso Americano 128 G,Dos Pinos,Queso Americano,128 g,,1
+473,Dos Pinos Queso Cheddar Bolsa 400 G,Dos Pinos,Queso Cheddar,bolsa 400 g,,1
+474,Dos Pinos Queso Tipo Cottage In Line Pote 310 G,Dos Pinos,Queso Tipo Cottage In Line,pote 310 g,,1
+475,Dos Pinos Queso Crenma Con Piña Y Semillas Mixtas Pote 210 G,Dos Pinos,Queso Crenma Con Piña Y Semillas Mixtas,pote 210 g,,1
+476,Dos Pinos Queso Crema Delactomy Pote 210 G,Dos Pinos,Queso Crema Delactomy,pote 210 g,,1
+477,Dos Pinos Queso Crema Original Pote 350 G,Dos Pinos,Queso Crema Original,pote 350 g,,1
+478,Dos Pinos Queso Crema,Dos Pinos,Queso Crema,,,1
+479,Dos Pinos Queso Crema Pequeño,Dos Pinos,Queso Crema Pequeño,,,1
+480,Dos Pinos Queso Crema Original Pote 210 G,Dos Pinos,Queso Crema Original,pote 210 g,,1
+481,Dos Pinos Queso Crema Light Pote 210 G,Dos Pinos,Queso Crema Light,pote 210 g,,1
+482,Dos Pinos Queso Crema Pote 210 G,Dos Pinos,Queso Crema,pote 210 g,,1
+483,Dos Pinos Queso Crema Original Pote 100 G,Dos Pinos,Queso Crema Original,pote 100 g,,1
+484,Dos Pinos Queso Crema Light In Line Pote 210 G,Dos Pinos,Queso Crema Light In Line,pote 210 g,,1
+485,Dos Pinos Queso Crema 100 G,Dos Pinos,Queso Crema,100 g,,1
+486,Zarcero Queso Crema 100 G,Zarcero,Queso Crema,100 g,,1
+487,Zarcero Queso Crema Pote 210 G,Zarcero,Queso Crema,pote 210 g,,1
+488,Zarcero Queso Crema Pote 300 G,Zarcero,Queso Crema,pote 300 g,,1
+489,Zarcero Queso Fresco 300 G,Zarcero,Queso Fresco,300 g,,1
+490,Zarcero Queso Fresco Suave Empaque 500 G,Zarcero,Queso Fresco Suave,empaque 500 g,,1
+491,Dos Pinos Queso Gouda Maduro Semiduro Bolsa 200 G,Dos Pinos,Queso Gouda Maduro Semiduro,bolsa 200 g,,1
+492,Monteverde Queso Monte Rico Empaque 140 G,Monteverde,Queso Monte Rico,empaque 140 g,,1
+493,Dos Pinos Queso Montino Fresco Semiduro Empaque 400 G,Dos Pinos,Queso Montino Fresco Semiduro,empaque 400 g,,1
+494,Dos Pinos Queso Mozzarella Bolsa 128 G - 8 Rebanadas,Dos Pinos,Queso Mozzarella,bolsa 128 g - 8 rebanadas,,1
+495,Dos Pinos Queso Mozzarella Semiduro Rallado Bolsa 225 G,Dos Pinos,Queso Mozzarella Semiduro Rallado,bolsa 225 g,,1
+496,Dos Pinos Queso Mozzarella Semiduro Rallado Doypack 225 G,Dos Pinos,Queso Mozzarella Semiduro Rallado,doypack 225 g,,1
+497,Dos Pinos Queso Americano Procesado Bolsa 480 G - 30 Rebanadas,Dos Pinos,Queso Americano Procesado,bolsa 480 g - 30 rebanadas,,1
+498,Dos Pinos Queso Procesado Bolsa 192 G - 12 Rebanadas,Dos Pinos,Queso Procesado,bolsa 192 g - 12 rebanadas,,1
+499,Dos Pinos Queso Americano Procesado Bolsa 12 Rebanadas,Dos Pinos,Queso Americano Procesado,bolsa 12 rebanadas,,1
+500,Dos Pinos Queso Americano Procesado Bolsa 128 G - 8 Rebanadas,Dos Pinos,Queso Americano Procesado,bolsa 128 g - 8 rebanadas,,1
+501,Dos Pinos Queso Americano Procesado Bolsa128 G - 8 Rebanadas,Dos Pinos,Queso Americano Procesado,bolsa128 g - 8 rebanadas,,1
+502,Dos Pinos Queso Americano Procesado In Line Bolsa192 G - 12 Rebanadas,Dos Pinos,Queso Americano Procesado In Line,bolsa192 g - 12 rebanadas,,1
+503,Dos Pinos Queso Americano Procesado Bolsa 192 G - 12 Rebanadas,Dos Pinos,Queso Americano Procesado,bolsa 192 g - 12 rebanadas,,1
+504,Dos Pinos Queso Pizzero Fresco Semiduro Rallado Bolsa 225 G,Dos Pinos,Queso Pizzero Fresco Semiduro Rallado,bolsa 225 g,,1
+505,Dos Pinos Queso Pizzero Fresco Semiduro Rallado Doypack 225 G,Dos Pinos,Queso Pizzero Fresco Semiduro Rallado,doypack 225 g,,1
+506,Dos Pinos Queso Pizzero Fresco Semiduro Rallado,Dos Pinos,Queso Pizzero Fresco Semiduro Rallado,,,1
+507,Dos Pinos Queso Rico Fresco Semiduro 140 G - 7 Rebanadas,Dos Pinos,Queso Rico Fresco Semiduro,140 g - 7 rebanadas,,1
+508,Zarcero Queso Semiduro Empaque 300 G,Zarcero,Queso Semiduro,empaque 300 g,,1
+509,Dos Pinos Queso Tico Empaque 200 G,Dos Pinos,Queso Tico,empaque 200 g,,1
+510,Dos Pinos Queso Tico Rebanado Bolsa 240 G - 12 Rebanadas,Dos Pinos,Queso Tico Rebanado,bolsa 240 g - 12 rebanadas,,1
+511,Monteverde Queso Familiar Tipo Turrialba Empaque 500 G,Monteverde,Queso Familiar Tipo Turrialba,empaque 500 g,,1
+512,Dos Pinos Queso Fresco Y Suave Tipo Turrialba Empaque 300 G,Dos Pinos,Queso Fresco Y Suave Tipo Turrialba,empaque 300 g,,1
+513,Dos Pinos Queso Fresco Blanco Tipo Turrialba Delactomy Empaque 300 G,Dos Pinos,Queso Fresco Blanco Tipo Turrialba Delactomy,empaque 300 g,,1
+514,Dos Pinos Queso Fresco Y Suave Tipo Turrialba Empaque 500 G,Dos Pinos,Queso Fresco Y Suave Tipo Turrialba,empaque 500 g,,1
+515,Dos Pinos Queso Fresco Y Suave Tipo Turrialba Light Empaque 300 G,Dos Pinos,Queso Fresco Y Suave Tipo Turrialba Light,empaque 300 g,,1
+516,Zarcero Queso Fresco Y Suave Tipo Turrialba Light Empaque 300 G,Zarcero,Queso Fresco Y Suave Tipo Turrialba Light,empaque 300 g,,1
+517,Zarcero Queso Mozzarella Rallado Bolsa 425 G,Zarcero,Queso Mozzarella Rallado,bolsa 425 g,,1
+518,Zarcero Queso Turrialba Empaque 500 G,Zarcero,Queso Turrialba,empaque 500 g,,1
+519,Refresco,,Refresco,,,1
+520,Dos Pinos Refresco Sabor Mix De Frutas Disfruta Cartón 330 Ml,Dos Pinos,Refresco Sabor Mix De Frutas Disfruta,cartón 330 ml,,1
+521,Dos Pinos Refresco Sabor Mix De Frutas Disfruta Cartón 946 Ml,Dos Pinos,Refresco Sabor Mix De Frutas Disfruta,cartón 946 ml,,1
+522,Dos Pinos Refresco Sabor Uva Disfruta Cartón 330 Ml,Dos Pinos,Refresco Sabor Uva Disfruta,cartón 330 ml,,1
+523,Dos Pinos Jugo De Naranja Cartón 1 L,Dos Pinos,Jugo De Naranja,cartón 1 l,,1
+524,Dos Pinos Rompope Cartón 1 L,Dos Pinos,Rompope,cartón 1 l,,1
+525,Dos Pinos Rompope Cartón 250 Ml,Dos Pinos,Rompope,cartón 250 ml,,1
+526,Sandwich Tercio De Bologn 1 Unid,,Sandwich Tercio De Bologn,1 unid,,1
+527,Sandwich Tercio De Carne Mechada 1 Unid,,Sandwich Tercio De Carne Mechada,1 unid,,1
+528,Sandwich Tercio De Pollo 1 Unid,,Sandwich Tercio De Pollo,1 unid,,1
+529,La Estación Shake De Proteína 1 Unid,La Estación,Shake De Proteína,1 unid,,1
+530,La Estación Slice 1 Unid,La Estación,Slice,1 unid,,1
+531,Sucramal Sucralfato 1 G 1 Sobre,Sucramal,Sucralfato 1 G,1 sobre,,1
+532,La Estación Sundae 1 Unid,La Estación,Sundae,1 unid,,1
+533,Dos Pinos Super Cono 70 G,Dos Pinos,Super Cono,70 g,,1
+534,Symbicort Budesonida 160 Mcg/Formoterol 4.5 Mcg 120 Dosis,Symbicort,Budesonida 160 Mcg/Formoterol 4.5 Mcg,120 dosis,,1
+535,Symbicort Budesonida 160 Mcg/Formoterol 4.5 Mcg 60 Dosis,Symbicort,Budesonida 160 Mcg/Formoterol 4.5 Mcg,60 dosis,,1
+536,Symbicort Budesonida 320 Mcg/Formoterol 9 Mcg 60 Dosis,Symbicort,Budesonida 320 Mcg/Formoterol 9 Mcg,60 dosis,,1
+537,Symbicort Budesonida 160 Mcg/Formoterol 4.5 Mcg Rapihaler 120 Dosis,Symbicort,Budesonida 160 Mcg/Formoterol 4.5 Mcg Rapihaler,120 dosis,,1
+538,Symbicort Budesonida 80 Mcg/Formoterol 4.5 Mcg Rapihaler 120 Dosis,Symbicort,Budesonida 80 Mcg/Formoterol 4.5 Mcg Rapihaler,120 dosis,,1
+539,Symbicort Budesonida 160 Mcg/Formoterol 4.5 Mcg Rapihaler 60 Dosis,Symbicort,Budesonida 160 Mcg/Formoterol 4.5 Mcg Rapihaler,60 dosis,,1
+540,Symbicort Budesonida 160 Mcg/Formoterol 4.5 Mcg Turbuhaler 120 Dosis,Symbicort,Budesonida 160 Mcg/Formoterol 4.5 Mcg Turbuhaler,120 dosis,,1
+541,Symbicort Budesonida 160 Mcg/Formoterol 4.5 Mcg Turbuhaler 60 Dosis,Symbicort,Budesonida 160 Mcg/Formoterol 4.5 Mcg Turbuhaler,60 dosis,,1
+542,Dos Pinos Té Blanco Más Té Botella 3 L,Dos Pinos,Té Blanco Más Té,botella 3 l,,1
+543,Dos Pinos Té Helado De Limón 2.5 L,Dos Pinos,Té Helado De Limón,2.5 l,,1
+544,Dos Pinos Té Con Melocotón Más Té Botella 3 L,Dos Pinos,Té Con Melocotón Más Té,botella 3 l,,1
+545,Dos Pinos Té Frío Melocotón 2.5 L,Dos Pinos,Té Frío Melocotón,2.5 l,,1
+546,Gallito Tapita Cajeta De Coco Bolsa 40 G,Gallito,Tapita Cajeta De Coco,bolsa 40 g,,1
+547,Dos Pinos Bebida De Té Azul Botella 500 Ml,Dos Pinos,Bebida De Té Azul,botella 500 ml,,1
+548,Dos Pinos Té Blanco 2.2 L,Dos Pinos,Té Blanco,2.2 l,,1
+549,Dos Pinos Té Blanco Botella 500 Ml,Dos Pinos,Té Blanco,botella 500 ml,,1
+550,Tropical Té Blanco Con Arándano Botella 500 Ml,Tropical,Té Blanco Con Arándano,botella 500 ml,,1
+551,Tropical Té Blanco Con Frutas Tropicales Cero Botella 2.5 L,Tropical,Té Blanco Con Frutas Tropicales Cero,botella 2.5 l,,1
+552,Tropical Té Blanco Con Frutas Tropicales Cero Botella 500 Ml,Tropical,Té Blanco Con Frutas Tropicales Cero,botella 500 ml,,1
+553,Dos Pinos Té Frío Con Limón Botella 500 Ml,Dos Pinos,Té Frío Con Limón,botella 500 ml,,1
+554,Dos Pinos Té Frío Con Melocotón Botella 500 Ml,Dos Pinos,Té Frío Con Melocotón,botella 500 ml,,1
+555,Tropical Té Blanco Con Manzana Verde Cero Botella 2.5 L,Tropical,Té Blanco Con Manzana Verde Cero,botella 2.5 l,,1
+556,Tropical Té Frío Con Limón Botella 500 Ml,Tropical,Té Frío Con Limón,botella 500 ml,,1
+557,Tropical Té Frío Con Melocotón Botella 500 Ml,Tropical,Té Frío Con Melocotón,botella 500 ml,,1
+558,Dos Pinos Té Frío De Limón Más Té Botella 3 L,Dos Pinos,Té Frío De Limón Más Té,botella 3 l,,1
+559,Dos Pinos Té Frío Más Té Botella 3 L,Dos Pinos,Té Frío Más Té,botella 3 l,,1
+560,Dos Pinos Té Frío De Limón Botella 500 Ml,Dos Pinos,Té Frío De Limón,botella 500 ml,,1
+561,Dos Pinos Té Negro Con Carbón Activado Botella 500 Ml,Dos Pinos,Té Negro Con Carbón Activado,botella 500 ml,,1
+562,Dos Pinos Té Rojo Botella 500 Ml,Dos Pinos,Té Rojo,botella 500 ml,,1
+563,Tropical Té Verde Con Manzana Verde Cero Botella 500 Ml,Tropical,Té Verde Con Manzana Verde Cero,botella 500 ml,,1
+564,Tropical Limonada Con Fresa Y Sandía Botella 2.5 L,Tropical,Limonada Con Fresa Y Sandía,botella 2.5 l,,1
+565,Tropical Limonada Con Hierbabuena Botella 500 Ml,Tropical,Limonada Con Hierbabuena,botella 500 ml,,1
+566,Tropical Limonada Con Hierbabuena Botella 2.5 L,Tropical,Limonada Con Hierbabuena,botella 2.5 l,,1
+567,Pack Pan Francés Con Ajonjolí + Frijoles Molidos Rojos Ducal 2 Unids + Doypack 227 G,,Pack Pan Francés Con Ajonjolí + Frijoles Molidos Rojos Ducal,2 unids + doypack 227 g,,1
+568,Pack Pan Francés Con Ajonjolí + Frijoles Rojos Ducal 2 Unids + Doypack 227 G,,Pack Pan Francés Con Ajonjolí + Frijoles Rojos Ducal,2 unids + doypack 227 g,,1
+569,Pack Pan Francés Con Ajonjolí + Frijoles Molidos Rojos Ducal 1 Unid + Doypack 227 G,,Pack Pan Francés Con Ajonjolí + Frijoles Molidos Rojos Ducal,1 unid + doypack 227 g,,1
+570,Pack Pan Francés Con Queso + Frijoles Molidos Rojos Ducal 1 Unid + Doypack 227 G,,Pack Pan Francés Con Queso + Frijoles Molidos Rojos Ducal,1 unid + doypack 227 g,,1
+571,Vitaloe Bebida De Aloe Vera Botella 500 Ml,Vitaloe,Bebida De Aloe Vera,botella 500 ml,,1
+572,La Estación Papas 1 Unid,La Estación,Papas,1 unid,,1
+573,La Estación Wrap 1 Unid,La Estación,Wrap,1 unid,,1
+574,La Estación Grilled Wrap 1 Unid,La Estación,Grilled Wrap,1 unid,,1
+575,Xigduo Dapaglifozina 10 Mg/Metformina Clorhidrato 1000 Mg Xr 30 Comprimidos,Xigduo,Dapaglifozina 10 Mg/Metformina Clorhidrato 1000 Mg Xr,30 comprimidos,,1
+576,Xigduo Dapaglifozina 5 Mg/Metformina Clorhidrato 1000 Mg Xr 30 Comprimidos,Xigduo,Dapaglifozina 5 Mg/Metformina Clorhidrato 1000 Mg Xr,30 comprimidos,,1
+577,Dos Pinos Yogurt De Arándanos Botella 200 Ml,Dos Pinos,Yogurt De Arándanos,botella 200 ml,,1
+578,Dos Pinos Yogurt De Arándanos Deligurt Botella 200 Ml,Dos Pinos,Yogurt De Arándanos Deligurt,botella 200 ml,,1
+579,Dos Pinos Yogurt De Arándanos In Line Botella 750 Ml,Dos Pinos,Yogurt De Arándanos In Line,botella 750 ml,,1
+580,Dos Pinos Yogurt Natural Con Topping De Aránano Deligurt Pote 190 G,Dos Pinos,Yogurt Natural Con Topping De Aránano Deligurt,pote 190 g,,1
+581,Dos Pinos Pack Yogurt Con Topping Deligurt 4 Unids,Dos Pinos,Pack Yogurt Con Topping Deligurt,4 unids,,1
+582,Coronado Yogurt De Frutas Botella 1 L,Coronado,Yogurt De Frutas,botella 1 l,,1
+583,Coronado Yogurt De Frutas Botella 200 Ml,Coronado,Yogurt De Frutas,botella 200 ml,,1
+584,Coronado Yogurt De Mora Botella 200 Ml,Coronado,Yogurt De Mora,botella 200 ml,,1
+585,Dos Pinos Yogurt De Arándanos Delactomy Botella 200 Ml,Dos Pinos,Yogurt De Arándanos Delactomy,botella 200 ml,,1
+586,Dos Pinos Yogurt De Fresa Delactomy Botella 200 Ml,Dos Pinos,Yogurt De Fresa Delactomy,botella 200 ml,,1
+587,Dos Pinos Yogurt De Fresa Con Topping De Chocolate Deligurt Pote 170 G,Dos Pinos,Yogurt De Fresa Con Topping De Chocolate Deligurt,pote 170 g,,1
+588,Dos Pinos Yogurt De Fresa Con Granola Y Pasas Deligurt Pote 170 G,Dos Pinos,Yogurt De Fresa Con Granola Y Pasas Deligurt,pote 170 g,,1
+589,Dos Pinos Yogurt De Fresa Con Topping De Chocolate Deligurt 1 Unid,Dos Pinos,Yogurt De Fresa Con Topping De Chocolate Deligurt,1 unid,,1
+590,Coronado Yogurt Líquido De Fresa Botella 1 L,Coronado,Yogurt Líquido De Fresa,botella 1 l,,1
+591,Lula Yogurt De Fresa Con Topping De Arroz Sabor Chocolate Pote 118 G,Lula,Yogurt De Fresa Con Topping De Arroz Sabor Chocolate,pote 118 g,,1
+592,Dos Pinos Yogurt Griego De Coco Botella 200 Ml,Dos Pinos,Yogurt Griego De Coco,botella 200 ml,,1
+593,Dos Pinos Yogurt Griego Fresa Banano Botella 200 Ml,Dos Pinos,Yogurt Griego Fresa Banano,botella 200 ml,,1
+594,Dos Pinos Yogurt Griego Piña Y Mora Pote 19 G,Dos Pinos,Yogurt Griego Piña Y Mora,pote 19 g,,1
+595,Dos Pinos Yogurt Griego Piña Y Mora Pote 200 G,Dos Pinos,Yogurt Griego Piña Y Mora,pote 200 g,,1
+596,Dos Pinos Yogurt Griego Vainilla Pote 200 G,Dos Pinos,Yogurt Griego Vainilla,pote 200 g,,1
+597,Dos Pinos Yogurt De Fresa In Line Botella 200 Ml,Dos Pinos,Yogurt De Fresa In Line,botella 200 ml,,1
+598,Dos Pinos Yogurt De Frutas In Line Botella 200 Ml,Dos Pinos,Yogurt De Frutas In Line,botella 200 ml,,1
+599,Dos Pinos Yogurt De Fresa In Line Botella 750 Ml,Dos Pinos,Yogurt De Fresa In Line,botella 750 ml,,1
+600,Dos Pinos Yogurt De Fresa Con Topping De Granola In Line Pote 150 G,Dos Pinos,Yogurt De Fresa Con Topping De Granola In Line,pote 150 g,,1
+601,Coronado Yogurt Lìqudo De Fresa Banano Botella 200 Ml,Coronado,Yogurt Lìqudo De Fresa Banano,botella 200 ml,,1
+602,Coronado Yogurt Lìqudo De Fresa Botella 1.8 L,Coronado,Yogurt Lìqudo De Fresa,botella 1.8 l,,1
+603,Coronado Yogurt Líquido Guanabana 200 Ml,Coronado,Yogurt Líquido Guanabana,200 ml,,1
+604,Coronado Yogurt Líquido Fresa Botella 1 L,Coronado,Yogurt Líquido Fresa,botella 1 l,,1
+605,Coronado Yogurt Líquido Frutas Botella 1 L,Coronado,Yogurt Líquido Frutas,botella 1 l,,1
+606,Coronado Yogurt Líquido Kiwi Botella 1 L,Coronado,Yogurt Líquido Kiwi,botella 1 l,,1
+607,Coronado Yogurt Líquido Kiwi Botella 200 Ml,Coronado,Yogurt Líquido Kiwi,botella 200 ml,,1
+608,Coronado Yogurt Líquido Mora Botella 1.8 L,Coronado,Yogurt Líquido Mora,botella 1.8 l,,1
+609,Coronado Yogurt Líquido Mora Botella 1 L,Coronado,Yogurt Líquido Mora,botella 1 l,,1
+610,Dos Pinos Yogurt Con Topping De Arándanos Deligurt Pote 150 G,Dos Pinos,Yogurt Con Topping De Arándanos Deligurt,pote 150 g,,1
+611,Dos Pinos Yogurt De Fresa Con Topping De Arroz Pote 150 G,Dos Pinos,Yogurt De Fresa Con Topping De Arroz,pote 150 g,,1
+612,Dos Pinos Yogurt De Guayabita Con Topping De Chips Pote 170 G,Dos Pinos,Yogurt De Guayabita Con Topping De Chips,pote 170 g,,1
+613,Dos Pinos Yogurt De Vainilla Con Topping De Tapita Pote 170 G,Dos Pinos,Yogurt De Vainilla Con Topping De Tapita,pote 170 g,,1
