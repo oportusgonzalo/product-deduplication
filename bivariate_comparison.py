@@ -263,8 +263,8 @@ def main():
     pareto_groups_df, non_pareto_groups_df = extracting_pareto_groups(groups_df, pareto_set)
 
     # saving results
-    if not os.path.isdir(f'bivariate_outputs/{parent_chain}'):
-        os.mkdir(f'bivariate_outputs/{parent_chain}')
+    if not os.path.isdir(f'bivariate_outputs/{country}/{parent_chain}'):
+        os.mkdir(f'bivariate_outputs/{country}/{parent_chain}')
 
     groups_df.to_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
     pareto_groups_df.to_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
