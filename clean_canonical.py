@@ -192,12 +192,12 @@ def main():
     df_links.drop('label', axis=1, inplace=True)
 
     # ask for existance of a canonical catalog file
-    if os.path.exists('canonical_data/canonical_catalog.csv'):
+    if os.path.exists(f'{country}/canonical_data/canonical_catalog.csv'):
         print('It does exist a canonical catalog..')
 
         # appending data to the canonical catalog
         print('Reading canonical file..')
-        canonical_df = pd.read_csv('canonical_data/canonical_catalog.csv')
+        canonical_df = pd.read_csv(f'{country}/canonical_data/canonical_catalog.csv')
         df_non_pareto = pd.read_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
         new_canonical_df, candidate_name_id_dict = canonical_catalog_concatenation(df_canonical_candidate, df_non_pareto, canonical_df)
 
@@ -206,7 +206,7 @@ def main():
 
         # appending data to the item canonical links DB; uses: canonical_links_df, df_direct, df_back, df_non_pareto, and df_links
         print('Reading canonical links file..')
-        canonical_links_df = pd.read_csv('canonical_data/canonical_links.csv')
+        canonical_links_df = pd.read_csv(f'{country}/canonical_data/canonical_links.csv')
         # when there are no direct matches, the file isn't created
         if os.path.exists(f'bivariate_outputs/{country}/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv'):
             df_direct = pd.read_csv(f'bivariate_outputs/{country}/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
@@ -221,8 +221,8 @@ def main():
 
         # saving datasets
         print('Saving canonical files..')
-        new_canonical_df.to_csv('canonical_data/canonical_catalog.csv', index=False)
-        new_canonical_links_df.to_csv('canonical_data/canonical_links.csv', index=False)
+        new_canonical_df.to_csv(f'{country}/canonical_data/canonical_catalog.csv', index=False)
+        new_canonical_links_df.to_csv(f'{country}/canonical_data/canonical_links.csv', index=False)
     
     else:
         print('There is no canonical catalog..')
@@ -242,8 +242,8 @@ def main():
 
         # saving datasets
         print('Saving canonical files..')
-        df_canonical_candidate.to_csv('canonical_data/canonical_catalog.csv', index=False)
-        new_links_df.to_csv('canonical_data/canonical_links.csv', index=False)
+        df_canonical_candidate.to_csv(f'{country}/canonical_data/canonical_catalog.csv', index=False)
+        new_links_df.to_csv(f'{country}/canonical_data/canonical_links.csv', index=False)
     
     print('Success!')
 

@@ -99,7 +99,7 @@ def direct_matches(data_nlp):
     print('Identifying direct matches: member --> canonical_member')
 
     # reading file with links between raw items and canonical data (when we run bivariate, this file has been already created)
-    canonical_links = pd.read_csv('canonical_data/canonical_links.csv')
+    canonical_links = pd.read_csv(f'{country}/canonical_data/canonical_links.csv')
 
     for col in ['canonical_leader', 'canonical_member']:
         canonical_links[col] = canonical_links[col].str.lower()

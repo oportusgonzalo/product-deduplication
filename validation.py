@@ -34,7 +34,7 @@ def agent_unverified(canonical_links_df):
 def main():
     print('Validation statistics coming up..')
     # reading canonical links file
-    canonical_links_df = pd.read_csv('canonical_data/canonical_links.csv')
+    canonical_links_df = pd.read_csv(f'{country}/canonical_data/canonical_links.csv')
 
     df_raw = pd.DataFrame()
     for store, country in stores_to_review.items():

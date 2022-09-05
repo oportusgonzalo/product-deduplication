@@ -1,8 +1,10 @@
 import pandas as pd
 
+country = ''
+
 def main():
 
-    df_links = pd.read_csv('canonical_data/canonical_links.csv')
+    df_links = pd.read_csv(f'{country}/canonical_data/canonical_links.csv')
     df_na = df_links[df_links['canonical_leader'].isna()].drop_duplicates('canonical_member').reset_index(drop=True)
     df_links = df_links[~df_links['canonical_leader'].isna()].reset_index(drop=True)
     df_links['canonical_leader'] = df_links['canonical_leader'].str.strip()
@@ -28,7 +30,7 @@ def main():
     print(f'N° canonical leaders: {len(list(set(df_links["canonical_id"])))}')
 
     # saving result
-    df_links.to_csv('canonical_data/canonical_links.csv', index=False)
+    df_links.to_csv(f'{country}/canonical_data/canonical_links.csv', index=False)
 
 
 if __name__ == "__main__":
