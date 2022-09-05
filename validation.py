@@ -5,8 +5,9 @@ import pandas as pd
 stores_to_review = {
     'booker': 'uk', 
     'nisa':'uk',
-    'costcutter': 'uk', 
-    'dp&az': 'cr'
+    'costcutter': 'uk',
+    'dp&az': 'cr',
+    'ampm': 'cr'
     }
 
 def read_back_propagation_file(store, country):
@@ -33,13 +34,14 @@ def agent_unverified(canonical_links_df):
 
 def main():
     print('Validation statistics coming up..')
-    # reading canonical links file
-    canonical_links_df = pd.read_csv(f'canonical_data/{country}/{country}_canonical_links.csv')
 
     df_raw = pd.DataFrame()
     for store, country in stores_to_review.items():
         df_temp = read_back_propagation_file(store, country)
         df_raw = pd.concat([df_raw, df_temp], axis=0).reset_index(drop=True)
+    
+    # reading canonical links file
+    canonical_links_df = pd.read_csv(f'canonical_data/{country}/{country}_canonical_links.csv')
 
     # total number of unique UUIDs processed
     number_uuids_involved(df_raw)
