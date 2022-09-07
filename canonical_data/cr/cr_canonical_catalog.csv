@@ -1856,3 +1856,831 @@ canonical_id,canonical_leader,brand,name,package,promotion,agent_verified
 1854,Ziploc Bolsas De Doble Cierre Caja 20 Unids,Ziploc,Bolsas De Doble Cierre,caja 20 unids,0.0,1
 1855,Zukra Azúcar Crudo Bolsa 2 Kg,Zukra,Azúcar Crudo,bolsa 2 kg,0.0,1
 1856,Zurquí Mortadela Especial 250 G,Zurquí,Mortadela Especial,250 g,0.0,1
+1857,1000 Stories Vino Zinfandel Botella 750 Ml,1000 Stories,Vino Zinfandel,botella 750 ml,,1
+1858,19 Crimes Vino Cabi Red Botella 750 Ml,19 Crimes,Vino Cabi Red,botella 750 ml,,1
+1859,19 Crimes Vino Dark Red Botella 750 Ml,19 Crimes,Vino Dark Red,botella 750 ml,0.0,1
+1860,3 Corners Vino Tinto Cabernet Sauvignon Botella 750 Ml,3 Corners,Vino Tinto Cabernet Sauvignon,botella 750 ml,,1
+1861,Adobe Pack Vino Reserva Cabernet Sauvignon 2 Unid X 750 Ml C/U,Adobe,Pack Vino Reserva Cabernet Sauvignon,2 unid x 750 ml c/u,1.0,1
+1862,Adobe Pack Vino Reserva Merlot 2 Unid X 750 Ml C/U,Adobe,Pack Vino Reserva Merlot,2 unid x 750 ml c/u,1.0,1
+1863,Adobe Vino Emiliana Reserva Merlot Botella 750 Ml,Adobe,Vino Emiliana Reserva Merlot,botella 750 ml,0.0,1
+1864,Adobe Vino Tinto Cabernet Sauvignon Reserva Botella 750 Ml,Adobe,Vino Tinto Cabernet Sauvignon Reserva,botella 750 ml,,1
+1865,Adán & Eva Bebida Alcóholica Durazno Rose Con Vodka 2 Unids X 355 Ml,Adán & Eva,Bebida Alcóholica Durazno Rose Con Vodka,2 unids x 355 ml,1.0,1
+1866,Adán & Eva Bebida Alcóholica Maracuyá Piña Con Ron 2 Unids X 355 Ml,Adán & Eva,Bebida Alcóholica Maracuyá Piña Con Ron,2 unids x 355 ml,1.0,1
+1867,Ajo 3 U,,Ajo,3 u,,1
+1868,Alamos Vino Malbec Botella 750 Ml,Alamos,Vino Malbec,botella 750 ml,1.0,1
+1869,Alamos Vino Tinto Malbec Botella 750 Ml,Alamos,Vino Tinto Malbec,botella 750 ml,,1
+1870,Albahaca 30 G,,Albahaca,30 g,,1
+1871,Albanese Gomitas De Gusanos Sour 2 Unids X 100 G,Albanese,Gomitas De Gusanos Sour,2 unids x 100 g,1.0,1
+1872,Albanese Gomitas De Osos Bolsa 99 G,Albanese,Gomitas De Osos,bolsa 99 g,1.0,1
+1873,Albanese Gomitas Worm 2 Unids X 100 G,Albanese,Gomitas Worm,2 unids x 100 g,1.0,1
+1874,Albanese Ositos De Gomita 2 Unids X 100 G,Albanese,Ositos De Gomita,2 unids x 100 g,1.0,1
+1875,Albanese Osos De Gomitas Ultra 2 Unids X 70 G,Albanese,Osos De Gomitas Ultra,2 unids x 70 g,1.0,1
+1876,Alea Tinte Color Negro Caja 155 Ml,Alea,Tinte Color Negro,caja 155 ml,,1
+1877,Alea Tinte Color Rubio Blond Caja 155 Ml,Alea,Tinte Color Rubio Blond,caja 155 ml,,1
+1878,Alea Tinte Color Rubio Platino Perlado,Alea,Tinte Color Rubio Platino Perlado,,,1
+1879,Alma Mora Vino Malbec Botella 750 Ml,Alma Mora,Vino Malbec,botella 750 ml,1.0,1
+1880,Alma Mora Vino Malbec Botella 750Ml,Alma Mora,Vino Malbec,botella 750 ml,1.0,1
+1881,Alolivomayonesa Light 400 G,Alolivo,Mayonesa Light,doypack 400 g,0.0,1
+1882,Alta Vista Vino Vive Cabernet Sauvignon Botella 750 Ml,Alta Vista,Vino Vive Cabernet Sauvignon,botella 750 ml,0.0,1
+1883,Alta Vista Vino Vive Malbec Botella 750 Ml,Alta Vista,Vino Vive Malbec,botella 750 ml,0.0,1
+1884,Alto Las Hormigas Vino Malbec Botella 750 Ml,Alto Las Hormigas,Vino Malbec,botella 750 ml,1.0,1
+1885,Altos Las Hormigas Vino Malbec Botella 750 Ml,Altos Las Hormigas,Vino Malbec,botella 750 ml,0.0,1
+1886,Amarula Crema De Licor Vainilla Botella 750 Ml,Amarula,Crema De Licor Vainilla,botella 750 ml,1.0,1
+1887,Anterra Vino Pinot Grigio Botella 750 Ml,Anterra,Vino Pinot Grigio,botella 750 ml,0.0,1
+1888,Antigal Vino 1 Cabernet Sauvignon Botella 750 Ml,Antigal,Vino 1 Cabernet Sauvignon,botella 750 ml,0.0,1
+1889,Antigal Vino 1 Malbec Botella 750 Ml,Antigal,Vino 1 Malbec,botella 750 ml,1.0,1
+1890,Antigal Vino 1 Sauvignon Blanc Botella 750 Ml,Antigal,Vino 1 Sauvignon Blanc,botella 750 ml,1.0,1
+1891,Aperol Aperitivo Botella 700 Ml,Aperol,Aperitivo,botella 700 ml,,1
+1892,Aperol Aperitivo Naranja Navel Botella 700 Ml,Aperol,Aperitivo Naranja Navel,botella 700 ml,,1
+1893,Apio Bolsa 300 G,,Apio,bolsa 300 g,,1
+1894,Arugula 30 G,,Arugula,30 g,,1
+1895,Atomic Encendedor Festival 1 Unid,Atomic,Encendedor Festival,1 unid,0.0,1
+1896,Atomic Encendedor Mini 1 Unid,Atomic,Encendedor Mini,1 unid,0.0,1
+1897,Axe Antitranspirante Collision Aerosol 152 Ml,Axe,Antitranspirante Collision,aerosol 152 ml,,1
+1898,Axe Desodorante Dark Temptation Aerosol 150 Ml,Axe,Desodorante Dark Temptation,aerosol 150 ml,,1
+1899,Axin Lavaplatos Liquido Crema 400 Ml 4354,Axion,Lavaplatos Liquido Crem,400 ml,0.0,1
+1900,Axin Lavaplatos Liquido Limn 750 Ml 1932,Axion,Lavaplatos Liquido Limon,750 ml,0.0,1
+1901,Axin Lavaplatos Lquido Dyp Limn 400 Ml 7684,Axion,Lavaplatos Lquido Dyp Limn,400 ml,0.0,1
+1902,Axion Lavaplatos En Crema Avena Pote 425 G,Axion,Lavaplatos En Crema Avena,pote 425 g,,1
+1903,Ayote Tierno Ud 2297,,Ayote Tierno,unid,0.0,1
+1904,Banano Delivery Ud Plu 15743 5743,,Banano Delivery Plu,unid,0.0,1
+1905,Banano Dtil Kg 0777,,Banano Dtil,kg,0.0,1
+1906,Bandeja Uva Mixta 250 G 0296,,Bandeja Uva Mixta,250 g,0.0,1
+1907,Base Salsa Blanca Halta 200 Ml 0501,Halta,Base Salsa Blanca,200 ml,0.0,1
+1908,Bavaria Cerveza Gold 6 Unids X 350 Ml,Bavaria,Cerveza Gold,6 unids x 350 ml,1.0,1
+1909,Bavaria Cerveza Light 6 Unids X 350 Ml,Bavaria,Cerveza Light,6 unids x 350 ml,1.0,1
+1910,Bear Cerveza Lager Lata 500 Ml,Bear,Cerveza Lager,lata 500 ml,1.0,1
+1911,Bebida Energizante Monster Energy Mango Loco 473 Ml 3967,Monster,Bebida Energizante Energy Mango Loco,473 ml,0.0,1
+1912,Bebida Hidratante Biosteel Mango 500 Ml 3421,Biosteel,Bebida Hidratante Mango,500 ml,0.0,1
+1913,Bebida Hidratante Biosteel Mixed 500 Ml 7850,Biosteel,Bebida Hidratante Mixed,500 ml,0.0,1
+1914,Bebida Hidratante Biosteel Rainbow 500 Ml 7180,Biosteel,Bebida Hidratante Rainbow,500 ml,0.0,1
+1915,Bebida Hidratante Biosteel Rasberry 500 Ml 3891,Biosteel,Bebidahidratante Rasberry 500 Ml,500 ml,0.0,1
+1916,Belgian	Butter Galleta Mantequilla Avellanas Caja 100 G,Belgian	Butter,Galleta Mantequilla Avellanas,caja 100 g,0.0,1
+1917,Belgian	Butter Galleta Mantequilla Bolsa 30 G,Belgian	Butter,Galleta Mantequilla,bolsa 30 g,0.0,1
+1918,Belgian	Butter Galleta Mantequilla Caja 200 G,Belgian	Butter,Galleta Mantequilla,caja 200 g,0.0,1
+1919,Belgian	Butter Galleta Mantequilla Chocolate Caja 100 G,Belgian	Butter,Galleta Mantequilla Chocolate,caja 100 g,0.0,1
+1920,Beneful Alimento Sabor Pollo Cachorros Bolsa 2 Kg,Beneful,Alimento Sabor Pollo Cachorros,bolsa 2 kg,,1
+1921,Beringer Vino Blanco Zinfandel Botella 750 Ml,Beringer,Vino Blanco Zinfandel,botella 750 ml,0.0,1
+1922,Beronia Vino Tempranillo Rioja Botella 750 Ml,Beronia,Vino Tempranillo Rioja,botella 750 ml,0.0,1
+1923,Bianchi Caramelo Chocolate Blanco 80 G 4843,Bianchi,Caramelo Chocolate Blanc,80 g,0.0,1
+1924,Bianchi Encantode Fresa Chocolate 60 G 3042,Bianchi,Encantode Fresa Chocolate,60 g,0.0,1
+1925,Bicentury Tortitas De Arroz Sabor Yogurt Bolsa 130 G,Bicentury,Tortitas De Arroz Sabor Yogurt,bolsa 130 g,,1
+1926,Bisteck De Cerdo Adobado Arreo 1 Kg 3732,Fresh Market,Bisteck De Cerdo Adobado Arreo,1 kg,0.0,1
+1927,Bisteck De Re Adobado Arreo 1 Kg 3589,Fresh Market,Bisteck De Re Adobado Arreo,1 kg,0.0,1
+1928,Bluetech Desinfectante Aromatics Floral Atomizador 650 Ml,Bluetech,Desinfectante Aromatics Floral,atomizador 650 ml,0.0,1
+1929,Bluetech Detergente Ropa Botella 1.5 Kg,Bluetech,Detergente Ropa,botella 1.5 kg,0.0,1
+1930,Bluetech Suavizante Para Ropa Botella 1.5 L,Bluetech,Suavizante Para Ropa,botella 1.5 l,,1
+1931,Bnet Goma Vitaminas Y Minerales Frasco 150 G,Bnet,Goma Vitaminas Y Minerales,frasco 150 g,0.0,1
+1932,Bnet Goma Zinc Vitamina C Frasco 150 G,Bnet,Goma Zinc Vitamina C,frasco 150 g,0.0,1
+1933,Bollito Francscongelado 4 Uds 4958,Fresh Market,Bollito Francscongelado,4 unids,0.0,1
+1934,Bolsa Para Congelar Ziploc 0039,Ziploc,Bolsa Para Congelar,caja 20 unids,0.0,1
+1935,Bombay London Dry Gin 750 Ml,Bombay,London Dry Gin,750 ml,0.0,1
+1936,Bonete Dulce Con Canela Fresh Market 192 G 5344,Fresh Market,Bonete Dulce Con Canela,192 g,0.0,1
+1937,Brasso Limpia Vidrios Y Superficies Spray 650 Ml,Brasso,Limpia Vidrios Y Superficies,spray 650 ml,1.0,1
+1938,Buchanan'S Whisky Deluxe 12 Años Botella 750 Ml,Buchanan'S,Whisky Deluxe 12 Años,botella 750 ml,0.0,1
+1939,Burgo Viejo Vino Crianza Botella 750 Ml,Burgo Viejo,Vino Crianza,botella 750 ml,1.0,1
+1940,Burgo Viejo Vino Joven Botella 750 Ml,Burgo Viejo,Vino Joven,botella 750 ml,1.0,1
+1941,Burgo Viejo Vino Rioja Crianza Botella 750 Ml,Burgo Viejo,Vino Rioja Crianza,botella 750 ml,0.0,1
+1942,Burgo Viejo Vino Rioja Joven  Botella 750 Ml,Burgo Viejo,Vino Rioja Joven,botella 750 ml,0.0,1
+1943,Ca Bandeja 500 G 2310,Fresh Market,Ca Bandeja,500 g,0.0,1
+1944,Cacao Con Chocolate 50 % Leche Nibsde 4531,Fresh Market,Cacao Con Chocolate 50 % Leche Nibsde,100 g,0.0,1
+1945,Caf Americano Britt 8 Oz 4969,Britt,Café Americano,8 oz,0.0,1
+1946,Caf Capuccino Britt 8 Oz 4967,Britt,Café Capuccino,8 oz,0.0,1
+1947,Caf Capuccino Vainilla Britt 8 Oz,Britt,Capuccino Vainilla,vaso 237 ml,0.0,1
+1948,Caf Con Leche Britt 8 Oz 4973,Britt,Café Con Leche Britt,8 oz,0.0,1
+1949,Caf Con Leche Vainilla Britt 8 Oz 6185,Britt,Café Con Leche Vainilla Britt,8 oz,0.0,1
+1950,Caf Cortado Britt 8 Oz 4968,Britt,Café Cortado Britt,8 oz,0.0,1
+1951,Caf Espresso Britt 4 Oz 4972,Britt,Café Espresso,8 oz,0.0,1
+1952,Caf Instantneo 3 En 1 Colcaf 380 G 3869,Colcafe,Café Instantneo 3 En 1,380 g,0.0,1
+1953,Caf Instantneo Todo En 1 Light Colcaf 280 G 3845,Colcafe,Café Instantneo Todo En 1 Light,280 g,0.0,1
+1954,Caf Latte Nescaf 12 Oz 4766,Nescafé,Café Latte,12 oz,0.0,1
+1955,Caf Moka Nescaf 12 Oz 4770,Nescafé,Café Moka,12 oz,0.0,1
+1956,Caf Naranjo Molido Gaia 340 G 0037,Gaia,Café Caf Naranjo Molido Gaia,340 g,0.0,1
+1957,Caf Negro Nescaf 12 Oz 4771,Nescafé,Café,12 oz,0.0,1
+1958,Caf Orgnico Molido Britt 340 G 1561,Britt,Café,340 g,0.0,1
+1959,Caf Vainilla Latte Nescaf 12 Oz 4768,Nescafé,Café,12 oz,0.0,1
+1960,Caldo De Pollo Orgnico Pacific 946 Ml 4256,Pacific,Caldo De Pollo Orgnico,946 ml,0.0,1
+1961,Camote Kg 2203,,Camote,kg,0.0,1
+1962,Camotedelivery Ud Plu 15820 5820,,Camote Delivery Plu,unid,0.0,1
+1963,Canada Dry Club Soda 2 Unids X 2 L,Canada Dry,Club Soda,2 unids x 2 l,1.0,1
+1964,Canada Dry Club Soda 2 Unids X 600 Ml,Canada Dry,Club Soda,2 unids x 600 ml,1.0,1
+1965,Canada Dry Gaseosa Ginger Ale 2 Unids X 3 L,Canada Dry,Gaseosa Ginger Ale,2 unids x 3 l,1.0,1
+1966,Canada Dry Gaseosa Ginger Ale 2 Unids X 355 Ml,Canada Dry,Gaseosa Giner Ale,2 unids x 355 ml,1.0,1
+1967,Canada Dry Gaseosa Ginger Ale 2 Unids X 600 Ml,Canada Dry,Gaseosa Ginger Ale,2 unids x 600 ml,1.0,1
+1968,Canada Dry Gaseosa Ginger Ale Light 2 Unids X 600 Ml,Canada Dry,Gaseosa Ginger Ale Light,2 unids x 600 ml,1.0,1
+1969,Canada Dry Ginger Ale Desechable 3 L 1150,Canada Dry,Ginger Ale,3 l,0.0,1
+1970,Canada Dry Ginger Ale Lata 355 Ml 1235,Canada Dry,Ginger Ale,355 ml,0.0,1
+1971,Canada Dry Ginger Ale Light 600 Ml 3482,Canada Dry,Ginger Ale Light,600 ml,0.0,1
+1972,Canada Dry Ginger Ale Light Desechable 2 L 3819,Canada Dry,Ginger Ale Light,2 l,0.0,1
+1973,Canada Dry Quinada Lata 355Ml 2232,Canada Dry,Quinda,355 ml,0.0,1
+1974,Canada Dry Soda 600 Ml 0481,Canada Dry,Soda,600 ml,0.0,1
+1975,Canada Dry Soda Desechable 2 L 0818,Canada Dry,Soda,2 l,0.0,1
+1976,Capuccino Instantneo Colcaf 6 Sobres 3761,Colcafe,Capuccino Instantneo,caja 6 sobres,0.0,1
+1977,Capuccino Nescaf 12 Oz 4765,Nescafé,Capuccino,12 oz,0.0,1
+1978,Capuccino Vainilla Instantneo Colcaf 108 G 3778,Colcafe,Capuccino Vainilla Instantneo,108 g,0.0,1
+1979,Capuccino Vainilla Nescaf 12 Oz 4769,Nescafé,Capuccino Vainilla,12 oz,0.0,1
+1980,Carne Molida Re Especial Arreo 1 Kg 3756,Fresh Market,Carne Molida Res Especial Arreo,1 kg,0.0,1
+1981,Casas Patronales Vino Cabernet Sauvignon Reserva Botella 750 Ml,Casas Patronales,Vino Cabernet Sauvignon Reserva,botella 750 ml,1.0,1
+1982,Casas Patronales Vino Carménère Gran Reserva Botella 750 Ml,Casas Patronales,Vino Carménère Gran Reserva,botella 750 ml,1.0,1
+1983,Casas Patronales Vino Carménère Reserva Botella 750 Ml,Casas Patronales,Vino Carménère Reserva,botella 750 ml,1.0,1
+1984,Casas Patronales Vino Chardonnay Gran Reserva Botella 750 Ml,Casas Patronales,Vino Chardonnay Gran Reserva,botella 750 ml,1.0,1
+1985,Casas Patronales Vino Chardonnay Reserva Botella 750 Ml,Casas Patronales,Vino Chardonnay Reserva,botella 750 ml,1.0,1
+1986,Casas Patronales Vino Chardonnay Reserva Selecta Botella 750 Ml,Casas Patronales,Vino Chardonnay Reserva Selecta,botella 750 ml,1.0,1
+1987,Casas Patronales Vino Reserva Maucho Carignan Botella 750 Ml,Casas Patronales,Vino Reserva Maucho Carignan,botella 750 ml,1.0,1
+1988,Casas Patronales Vino Selected Reserve Cabernet Sauvignon Botella 750 Ml,Casas Patronales,Vino Selected Reserve Cabernet Sauvignon,botella 750 ml,0.0,1
+1989,Casas Patronales Vino Selected Reserve Carmenere Botella 750 Ml,Casas Patronales,Vino Selected Reserve Carmenere,botella 750 ml,0.0,1
+1990,Cashitas Palomitas Sal Marina 120 G,Cashitas,Palomitas Sal Marina,bolsa 120 g,0.0,1
+1991,Catena Vino Malbec Botella 750 Ml,Catena,Vino Malbec,botella 750 ml,1.0,1
+1992,Cava Dibon Vino Brut Reserve Botella 750 Ml,Cava Dibon,Vino Brut Reserve,botella 750 ml,0.0,1
+1993,Cava Villa Conchi Vino Espumante Botella 750 Ml,Cava Villa Conchi,Vino Espumante,botella 750 ml,0.0,1
+1994,Cavit Vino Pinot Grigio Botella 750 Ml,Cavit,Vino Pinot Grigio,botella 750 ml,1.0,1
+1995,Cebolla Malla 1.5 Kg 2206,,Cebolla Malla,1.5 kg,0.0,1
+1996,Cebolla Morada 500 G 2205,,Cebolla Morada,5000 g,0.0,1
+1997,Cebollino 250 G 2207,,Cebollino,250 g,0.0,1
+1998,Celestial Seasonings Surtido De Té Frutal Caja 18 Unids,Celestial Seasonings,Surtido De Té Frutal,caja 18 unids,,1
+1999,Centenario Pack Ron 7 Años 2 Unid X 1 L C/U,Centenario,Pack Ron 7 Años,2 unid x 1 l c/u,,1
+2000,Centenario Ron 12 Aos 750Ml,Centenario,Ron 12 Años,750 ml,0.0,1
+2001,Centenario Ron Añejo 7 Años 2 Unids X 1 L,Centenario,Ron Añejo 7 Años,2 unids x 1 l,1.0,1
+2002,Cerveza Bavaria Pura Malta 6 Pack Lata 350 Ml 6932,Bavaria,Cerveza Pura Malta,350 ml,0.0,1
+2003,Cerveza Bear Beer Lager Lata 500 Ml 6031,Bear,Caerveza Lager,500 ml,0.0,1
+2004,Cerveza Blue Moon Botella 355 Ml 0737,Blue Moon,Cerveza,355 ml,0.0,1
+2005,Cerveza Bohemia 6 Pack 350 Ml 0018,Bohemia,Cerveza,350 ml,0.0,1
+2006,Cerveza Carlsberg Botella 330 Ml 3200,Carlsberg,Cerveza,330 ml,0.0,1
+2007,Cerveza Carlsberg Lata 6 Pack 4221,Carlsberg,Cerveza,6 pack,0.0,1
+2008,Cerveza Coors Light Lata 354 Ml,Croos,Cerveza Light Lata,354 ml,0.0,1
+2009,Cerveza Coral Lager Premium Lata 355 Ml 0424,Coral,Cerveza Lager Premium,355 ml,0.0,1
+2010,Cerveza Crbf Puerto Viejo Botella 350 Ml,Crbf,Cerveza Puerto Viejo,350 ml,0.0,1
+2011,Cerveza Damm Complot Ipa Botella 330 Ml 1936,Complot Damm,Cerveza Damm Ipa,330 ml,0.0,1
+2012,Cerveza Daura Gluten Free Botella 330 Ml 2936,Dura Damm,Cerveza Gluten Free,330 ml,0.0,1
+2013,Cerveza Dota Artesanal 350 Ml,Dota,Cerveza Artesanal,350 ml,0.0,1
+2014,Cerveza Estrella Botella 330 Ml,Estrella Damm,Cerveza,330 ml,0.0,1
+2015,Cerveza Estrella Galicia Botella 330 Ml,Estrella Galicia,Cerveza,330 ml,0.0,1
+2016,Cerveza Estrella Lata 6 Pack 330 Ml 7731,Estrella Damm,Cerveza,6 x 330 ml,0.0,1
+2017,Cerveza Estrella Lt 330 Ml,Estrella Damm,Cerveza,330 ml,0.0,1
+2018,Cerveza Hoegaarden Botella 330 Ml 1785,Hoegaarden,Cerveza,330 ml,0.0,1
+2019,Cerveza Hollandia Bt 330 Ml,Hollandia,Cerveza,330 ml,0.0,1
+2020,Cerveza Hollandia Lt 330 Ml,Hollandia,Cerveza,330 ml,0.0,1
+2021,Cerveza Indomito India Pale Ale 330 Ml 0196,Indomito,Cerveza India Pale Ale,330 ml,0.0,1
+2022,Cerveza Kronenbourg Blanc 330 Ml 0043,Kronenbourg,Cerveza Blanc,330 ml,0.0,1
+2023,Cerveza La Chouffe Cerveza Rubia Botella 330 Ml 0081,Chouffe,Cerveza Rubia,330 ml,0.0,1
+2024,Cerveza Mahou Clsica Lata 330 Ml 1755,Mahou,Cerveza Clasica,330 ml,0.0,1
+2025,Cerveza Mahou Especial Lata 330 Ml 2016,Mahou,Cerveza Especial,330 ml,0.0,1
+2026,Cerveza Majadera Artesanal Botella 350 Ml 0133,Majadera,Cerveza Artesanal,350 ml,0.0,1
+2027,Cerveza Miller 6 Pack Botella 355 Ml 0792,Miller Genuine Draft,Cerveza,355 ml,0.0,1
+2028,Cerveza Miller Gen Draft Botella 355 Ml 5627,Miller Genuine Draft,Cerveza,355 ml,0.0,1
+2029,Cerveza Miller Genuine Draft Lata 350 Ml 5542,Miller Genuine Draft,Cerveza,350 ml,0.0,1
+2030,Cerveza Miller Lite 6 Pack Botella 355 Ml 0785,Miller Lite,Cerveza,355 ml,0.0,1
+2031,Cerveza Miller Lite Lata 355 Ml 6 Pack 4554,Miller Lite,Cerveza,355 ml,0.0,1
+2032,Cerveza Milwaukee Best Ice 12 Pack Lata 6021,Milwaukee,Cerveza Best Ice,12 pack,0.0,1
+2033,Cerveza Modelo Negra Botella 355 Ml 1589,Modelo,Cerveza Negra,355 ml,0.0,1
+2034,Cerveza Moosehead Lager Lata 355 Ml 1852,Moosehead,Cerveza Lager,355 ml,0.0,1
+2035,Cerveza Peroni Italiana Bt 330 Ml,Peroni,Cerveza Italiana,330 ml,0.0,1
+2036,Cerveza Peroni Italiana Lt 330 Ml,Peroni,Cerveza Italiana,330 ml,0.0,1
+2037,Cerveza Pilsen Lata 710 Ml 7290,Pilsen,Cerveza,710 ml,0.0,1
+2038,Cerveza Stella Botella 330 Ml 6 Pack 4755,Stella,Cerveza,6 x 330 ml,0.0,1
+2039,Cerveza Tortuguero Ipa Botella 350 Ml 0031,Tortuguero,Cerveza Ipa,350 ml,0.0,1
+2040,Ceviche De Mango 380 G 1019,,Ceviche De Mango,380 ml,0.0,1
+2041,Ceviche De Pltano 400 G 1170,,Ceviche De Pltano,400 g,0.0,1
+2042,Chalupa Pa Picar 150 G 1231,Pa Picar,Chalupa,150 g,0.0,1
+2043,Cheetos Puff 255 G 5409,Cheetos,Puff,255 g,0.0,1
+2044,Chile Dulce 3 Uds 2249,,Chile Dulce,3 unids,0.0,1
+2045,Chile Dulce Premium Ud 2248,,Chile Dulce Premium,unid,0.0,1
+2046,Chip Mixtos Para Perro Compa 100 G 2000,Compa,Chip Mixtos Para Perro,100 g,0.0,1
+2047,Chistorra Goikoa 200 G 3048,Goikoa,Chistorra,200 g,0.0,1
+2048,Chivas Regal Whisky 12 Años Botella 750 Ml,Chivas Regal,Whisky 12 Años,botella 750 ml,0.0,1
+2049,Chivas Regal Whisky Extra 13 Años Botella 750 Ml,Chivas Regal,Whisky Extra 13 Años,botella 750 ml,0.0,1
+2050,Chocolate Britt 8 Oz 4970,Britt,Chocolate,8 oz,0.0,1
+2051,Chocolate Nescaf 12 Oz 4764,Nescafé,Chocolate,12 oz,0.0,1
+2052,Chocolate Tableta Crisp Rice Mm 107.7 G 9803,M&M,Chocolate Tableta Crisp Rice,107.7 g,0.0,1
+2053,Chocolate Tableta Leche Mm 113.4 G 9551,M&M,Chocolate Tableta Leche,113.4 g,0.0,1
+2054,Club Galleta Extra Bolsa 225 G,Club,Galleta Extra,bolsa 225 g,0.0,1
+2055,Coca-Cola Bebida Sabor Cola 3 Unids X 355 Ml,Coca-Cola,Bebida Sabor Cola,3 unids x 355 ml,1.0,1
+2056,Coca-Cola Gaseosa Sabor Cola 2 Unids X 3 L,Coca-Cola,Gaseosa Sabor Cola,2 unids x 3 l,1.0,1
+2057,Coca-Cola Gaseosa Sabor Cola 2 Unids X 600 Ml,Coca-Cola,Gaseosa Sabor Cola,2 unids x 600 ml,1.0,1
+2058,Coca-Cola Gaseosa Sabor Cola Light 2 Unids X 600 Ml,Coca-Cola,Gaseosa Sabor Cola Light,2 unids x 600 ml,1.0,1
+2059,Coca-Cola Gaseosa Sabor Cola Zero 2 Unids X 600 Ml,Coca-Cola,Gaseosa Sabor Cola Zero,2 unids x 600 ml,1.0,1
+2060,Coliflor Ud 2199,,Coliflor,unid,0.0,1
+2061,Collar Para Perro 0.98X23.62 Pulgadas 2716,,Collar Para Perro,1 unid,0.0,1
+2062,Compa Hueso Para Perro Bolsa 2 Unids,Compa,Hueso Para Perro,bolsa 2 unids,0.0,1
+2063,Conde De Caralt Vino Tinto Botella 750 Ml,Conde De Caralt,Vino Tinto,botella 750 ml,0.0,1
+2064,Cono Copa Mediana Victoria 70 G 0159,Victoria,Cono Copa Mediana,70 g,0.0,1
+2065,Cono Sur Vino Bicicleta Chardonnay Botella 750 Ml,Cono Sur,Vino Bicicleta Chardonnay,botella 750 ml,0.0,1
+2066,Cono Sur Vino Reserva Chardonnay Botella 750 Ml,Cono Sur,Vino Reserva Chardonnay,botella 750 ml,1.0,1
+2067,Correa Para Perro 0.98X47 Pulgadas 2747,,Correa Para Perro,1 unid,0.0,1
+2068,Cosecha Dorada Ajonjolitos Bolsa 75 G,Cosecha Dorada,Ajonjolitos,bolsa 75 g,,1
+2069,Costanilla Vino Tinto Marqués De Cáceres Botella 750 Ml,Costanilla,Vino Tinto Marqués De Cáceres,botella 750 ml,0.0,1
+2070,Cotuba Pack Bebida De Guaraná  2 Unid X 600 Ml C/U,Cotuba,Pack Bebida De Guaraná,2 unid x 600 ml c/u,1.0,1
+2071,Cotuba Pack Bebida De Guaraná Zero 2 Unid X 600 Ml C/U,Cotuba,Pack Bebida De Guaraná Zero,2 unid x 600 ml c/u,1.0,1
+2072,Cousiño Macul Vino Don Luis Cabernet Sauvignon Botella 750 Ml,Cousiño Macul,Vino Don Luis Cabernet Sauvignon,botella 750 ml,0.0,1
+2073,Cousiño Macul Vino Don Luis Carmenere Botella 750 Ml,Cousiño Macul,Vino Don Luis Carmenere,botella 750 ml,0.0,1
+2074,Cranberry Con Chocolate 70 % 4530,Fresh Market,Cranberry Con Chocolate 70 %,100 g,0.0,1
+2075,Crane Lake Vino Blanco Zinfandel Botella 750 Ml,Crane Lake,Vino Blanco Zinfandel,botella 750 ml,1.0,1
+2076,Crema Amarula 750 Ml 2508,Amarula,Crema,750 ml,0.0,1
+2077,Crema Dental Rpido Alivio Sensodyne 100 G 1550,Sensogyne,Crema Dental Rápido Alivio,100 g,0.0,1
+2078,Crema Limpiadora Vitrocermica Weiman 425 Ml 0720,Weiman,Crema Limpiadora Vitrocermica,425 ml,0.0,1
+2079,Crema Tomate Orgnica Pacific 946 Ml 1201,Pacific,Crema Tomate Orgnica,956 ml,0.0,1
+2080,Crianza Vino Villarica Rioja Botella 750 Ml,Crianza,Vino Villarica Rioja,botella 750 ml,0.0,1
+2081,Cristal Agua 1.750 Ml,Cristal,Agua,1.750 ml,0.0,1
+2082,Croissant Fresh Market 100 G 1720,Fresh Market,Croissant,100 g,0.0,1
+2083,Culantro Coyote 30 G 2568,,Culantro Coyote,30 g,0.0,1
+2084,Cune Vino Rioja Crianza Botella 750 Ml,Cune,Vino Rioja Crianza,botella 750 ml,1.0,1
+2085,Dash Agua Gasificada Limón Lata 330 Ml,Dash,Agua Gasificada Limón,lata 330 ml,,1
+2086,Dash Agua Gasificada Melocotón Lata 330 Ml,Dash,Agua Gasificada Melocotón,lata 330 ml,,1
+2087,Dash Agua Gasificada Sabor Frambuesa Lata 330 Ml,Dash,Agua Gasificada Sabor Frambuesa,lata 330 ml,,1
+2088,De Martino Vino Estate Botella 750 Ml,De Martino,Vino Estate,botella 750 ml,0.0,1
+2089,Delgac Aderezo Italiano Botella 240 Ml 0700,Delgac,Aderezo Italiano,240 ml,0.0,1
+2090,Delgac Salsa Ketchup Dyp 400 G 0496,Delgac,Salsa Ketchup,400 g,0.0,1
+2091,Deli Bite Empanada Leche Condensada Doypack 200 G,Deli Bite,Empanada Leche Condensada,doypack 200 g,0.0,1
+2092,Delibites Empana Guayaba 8 U,Delibites,Empana Guayaba,8 unids,0.0,1
+2093,Delibites Empanada Piña Doypack 3 U,Delibites,Empanada Piña,doypack 3 u,0.0,1
+2094,Delibites Empanada Piña Doypack 8 U,Delibites,Empanada Piña,doypack 8 u,0.0,1
+2095,Delibites Empanadas Guayaba Doypack 3 U,Delibites,Empanadas Guayaba,doypack 3 u,0.0,1
+2096,Delibites Empanadas Leche Condensada Doypack 75 G,Delibites,Empanadas Leche Condensada,doypack 75 g,0.0,1
+2097,Delika Jamón Pavo Ahumado Hickory Bolsa 150 G,Delika,Jamón Pavo Ahumado Hickory,bolsa 150 g,0.0,1
+2098,Delika Queso Parmesano Rallado Bolsa 125 G,Delika,Queso Parmesano Rallado,bolsa 125 g,,1
+2099,Diet-X Flan Dulce Leche Caja 11 G,Diet-X,Flan Dulce Leche,caja 11 g,0.0,1
+2100,Diet-X Gelatina Sin Sabor Caja 32 G,Diet-X,Gelatina Sin Sabor,caja 32 g,0.0,1
+2101,Divella  Pasta De Tomate Pomodoro 680 G,Divella,Pasta De Tomate Pomodoro,botella 680 g,0.0,1
+2102,Divella Pasta Fettuccine 90 500 G,Divella,Pasta Fettuccine 90,bolsa 500 g,0.0,1
+2103,Divella Pasta Fusilli 40 500 G,Divella,Pasta Fusilli 40,bolsa 500 g,0.0,1
+2104,Divella Pasta Linguini 14 500 G,Divella,Pasta Linguini 14,empaque 500 g,0.0,1
+2105,Divella Pasta Spaguetti 8 250 G,Divella,Pasta Spaguetti 8,empaque 250 g,0.0,1
+2106,Divella Salsa De Tomate Troceado Lata 400 G,Divella,Salsa De Tomate Troceado,lata 400 g,,1
+2107,Dog Chow Alimento Para Cachorros Bolsa 1 Kg,Dog Chow,Alimento Para Cachorros,bolsa 1 kg,,1
+2108,Don Luis Vino Merlot Botella 750 Ml,Don Luis,Vino Merlot,botella 750 ml,1.0,1
+2109,Don Simón Sangría Premium Botella 750 Ml,Don Simón,Sangría Premium,botella 750 ml,,1
+2110,Don Simón Sangría Tinta Botella 1.5 L,Don Simón,Sangría Tinta,botella 1.5 l,,1
+2111,Dona Chocolate Rayada 63 G,,Dona Chocolate Rayada,63 g,0.0,1
+2112,Dos Pinos Leche Descremada +Proteína 3 Unids X 1 L,Dos Pinos,Leche Descremada +Proteína,3 unids x 1 l,1.0,1
+2113,Dos Pinos Pack Helado +Proteína Sabor Chocolate 2 Unid X 252 G C/U,Dos Pinos,Pack Helado +Proteína Sabor Chocolate,2 unid x 252 g c/u,1.0,1
+2114,Dos Pinos Pack Helado +Proteína Sabor Coco 2 Unid X 252 G C/U,Dos Pinos,Pack Helado +Proteína Sabor Coco,2 unid x 252 g c/u,1.0,1
+2115,Dos Pinos Pack Leche Descremada +Proteína Choco/Almendras 2 Unid X 250 Ml C/U,Dos Pinos,Pack Leche Descremada +Proteína Choco/Almendras,2 unid x 250 ml c/u,1.0,1
+2116,Dos Pinos Pack Leche Descremada +Proteína Sabor Coco 2 Unid X 250 Ml C/U,Dos Pinos,Pack Leche Descremada +Proteína Sabor Coco,2 unid x 250 ml c/u,1.0,1
+2117,Dos Pinos Pack Leche Descremada +Proteína Vainilla 2 Unid X 250 Ml C/U,Dos Pinos,Pack Leche Descremada +Proteína Vainilla,2 unid x 250 ml c/u,1.0,1
+2118,Dos Pinos Pack Leche Descremada Deslactosada Doble Proteína 2 Unid X 500 Ml C/U,Dos Pinos,Pack Leche Descremada Deslactosada Doble Proteína,2 unid x 500 ml c/u,1.0,1
+2119,Dos Pinos Pack Yogurt Griego Bebible Sabor Almendra 2 Unid X 200 Ml C/U,Dos Pinos,Pack Yogurt Griego Bebible Sabor Almendra,2 unid x 200 ml c/u,1.0,1
+2120,Dos Pinos Pack Yogurt Griego Bebible Sabor Coco 2 Unid X 200 Ml C/U,Dos Pinos,Pack Yogurt Griego Bebible Sabor Coco,2 unid x 200 ml c/u,1.0,1
+2121,Dos Pinos Pack Yogurt Griego Bebible Sabor Fresa-Banano 2 Unid X 200 Ml C/U,Dos Pinos,Pack Yogurt Griego Bebible Sabor Fresa-Banano,2 unid x 200 ml c/u,1.0,1
+2122,Dos Pinos Pack Yogurt Griego Bebible Sabor Fresa-Banano 2 Unid X 750 Ml C/U,Dos Pinos,Pack Yogurt Griego Bebible Sabor Fresa-Banano,2 unid x 750 ml c/u,1.0,1
+2123,Dos Pinos Yogurt Bio Vainilla 6 Unids X 100 Ml,Dos Pinos,Yogurt Bio Vainilla,6 unids x 100 ml,1.0,1
+2124,Dos Pinos Yogurt Griego Bebible Sabor Arándano 2 Unid X 200 Ml C/U,Dos Pinos,Yogurt Griego Bebible Sabor Arándano,2 unid x 200 ml c/u,1.0,1
+2125,Dos Pinos Yogurt Inline Bebible Frutas Botella 200 Ml,Dos Pinos,Yogurt Inline Bebible Frutas,botella 200 ml,1.0,1
+2126,Dove Antitranspirante Y Jabón Clinical Expert 3 Unids,Dove,Antitranspirante Y Jabón Clinical Expert,3 unids,1.0,1
+2127,Doña Blanca Cilindro Bolsa 170 G,Doña Blanca,Cilindro,bolsa 170 g,0.0,1
+2128,Dr. Piex Desodorante Para Pie Spray 230 Ml,Dr. Piex,Desodorante Para Pie,spray 230 ml,0.0,1
+2129,Ducal Frijol Volteado Rojo Doypack 400 G,Ducal,Frijol Volteado Rojo,doypack 400 g,0.0,1
+2130,Durex Condones Sorpresa Y Placer Caja 3 Unids,Durex,Condones Sorpresa Y Placer,caja 3 unids,1.0,1
+2131,Durex Condón Clásico Caja 12 Unids,Durex,Condón Clásico,caja 12 unids,0.0,1
+2132,Durex Condón Clímax Mutuo Caja 3 Unids,Durex,Condón Clímax Mutuo,caja 3 unids,0.0,1
+2133,Durex Condón Extra Seguro Caja 3 Unids,Durex,Condón Extra Seguro,caja 3 unids,0.0,1
+2134,Durex Condón Invisible Caja 3 Unids,Durex,Condón Invisible,caja 3 unids,0.0,1
+2135,Durex Condón Natural Caja 3 Unids,Durex,Condón Natural,caja 3 unids,0.0,1
+2136,Durex Condón Preservativo Xl Caja 3 Unids,Durex,Condón Preservativo Xl,caja 3 unids,0.0,1
+2137,Durex Condón Real Feel Caja 3 Unids,Durex,Condón Real Feel,caja 3 unids,0.0,1
+2138,Durex Condón Sensitivo Caja 3 Unids,Durex,Condón Sensitivo,caja 3 unids,0.0,1
+2139,Durex Condón Sensitivo Delgado Caja 12 Unids,Durex,Condón Sensitivo Delgado,caja 12 unids,0.0,1
+2140,Durex Lubricante Natural H2O Tubo 100 Ml,Durex,Lubricante Natural H2O,tubo 100 ml,1.0,1
+2141,Eco	Smart Insecticida Spray 397 G,Eco	Smart,Insecticida,spray 397 g,0.0,1
+2142,El	Pozo Jamón Cocido Artesanal Bolsa 100 G,El	Pozo,Jamón Cocido Artesanal,bolsa 100 g,0.0,1
+2143,El	Pozo Jamón Ibérico Bolsa 85 G,El	Pozo,Jamón Ibérico,bolsa 85 g,0.0,1
+2144,El	Pozo Jamón Serrano Bolsa 100 G,El	Pozo,Jamón Serrano,bolsa 100 g,0.0,1
+2145,El Andén De La Estación Vino Tinto Muga Botella 750 Ml,El Andén De La Estación,Vino Tinto Muga,botella 750 ml,0.0,1
+2146,El Famoso Galletas De Natilla Bolsa 200 G,El Famoso,Galletas De Natilla,bolsa 200 g,0.0,1
+2147,El Pozo Pack Jamn Serrano Queso 180 G,El Pozo,Jamón Serrano Y Queso,bolsa 180 g,0.0,1
+2148,El Pozo Salami Extra Rebanado Empaque 100 G,El Pozo,Salami Extra Rebanado,empaque 100 g,,1
+2149,El Pozo Salchichón Nobleza Empaque 100 G,El Pozo,Salchichón Nobleza,empaque 100 g,,1
+2150,El Pozo Taquitos De España Bolsa 6 Unids,El Pozo,Taquitos De España,bolsa 6 unids,,1
+2151,Electrolit Suero Sabor Coco Botella 625 Ml,Electrolit,Suero Sabor Coco,botella 625 ml,1.0,1
+2152,Electrolit Suero Sabor Mora Azul Botella 625 Ml,Electrolit,Suero Sabor Mora Azul,botella 625 ml,1.0,1
+2153,Elote Blanco 2 Unids,,Elote Blanco,2 unids,0.0,1
+2154,Elote Dulce 2 Unids,,Elote Dulce,2 unids,0.0,1
+2155,Empanada Guayaba Bandeja 160 G,,Empanada Guayaba,bandeja 160 g,0.0,1
+2156,Ensalada 1 Unid,,Ensalada,1 unid,0.0,1
+2157,Ensalada Americana Bandeja 140 G,,Ensalada Americana,bandeja 140 g,0.0,1
+2158,Ensalada Típica Bolsa 500 G,,Ensalada Típica,bolsa 500 g,0.0,1
+2159,Errazuriz Vino Cabernet Sauvignon Botella 750 Ml,Errazuriz,Vino Cabernet Sauvignon,botella 750 ml,0.0,1
+2160,Errazuriz Vino Reserva Cabernet Sauvignon Botella 750 Ml,Errazuriz,Vino Reserva Cabernet Sauvignon,botella 750 ml,1.0,1
+2161,Errazuriz Vino Reserva Carménère Botella 750 Ml,Errazuriz,Vino Reserva Carménère,botella 750 ml,1.0,1
+2162,Errazuriz Vino Reserva Merlot Botella 750 Ml,Errazuriz,Vino Reserva Merlot,botella 750 ml,1.0,1
+2163,Errazuriz Vino Sauvignon Blanc Botella 750 Ml,Errazuriz,Vino Sauvignon Blanc,botella 750 ml,1.0,1
+2164,Espadafor Sangría Tinta Premium Botella 1 L,Espadafor,Sangría Tinta Premium,botella 1 l,,1
+2165,Espinaca 250 G,,Espinaca,250 g,0.0,1
+2166,Espinaca Hoja 180 G,,Espinaca Hoja,180 g,0.0,1
+2167,Estiu Sangría Tinta Frizzante 4 Unids X 330 Ml C/U,Estiu,Sangría Tinta Frizzante,4 unids x 330 ml c/u,,1
+2168,Estiu Sangría Tinta Frizzante Botella 330 Ml,Estiu,Sangría Tinta Frizzante,botella 330 ml,,1
+2169,Estrella Galicia Pack Cerveza Sin Gluten 2 Unid X 330 Ml C/U,Estrella Galicia,Pack Cerveza Sin Gluten,2 unid x 330 ml c/u,1.0,1
+2170,Estrella Pack Cerveza 6 Unid X 330 Ml C/U,Estrella,Pack Cerveza,6 unid x 330 ml c/u,1.0,1
+2171,Evervess Bebida Sabor Ginger Ale Botella 600 Ml,Evervess,Bebida Sabor Ginger Ale,botella 600 ml,1.0,1
+2172,Excelcium Bombones De Chocolate 125 G,Excelcium,Bombones De Chocolate,125 g,1.0,1
+2173,Excelcium Bombones De Chocolate Twist Con Caramelo Barra 120 G,Excelcium,Bombones De Chocolate Twist Con Caramelo,barra 120 g,1.0,1
+2174,Excelcium Chocolate Bombón Avellanas Caja 150 G,Excelcium,Chocolate Bombón Avellanas,caja 150 g,0.0,1
+2175,Excelcium Chocolate Bombón Caja 125 G,Excelcium,Chocolate Bombón,caja 125 g,0.0,1
+2176,Excelcium Chocolate Twist Caramelo Caja 120 G,Excelcium,Chocolate Twist Caramelo,caja 120 g,0.0,1
+2177,Excelcium Chocolate Twist Cocoa Caja 120 G,Excelcium,Chocolate Twist Cocoa,caja 120 g,0.0,1
+2178,Fabuloso Desinfectante Cloro Primavera Botella 900 Ml,Fabuloso,Desinfectante Cloro Primavera,botella 900 ml,0.0,1
+2179,Fabuloso Desinfectante Cítrico Bolsa 750 Ml,Fabuloso,Desinfectante Cítrico,bolsa 750 ml,0.0,1
+2180,Fabuloso Desinfectante Lavanda Bolsa 750 Ml,Fabuloso,Desinfectante Lavanda,bolsa 750 ml,0.0,1
+2181,Fajitas De Res Arreo Bolsa 1 Kg,,Fajitas De Res Arreo,bolsa 1 kg,0.0,1
+2182,Fanta Gaseosa Sabor Kolita 2 Unids X 3 L,Fanta,Gaseosa Sabor Kolita,2 unids x 3 l,1.0,1
+2183,Fanta Gaseosa Sabor Naranja 2 Unids X 3 L,Fanta,Gaseosa Sabor Naranja,2 unids x 3 l,1.0,1
+2184,Fanta Gaseosa Sabor Naranja 2 Unids X 355 Ml,Fanta,Gaseosa Sabor Naranja,2 unids x 355 ml,1.0,1
+2185,Fantini Vino Montepulciano D'Abruzzo Botella 1.5 L,Fantini,Vino Montepulciano D'Abruzzo,botella 1.5 l,0.0,1
+2186,Fentimans Pack Bebida Rose Lemonade 2 Unid X 200 Ml C/U,Fentimans,Pack Bebida Rose Lemonade,2 unid x 200 ml c/u,1.0,1
+2187,Fentimans Rose Lemonade Mezclador Botella 200 Ml,Fentimans,Rose Lemonade Mezclador,botella 200 ml,0.0,1
+2188,Fevertree Ginger Cerveza Botella 200 Ml,Fevertree,Ginger Cerveza,botella 200 ml,0.0,1
+2189,Fevertree Madagascan Cola Botella 200 Ml,Fevertree,Madagascan Cola,botella 200 ml,0.0,1
+2190,Fevertree Mediterranean Agua Tónica Botella 200 Ml,Fevertree,Mediterranean Agua Tónica,botella 200 ml,0.0,1
+2191,Fevertree Tonic Water Botella 200 Ml,Fevertree,Tonic Water,botella 200 ml,0.0,1
+2192,Fevertree Tonic Water Light Botella 200 Ml,Fevertree,Tonic Water Light,botella 200 ml,0.0,1
+2193,Filippo Berio Aceite De Oliva Extra Virgen Botella 750 Ml,Filippo Berio,Aceite De Oliva Extra Virgen,botella 750 ml,,1
+2194,Filippo Berio Pesto Tomate 190 G,Filippo Berio,Pesto Tomate,frasco 190 g,0.0,1
+2195,Filippo Berio Pesto Verde 180 G,Filippo Berio,Pesto Verde,frasco 180 g,0.0,1
+2196,Filippo Berio Vinagre Balsámico Botella 250 Ml,Filippo Berio,Vinagre Balsámico,botella 250 ml,,1
+2197,Finca Las Moras Vino Malbec 2 Unids X 750 Ml,Finca Las Moras,Vino Malbec,2 unids x 750 ml,1.0,1
+2198,Finca Las Moras Vino Malbec Botella 750 Ml,Finca Las Moras,Vino Malbec,botella 750 ml,0.0,1
+2199,Finca Las Moras Vino Pinot Grigio 2 Unids X 750 Ml,Finca Las Moras,Vino Pinot Grigio,2 unids x 750 ml,1.0,1
+2200,Finca Las Moras Vino Pinot Grigio Botella 750 Ml,Finca Las Moras,Vino Pinot Grigio,botella 750 ml,0.0,1
+2201,Finca Resalso Vino Emilio Moro Botella 750 Ml,Finca Resalso,Vino Emilio Moro,botella 750 ml,0.0,1
+2202,Fireball Pack Whisky 2 Unid X 200 Ml C/U,Fireball,Pack Whisky,2 unid x 200 ml c/u,1.0,1
+2203,Flauta Crema Pastelera 90 G,,Flauta Crema Pastelera,90 g,0.0,1
+2204,Flor De Caña Ron 15 Años Botella 750 Ml,Flor De Caña,Ron 15 Años,botella 750 ml,1.0,1
+2205,Flor De Caña Ron Eco 15 Años Botella 750 Ml,Flor De Caña,Ron Eco 15 Años,botella 750 ml,,1
+2206,Frambuesa 125 G,,Frambuesa,125 g,0.0,1
+2207,Freixenet Vino Cordon Negro Brut Espumante Botella 750 Ml,Freixenet,Vino Cordon Negro Brut Espumante,botella 750 ml,0.0,1
+2208,Fresca Gaseosa Sabor Toronja 2 Unids X  600 Ml,Fresca,Gaseosa Sabor Toronja,2 unids x 600 ml,1.0,1
+2209,Fresca Gaseosa Sabor Toronja 2 Unids X 3 L,Fresca,Gaseosa Sabor Toronja,2 unids x 3 l,1.0,1
+2210,Fresca Gaseosa Sabor Toronja 2 Unids X 355 Ml,Fresca,Gaseosa Sabor Toronja,2 unids x 355 ml,1.0,1
+2211,Fresh Market Alfajores 12 Unid,Fresh Market,Alfajores,12 unid,,1
+2212,Fresh Market Arroz Con Pollo Bolsa 1 Kg,Fresh Market,Arroz Con Pollo,bolsa 1 kg,,1
+2213,Fresh Market Arroz Con Pollo Bolsa 500 G,Fresh Market,Arroz Con Pollo,bolsa 500 g,,1
+2214,Fresh Market Café Molido Juan Viñas Bolsa 340 G,Fresh Market,Café Molido Juan Viñas,bolsa 340 g,0.0,1
+2215,Fresh Market Café Molido Tres Tíos Bolsa 340 G,Fresh Market,Café Molido Tres Tíos,bolsa 340 g,0.0,1
+2216,Fresh Market Mix De Semillas Natural Bandeja 500 G,Fresh Market,Mix De Semillas Natural,bandeja 500 g,1.0,1
+2217,Fresh Market Mix De Semillas Pote 500 G,Fresh Market,Mix De Semillas,pote 500 g,1.0,1
+2218,Fresh Market Mix De Snacks Bolsa 300 G,Fresh Market,Mix De Snacks,bolsa 300 g,1.0,1
+2219,Fresh Market Platanitos Salados71 G,Fresh Market,Platanitos Salados,bolsa 71 g,0.0,1
+2220,Fresh Market Postre Fantasía De Chocolate Bandeja 1 Unid,Fresh Market,Postre Fantasía De Chocolate,bandeja 1 unid,,1
+2221,Fresh Market Queque De Zanahoria 440 G,Fresh Market,Queque De Zanahoria,440 g,,1
+2222,Fresh Market Quesadillas Artesanales Bolsa 6 Unids,Fresh Market,Quesadillas Artesanales,bolsa 6 unids,,1
+2223,Fresh Market Semilla Caramelizada Pote 500 G,Fresh Market,Semilla Caramelizada,pote 500 g,1.0,1
+2224,Fresh Market Tableta De Chocolate 50% Cacao Tableta 100 G,Fresh Market,Tableta De Chocolate 50% Cacao,tableta 100 g,,1
+2225,Fresh Market Tableta De Chocolate Oscuro 70% Tableta 100 G,Fresh Market,Tableta De Chocolate Oscuro 70%,tableta 100 g,,1
+2226,Fresh Market Tableta De Chocolate Oscuro 85% Tableta 100 G,Fresh Market,Tableta De Chocolate Oscuro 85%,tableta 100 g,,1
+2227,Fresh Market Tortilla Tostada Con Chía Bolsa 500 G,Fresh Market,Tortilla Tostada Con Chía,bolsa 500 g,1.0,1
+2228,Fresh Market Té Blanco 2 Unids X 500 Ml,Fresh Market,Té Blanco,2 unids x  500 ml,1.0,1
+2229,Fresh Market Té Blanco Arándano Botella 500 Ml,Fresh Market,Té Blanco Arándano,botella 500 ml,,1
+2230,Fresh Market Té Blanco Arándano Cero Azúcar Botella 500 Ml,Fresh Market,Té Blanco Arándano Cero Azúcar,botella 500 ml,,1
+2231,Fresh Market Té Blanco Cero 2 Unids X 500 Ml,Fresh Market,Té Blanco,2 unids x  500 ml,1.0,1
+2232,Fresh Market Té De Melocotón Botella 500 Ml,Fresh Market,Té De Melocotón,botella 500 ml,,1
+2233,Fresh Market Té De Melocotón Cero Azúcar Botella 500 Ml,Fresh Market,Té De Melocotón Cero Azúcar,botella 500 ml,,1
+2234,Fresh Market Té Melocotón 2 Unids X 500 Ml,Fresh Market,Té Melocotón,2 unids x  500 ml,1.0,1
+2235,Fresh Market Té Melocotón Cero 2 Unids X 500 Ml,Fresh Market,Té Melocotón Cero,2 unids x  500 ml,1.0,1
+2236,Fresh Tortilla Tostada Con Chía Bolsa 500 G,Fresh,Tortilla Tostada Con Chía,bolsa 500 g,0.0,1
+2237,Freyé Vallformosa Vino Syrah Tempranillo Botella 750 Ml,Freyé Vallformosa,Vino Syrah Tempranillo,botella 750 ml,0.0,1
+2238,Frontera Vino Cabernet Sauvignon Botella 750 Ml,Frontera,Vino Cabernet Sauvignon,botella 750 ml,0.0,1
+2239,Frontera Vino Reserva Sauvignon Blanc Botella 1.5 L,Frontera,Vino Reserva Sauvignon Blanc,botella 1.5 l,0.0,1
+2240,Fud Pechuga De Pavo Delgado Empaque 450 G,Fud,Pechuga De Pavo Delgado,empaque 450 g,1.0,1
+2241,Fud Pechuga Pavo Delgado 450 G,Fud,Pechuga Pavo Delgado,empaque 450 g,0.0,1
+2242,Fud Tocino Ahumado Empaque 1 Unid,Fud,Tocino Ahumado,empaque 1 unid,,1
+2243,Fuze Tea Té Negro Sabor Melocotón Zero 2 Unids X 2.5 L,Fuze Tea,Té Negro Sabor Melocotón,2 unids x 2.5 l,1.0,1
+2244,Fuze Tea Té Sabor Manzana Zero 2 Unids X 2.5 L,Fuze Tea,Té Sabor Manzana Zero,2 unids x 2.5 l,1.0,1
+2245,Fuze Tea Té Verde Sabor Limón Zero 2 Unids X 2.5 L,Fuze Tea,Té Verde Sabor Limón Zero,2 unids x 2.5 l,1.0,1
+2246,Galletas Holandesas Bolsa 90 G,,Galletas Holandesas,bolsa 90 g,0.0,1
+2247,Garbanzo Bolsa 400 G,,Garbanzo,bolsa 400 g,0.0,1
+2248,Gato Negro 9 Lives Cabernet Sauvignon Botella 750 Ml,Gato Negro,9 Lives Cabernet Sauvignon,botella 750 ml,0.0,1
+2249,Gato Negro Vino Cabernet Sauvignon Botella 1.5 L,Gato Negro,Vino Cabernet Sauvignon,botella 1.5 l,1.0,1
+2250,Gato Negro Vino Merlot Botella 750 Ml,Gato Negro,Vino Merlot,botella 750 ml,0.0,1
+2251,Gatorade Bebida Energética Glaci Zero 2 Unids X 591 Ml,Gatorade,Bebida Energética Glaci Zero,2 unids x 591 ml,1.0,1
+2252,Gatorade Bebida Energética Naranja Zero 2 Unids X Bot 591 Ml,Gatorade,Bebida Energética Naranja Zero,2 unids x 591 ml,1.0,1
+2253,Gillete Máquina Afeitar Sensitive Blíster 2 Unids,Gillete,Máquina Afeitar Sensitive,blíster 2 unids,0.0,1
+2254,Gillete Repuesto Máquina Venus Breeze Blíster 2 Unids,Gillete,Repuesto Máquina Venus Breeze,blíster 2 unids,0.0,1
+2255,Gillette Máquina Afeitar Breeze Venus Blíster 1 Unid,Gillette,Máquina Afeitar Breeze Venus,blíster 1 unid,0.0,1
+2256,Gillette Presto Barba 3 Ultrgrip Rasuradora Cartón 2 Unids,Gillette,Presto Barba 3 Ultrgrip Rasuradora,cartón 2 unids,0.0,1
+2257,Gillette Presto Barba Máquina Afeitar Blíster 4 Unids,Gillette,Presto Barba Máquina Afeitar,blíster 4 unids,0.0,1
+2258,Gillette Venus Ocano Rasuradora Blíster 2 Unids,Gillette,Venus Ocano Rasuradora,blíster 2 unids,0.0,1
+2259,Glade Desodorante Ambiental Paraíso Azul Spray 400 Ml,Glade,Desodorante Ambiental Paraíso Azul,spray 400 ml,0.0,1
+2260,Glade Manzana Canela Aparato Repuesto Blíster 1 Unid,Glade,Manzana Canela Aparato Repuesto,blíster 1 unid,0.0,1
+2261,Glunos Galleta Coffee Toffee Gluten Free Bolsa 1 Unid,Glunos,Galleta Coffee Toffee Gluten Free,bolsa 1 unid,0.0,1
+2262,Glunos Galleta De Canela Gluten Free 1 Unid,Glunos,Galleta De Canela Gluten Free,1 unid,0.0,1
+2263,Gourmar Salmón Ahumado Empaque 250 G,Gourmar,Salmón Ahumado,empaque 250 g,,1
+2264,Gran Tarapaca Vino Reserva Carmenere Botella 750 Ml,Gran Tarapaca,Vino Reserva Carmenere,botella 750 ml,0.0,1
+2265,Grand Old Parr Whisky 18 Años Botella 750 Ml,Grand Old Parr,Whisky 18 Años,botella 750 ml,0.0,1
+2266,Grand Old Parr Whisky Silver Botella 750 Ml,Grand Old Parr,Whisky Silver,botella 750 ml,0.0,1
+2267,Gricket Barra De Proteína Piña Colada 60 G,Gricket,Barra De Proteína Piña Colada,60 g,1.0,1
+2268,Guacamole Bocata 300 G,,Guacamole Bocata,300 g,0.0,1
+2269,"Guayaba China A Granel, Precio Por Kg",,Guayaba China,"a granel, precio por kg",0.0,1
+2270,Harpic Limpiador Baños Ultra Doypack 500 Ml,Harpic,Limpiador Baños Ultra,doypack 500 ml,0.0,1
+2271,Hatsu Soda Frambuesa Botella 300 Ml,Hatsu,Soda Frambuesa,botella 300 ml,0.0,1
+2272,Hatsu Soda Sabor Frambuesa 2 Unids X 300 Ml,Hatsu,Soda Sabor Frambuesa,2 unids x 300 ml,1.0,1
+2273,Hatsu Soda Sabor Sandía 2 Unids X 300 Ml,Hatsu,Soda Sabor Sandía,2 unids x 300 ml,1.0,1
+2274,Hatsu Soda Sabor Uva Blanca 2 Unids X 300 Ml,Hatsu,Soda Sabor Uva Blanca,2 unids x 300 ml,1.0,1
+2275,Hatsu Soda Sandia Botella 300 Ml,Hatsu,Soda Sandia,botella 300 ml,0.0,1
+2276,Hatsu Soda Uva Blanca Botella 300 Ml,Hatsu,Soda Uva Blanca,botella 300 ml,0.0,1
+2277,Hatsu Té Blanco Sabor Caramelo Y Flor De Loto 2 Unid X 400 Ml C/U,Hatsu,Té Blanco Sabor Caramelo Y Flor De Loto,2 unid x 400 ml c/u,1.0,1
+2278,Hatsu Té Blanco Sabor Mangostino 2 Unid X 400 Ml C/U,Hatsu,Té Blanco Sabor Mangostino,2 unid x 400 ml c/u,1.0,1
+2279,Hatsu Té Blanco Sabor Pomegranate & Mora Azul 2 Unid X 400 Ml C/U,Hatsu,Té Blanco Sabor Pomegranate & Mora Azul,2 unid x 400 ml c/u,1.0,1
+2280,Hatsu Té Negro Sabor Limonada 2 Unid X 400 Ml C/U,Hatsu,Té Negro Sabor Limonada,2 unid x 400 ml c/u,1.0,1
+2281,Hatsu Té Rojo Pu-Erh Sabor Frutos Rojos 2 Unid X 400 Ml C/U,Hatsu,Té Rojo Pu-Erh Sabor Frutos Rojos,2 unid x 400 ml c/u,1.0,1
+2282,Head & Shoulders Shampoo Botella 375 Ml + Botella 80 Ml,Head & Shoulders,Sampoo,botella 375 ml + botella 80 ml,1.0,1
+2283,Hellmann'S Mayonesa Light 200 G,Hellmann'S,Mayonesa Light,doypack 200 g,0.0,1
+2284,Hi-C Refresco Té Con Limón 2 Unids X 2.5 L,Hi-C,Refresco Té Con Limón,2 unids x 2.5 l,1.0,1
+2285,Hi-C Té Con Limón 2 Unids X 400 Ml,Hi-C,Té Con Limón,2 unids x 400 ml,1.0,1
+2286,Hielo Bolsa 3.5 Kg,,Hielo,bolsa 3.5 kg,0.0,1
+2287,Hierbabuena 30 G,,Hierbabuena,30 g,0.0,1
+2288,Hollandia Cerveza 6 Unids X 330 Ml,Hollandia,Cerveza,6 unids x 330 ml,0.0,1
+2289,Hollandia Pack Cerveza  10 Unid X 330 Ml C/U,Hollandia,Pack Cerveza,10 unid x 330 ml c/u,1.0,1
+2290,Hollandia Pack Cerveza 6 Unid X 330 Ml C/U,Hollandia,Pack Cerveza,6 unid x 330 ml c/u,1.0,1
+2291,Hongo Rebanado 250 G,,Hongo Rebanado,250 g,0.0,1
+2292,Hongos Enteros 250 G,,Hongos Enteros,250 g,0.0,1
+2293,Honoro Vera Vino Tinto Garnacha Botella 750 Ml,Honoro Vera,Vino Tinto Garnacha,botella 750 ml,0.0,1
+2294,Hornel Tocineta Etiqueta Negra Empaque 340 G,Hornel,Tocineta Etiqueta Negra,empaque 340 g,,1
+2295,Huevos Bandeja 10 Unids,,Huevos,bandeja 10 unids,0.0,1
+2296,Huevos De Pastoreo  Bandeja 12 Unids,,Huevos De Pastoreo,bandeja 12 unids,0.0,1
+2297,Huggies Pañal Natural Care G3 19 Unids,Huggies,Pañal Natural Care G3,19 unids,1.0,1
+2298,Huggies Pañal Natural Care M2 22 Unids,Huggies,Pañal Natural Care M2,22 unids,1.0,1
+2299,Huggies Pañal Natural Care Recién Nacido  20 Unid,Huggies,Pañal Natural Care Recién Nacido,20 unid,1.0,1
+2300,Huggies Pañal Natural Care Xg 16 Unid,Huggies,Pañal Natural Care Xg,16 unid,1.0,1
+2301,Huggies Pañal Natural Care Xxg 28 Unids,Huggies,Pañal Natural Care Xxg,28 unids,1.0,1
+2302,Huggies Shampoo Extra Suave Botella 200 Ml,Huggies,Shampoo Extra Suave,botella 200 ml,1.0,1
+2303,Huggies Shampoo Manzanilla Botella 200 Ml,Huggies,Shampoo Manzanilla,botella 200 ml,1.0,1
+2304,Infame Vino Cabernet Sauvignon Botella 750 Ml,Infame,Vino Cabernet Sauvignon,botella 750 ml,0.0,1
+2305,Infame Vino Carmenere Botella 750 Ml,Infame,Vino Carmenere,botella 750 ml,0.0,1
+2306,J Y M  Mermelada Mora Manzana 280 G 0323,J & M,Mermelada  De Moras Y Manzana,frasco 280 g,0.0,1
+2307,J Y M Mermelada Fresa Orgnica 280 G,J & M,Mermelada De Fresa Orgánica,frasco 280 g,0.0,1
+2308,Jack Daniel'S Whiskey Botella 375 Ml,Jack Daniel'S,Whiskey,botella 375 ml,0.0,1
+2309,Jack Daniel'S Whiskey Botella 750 Ml,Jack Daniel'S,Whiskey,botella 750 ml,0.0,1
+2310,Jagermeister Aperitivo Botella 700 Ml,Jagermeister,Aperitivo,botella 700 ml,0.0,1
+2311,Jameson Irish Whiskey Botella 1 L,Jameson,Irish Whiskey,botella 1 l,0.0,1
+2312,Jet Bebida Energética 2 Unids X 600 Ml,Jet,Bebida Energética,2 unids x 600 ml,1.0,1
+2313,Jet Bebida Energética Cero Azúcar 2 Unids X 600 Ml,Jet,Bebida Energética Cero Azúcar,2 unids x 600 ml,1.0,1
+2314,Johnnie Walker Whisky Black Label Botella 200 Ml,Johnnie Walker,Whisky Black Label,botella 200 ml,0.0,1
+2315,Johnsonville Salchicha Stadium Brat Empaque 396 G,Johnsonville,Salchicha Stadium Brat,empaque 396 g,,1
+2316,Jomar Galleta Mantequilla Bolsa 165 G,Jomar,Galleta Mantequilla,bolsa 165 g,0.0,1
+2317,Jomar Galleta Maracuyá Bolsa 165 G,Jomar,Galleta Maracuyá,bolsa 165 g,0.0,1
+2318,Jomar Galletas Especiales Bolsa 165 G,Jomar,Galletas Especiales,bolsa 165 g,0.0,1
+2319,Jomar Orejitas 145 G,Jomar,Orejitas,bolsa 145 g,0.0,1
+2320,Jomar Orejitas Sin Azúcar 115 G,Jomar,Orejitas Sin Azúcar,bolsa 115 g,0.0,1
+2321,Jp Chenet Vino Espumoso Ice Edition Botella 750 Ml,Jp Chenet,Vino Espumoso Ice Edition,botella 750 ml,0.0,1
+2322,Jugo Naranja Some Pulp Tropicana 355 Ml,Tropicana,Jugo De Naranja Con Pulpa,botella 355 ml,0.0,1
+2323,Kale 100 G,,Kale,100 g,0.0,1
+2324,Kellogg Chocozucaritas 480 G,Kellog'S,Chocozucaritas,caja 480 g,0.0,1
+2325,Kellogg Froot Loop 180 G,Kellog'S,Froot Loops,caja 180 g,0.0,1
+2326,Kern Salsa Hongos Y Hierbas 425 G,Kern'S,Salsa Hongos Y Hierbas,frasco 425 g,0.0,1
+2327,Kern Salsa Tomate 400 G,Kern'S,Salsa De Tomate Ketchup,doypack 400 g,0.0,1
+2328,Kern Salsa Tomate Y Albahaca 425 G,Kern'S,Salsa Tomate Y Albahaca,frasco 425 g,0.0,1
+2329,Kikkoman Salsa Soya 148 Ml,Kikkoman,Salsa Soya,botella 148 ml,0.0,1
+2330,Kikkoman Salsa Soya Baja En Sodio 148 Ml,Kikkoman,Salsa Soya Baja En Sodio,botella 148 ml,0.0,1
+2331,Kilosophy Helado Sensación Keto Coco Pote 130 G,Kilosophy,Helado Sensación Keto Coco,pote 130 g,0.0,1
+2332,Kilosophy Helado Sensación Keto Frutos Rojos Pote 130 G,Kilosophy,Helado Sensación Keto Frutos Rojos,pote 130 g,0.0,1
+2333,Kitty Fritura Kronchitos De Maíz Sabor Barbacoa Bolsa 90 G,Kitty,Fritura Kronchitos De Maíz Sabor Barbacoa,bolsa 90 g,,1
+2334,Kombucha Gutsy Frambuesa Botella 400 Ml,The Gutsy Captain,Kombucha Frambuesa,botella 400 ml,0.0,1
+2335,Kombucha Gutsy Granadilla Botella 400 Ml,The Gutsy Captain,Kombucha Granadilla,botella 400 ml,0.0,1
+2336,Kombucha Gutsy Jengibre Botella 400 Ml,The Gutsy Captain,Kombucha Jengibre,botella 400 ml,0.0,1
+2337,Kotex Protector Diario Extra Largo Caja 150 Unids,Kotex,Protector Diario Extra Largo,caja 150 unids,1.0,1
+2338,Kotex Protectores Diarios  50 Unid,Kotex,Protectores Diarios,50 unid,1.0,1
+2339,Kotex Toalla Sanitaria Día Y Noche 8 Unids,Kotex,Toalla Sanitaria Día Y Noche,8 unids,,1
+2340,Kotex Toallas Femeninas Cuidado Puro 30 Unids,Kotex,Toallas Femeninas Cuidado Puro,30 unids,1.0,1
+2341,Kotex Toallas Femeninas Nocturas 8 Unids,Kotex,Toallas Femeninas Nocturas,16 unids,1.0,1
+2342,Kotex Toallas Femeninas Nocturnas Con Alas 8 Unids,Kotex,Toallas Femeninas Nocturnas Con Alas,8 unids,1.0,1
+2343,Kotex Toallas Húmedas Defensa Natural 16 Unids,Kotex,Toallas Húmedas Defensa Natural 16,16 unids,1.0,1
+2344,La Celia Vino Reserva Malbec Botella 750 Ml,La Celia,Vino Reserva Malbec,botella 750 ml,0.0,1
+2345,La Celia Vino Reserva Malbec Cabernet Franc Botella 750 Ml,La Celia,Vino Reserva Malbec Cabernet Franc,botella 750 ml,0.0,1
+2346,La Croix Bebida Sabor Lima Lata 355 Ml,La Croix,Bebida Sabor Lima,lata 355 ml,1.0,1
+2347,La Croix Bebida Sabor Limón Lata 355 Ml,La Croix,Bebida Sabor Limón,lata 355 ml,1.0,1
+2348,La Croix Bebinda Sabor Naranja Lata 355 Ml,La Croix,Bebinda Sabor Naranja,lata 355 ml,1.0,1
+2349,La Estación Queque Redondo 760 G,La Estación,Queque Redondo,760 g,1.0,1
+2350,La Estación Queque Redondo Mega Trits 762 G,La Estación,Queque Redondo Mega Trits,762 g,1.0,1
+2351,Lady Speed Stick Desodorante Wild Fressia Barra 45 G,Lady Speed Stick,Desodorante Wild Fressia,barra 45 g,0.0,1
+2352,Lay Papa Bbq 1842 G,Lays,Papas Sabor Bbq,bolsa 184 g,0.0,1
+2353,Lay Papa Crema Cebolla 184 G,Lays,Papas Sabor Crema Cebolla,bolsa 184 g,0.0,1
+2354,Lazo Vino Cabernet Suavignon 2 Unids X 750 Ml,Lazo,Vino Cabernet Suavignon,2 unids x 750 ml,1.0,1
+2355,Lazo Vino Merlot 2 Unids X 750 Ml,Lazo,Vino Merlot,2 unids x 750 ml,1.0,1
+2356,Leche De Almendra Pacific 946 Ml,Pacific Foods,Leche De Almendra,cartón 946 ml,0.0,1
+2357,Leche De Coco Pacific 946 Ml,Pacific Foods,Leche De Coco,cartón 946 ml,0.0,1
+2358,Lechuga Freze,,Lechuga Freze,1 unid,0.0,1
+2359,Lechuga Hidropónica Americana,,Lechuga Hidropónica Americana,1 unid,0.0,1
+2360,Limon Mesino 12 Unid,,Limón Mesino,12 unid,0.0,1
+2361,Linx Bebida Energética Sabor Original 2 Unid X 250 Ml C/U,Linx,Bebida Energética Sabor Original,2 unid x 250 ml c/u,1.0,1
+2362,Linx Bebida Energética Sabor Sandía 2 Unid X 250 Ml C/U,Linx,Bebida Energética Sabor Sandía,2 unid x 250 ml c/u,1.0,1
+2363,Lolailo Sangría Tinta Botella 750 Ml,Lolailo,Sangría Tinta,botella 750 ml,1.0,1
+2364,Lolalio Sangría Tinta Botella 750 Ml,Lolalio,Sangría Tinta,botella 750 ml,,1
+2365,Lollalio Pack Sangría Sofisticada Caja 3 Unids,Lollalio,Pack Sangría Sofisticada,caja 3 unids,,1
+2366,Lollalio Sangría Rosada Botella 750 Ml,Lollalio,Sangría Rosada,botella 750 ml,,1
+2367,Lomo Curado Rebanado Goikoa 100 G,Goikoa,Lomo Curado Rebanado,,0.0,1
+2368,London	Dry	Gin Ginebra Tanqueray Botella 375 Ml,London	Dry	Gin,Ginebra Tanqueray,botella 375 ml,0.0,1
+2369,Lucio Muñoz Vino Tempranillo Botella 750 Ml,Lucio Muñoz,Vino Tempranillo,botella 750 ml,0.0,1
+2370,Luigi Bosca Rose 750 Ml Y Excelcium Choc Bombom 125 G,Luigi Bosca,Rose Wine + Choco Bombom Excelcium 125 G,750 ml,1.0,1
+2371,Luigi Bosca Vino Cabernet Sauvignon Botella 750 Ml,Luigi Bosca,Vino Cabernet Sauvignon,botella 750 ml,0.0,1
+2372,Luigi Bosca Vino Malbec Reserva Botella 750 Ml,Luigi Bosca,Vino Malbec Reserva,botella 750 ml,0.0,1
+2373,Luis Cañas Vino Crianza Botella 750 Ml,Luis Cañas,Vino Crianza,botella 750 ml,1.0,1
+2374,Luis Cañas Vino Rioja Crianza Botella 750 Ml,Luis Cañas,Vino Rioja Crianza,botella 750 ml,0.0,1
+2375,Luis Cañas Vino Rioja Reserva Botella 750 Ml,Luis Cañas,Vino Rioja Reserva,botella 750 ml,0.0,1
+2376,Luis Felipe Edwards Vino Cabernet Sauvignon Botella 750 Ml,Luis Felipe Edwards,Vino Cabernet Sauvignon,botella 750 ml,0.0,1
+2377,Luis Felipe Edwards Vino Merlot Botella 750 Ml,Luis Felipe Edwards,Vino Merlot,botella 750 ml,1.0,1
+2378,Lysol Desinfectante Spray Brezze 354 Ml,Lysol,Desinfectante Spray Brezze,aerosol 354 ml,0.0,1
+2379,Lysol Toallas Desinfectantes Tubo 80 Unids,Lysol,Toallas Desinfectantes,tubo 80 unids,1.0,1
+2380,Lágrimas De María Vino Rioja Botella 750 Ml,Lágrimas De María,Vino Rioja,botella 750 ml,0.0,1
+2381,Lágrimas De María Vino Tempranillo Botella 750 Ml,Lágrimas De María,Vino Tempranillo,botella 750 ml,0.0,1
+2382,Lágrimas De María Vino Tempranillo Crianza Botella 750 Ml,Lágrimas De María,Vino Tempranillo Crianza,botella 750 ml,0.0,1
+2383,Mahou Pack Cerveza 3 Unid X 330 Ml C/U,Mahou,Pack Cerveza,3 unid x 330 ml c/u,1.0,1
+2384,Mandarina Clementina Kg,,Mandarina Clementina,precio por kg,0.0,1
+2385,Manga Kg,,Manga,precio por kg,0.0,1
+2386,Mantequilla De Almendra Natural Bite 265 G,Natural Bites,Mantequilla De Almendra,frasco 265 g,0.0,1
+2387,Mantequilla De Man Natural Bite 265 G,Natural Bites,Mantequilla De Maní,frasco 265 g,0.0,1
+2388,Manzana Gala Pequeña Empacada 6 Unid,,Manzana Gala Pequeña,malla 6 unid,0.0,1
+2389,Manzana Gala Ud Plu,,Manzana Gala,1 unid,0.0,1
+2390,Mar Y Sol Sangria Tinta 750Ml Y Platon Quesos Y Fiambres 5,Mar Y Sol,Sangría Tinta + Platón Quesos Y Fiambres,botella 750 ml,1.0,1
+2391,Mar Y Sol Vino Tinto Caja 3 L,Mar Y Sol,Vino Tinto,caja 3 l,1.0,1
+2392,Matsu Vino Tinto El Pícaro Botella 750 Ml,Matsu,Vino Tinto El Pícaro,botella 750 ml,0.0,1
+2393,Maxxx Energy Bebida Energética 2 Unids X 473 Ml,Maxxx Energy,Bebida Energética,2 unids x 473 ml,1.0,1
+2394,Maxxx Energy Pack Bebida Energética 2 Unid X 350 Ml C/U,Maxxx Energy,Pack Bebida Energética,2 unid x 350 ml c/u,1.0,1
+2395,Maxxx Energy Pack Bebida Energética Fresa & Acai Zero 2 Unid X 350 Ml C/U,Maxxx Energy,Pack Bebida Energética Fresa & Acai Zero,2 unid x 350 ml c/u,1.0,1
+2396,Maxxx Energy Pack Bebida Energética Sandia 2 Unid X 350 Ml C/U,Maxxx Energy,Pack Bebida Energética Sandia,2 unid x 350 ml c/u,1.0,1
+2397,Maxxx Energy Pack Bebida Energética Zero 2 Unid X 350 Ml C/U,Maxxx Energy,Pack Bebida Energética Zero,2 unid x 350 ml c/u,1.0,1
+2398,Mc Cormick Aderezo Caesar 200 Ml,Mccormick,Aderezo Caesar,doypack 200 g,0.0,1
+2399,Mc Cormick Aderezo Honey 200 Ml,Mccormick,Aderezo Honey,doypack 200 g,0.0,1
+2400,Mennen Aceite Baby Magic 100 Ml,Mennen,Aceite Baby Magic,botella 100 ml,0.0,1
+2401,Mennen Colonia Baby Magic 200 Ml,Mennen,Colonia Baby Magic,botella 200 ml,0.0,1
+2402,Mennen Jabon Regular 90 G,Mennen,Jabon Regular,caja 90 g,0.0,1
+2403,Miel De Abeja Bluezone 350 G,Blue Zones,Miel De Abeja,frasco 350 g,0.0,1
+2404,Mini Snicker 125 G,Snickers,Mini Snicker,bolsa 125 g,0.0,1
+2405,Mix Lechuga Gourmet Bandeja 180 G,,Mix Lechuga Gourmet,bandeja 180 g,0.0,1
+2406,Mixto De Berry 240 G,,Mixto De Berrys,bandeja 240 g,0.0,1
+2407,Moccachino Britt 226 Ml,Britt,Moccachino,vaso 226 ml,0.0,1
+2408,Moccachino Vainilla Britt 226 Ml,Britt,Moccachino Vainilla,vaso 226 ml,0.0,1
+2409,Mondaisa Té Verde Con Piña Caja 20 Unids,Mondaisa,Té Verde Con Piña,caja 20 unids,,1
+2410,Monkey Shoulder Whisky Botella 700 Ml,Monkey Shoulder,Whisky,botella 700 ml,1.0,1
+2411,Monster Energy Bebida Energética Mango Loco 2 Unids X 473 Ml,Monster Energy,Bebida Energética Mango Loco,2 unids x 473 ml,1.0,1
+2412,Monster Energy Bebida Energética Regular 2 Unids X 473 Ml,Monster Energy,Bebida Energética Regular,2 unids x 473 ml,1.0,1
+2413,Monster Energy Bebida Energética Zero 2 Unids X 473 Ml,Monster Energy,Bebida Energética Zero,2 unids x 473 ml,1.0,1
+2414,Monte Ducay Vino Cariena Blanco Botella 750 Ml,Monte Ducay,Vino Cariena Blanco,botella 750 ml,0.0,1
+2415,Monte Ducay Vino Tinto Crianza Botella 750 Ml,Monte Ducay,Vino Tinto Crianza,botella 750 ml,0.0,1
+2416,Monteverde Queso Gouda Pesto 300 G,Monteverde,Queso Gouda Pesto,bolsa 300 g,0.0,1
+2417,Monteverde Queso Mozzarella Light 250 G,Monteverde,Queso Mozzarella Light,bolsa 250 g,0.0,1
+2418,Monteverde Queso Probióticos 300 G,Monteverde,Queso Probióticos,bolsa 300 g,0.0,1
+2419,Monteverde Queso Rallado Mozzarella 227 G,Monteverde,Queso Rallado Mozzarella,bolsa 227 g,0.0,1
+2420,Monteverde Queso Rallado Para Pizza 227 G,Monteverde,Queso Rallado Para Pizza,bolsa 227 g,0.0,1
+2421,Naox Bebida Frutos Rojos 358 Ml,Naox,Bebida Sabor Frutos Rojos,botella 358 ml,0.0,1
+2422,Naox Bebida Limn 358 Ml,Naox,Bebida Sabor Limón 358 Ml,botella 358 ml,0.0,1
+2423,Naranja Malla 5 Unid,,Naranja,malla 5 unid,0.0,1
+2424,Natura'S Salsa De Tomate Doypack 210 G,Natura'S,Salsa De Tomate,doypack 210 g,,1
+2425,Natural Bite Galleta Apple 160 G,Natural Bites,Galleta Oatmeal Apple,caja 160 g,0.0,1
+2426,Natural Bite Galleta Chocolate 160 G,Natural Bites,Galleta Chocolate,caja 160 g,0.0,1
+2427,Natural Bite Palomitas Con Sal 45 G,Natural Bites,Palomitas Con Sal,bolsa 45 g,0.0,1
+2428,Natural Bite Palomitas Dulces Saladas 45 G,Natural Bites,Palomitas Dulces Saladas,bolsa 45 g,0.0,1
+2429,Nature Heart Almendra Coco 946 Ml,Nature'S Heart,Alimento Líquido Almendra Coco,cartón 946 ml,0.0,1
+2430,Nature Heart Almendra Vainilla 946 Ml,,Alimento Líquido Almendra Vainilla,cartón 946 ml,0.0,1
+2431,Navarro Correas Vino Malbec Cabernet Merlot Botella 750 Ml,Navarro Correas,Vino Malbec Cabernet Merlot,botella 750 ml,0.0,1
+2432,Nestl Kit Kat Chocolate 41.5 G,Nestlé,Kit Kat Chocolate,empaque 41 g,0.0,1
+2433,Nestle Cereal Nesquik 330 G,Nesquik,Cereal Chocolate,caja 330 g,0.0,1
+2434,Nestlé Crunch Buncha 35 G,Nestlé,Crunch Buncha,bolsa 35 g,0.0,1
+2435,Newvana Mezclador Coctel Margarita 1 L,Newvana,Mezclador Coctel Margarita,cartón 1 l,0.0,1
+2436,Newvana Mezclador Coctel Pia Colada 1 L,Newvana,Mezclador Coctel Piña Colada,cartón 1 l,0.0,1
+2437,Nieto Senetiner Vino Malbec Botella 750 Ml,Nieto Senetiner,Vino Malbec,botella 750 ml,1.0,1
+2438,Nikkos Mantequilla Barra Barra 115 G,Nikkos,Mantequilla Barra,barra 115 g,0.0,1
+2439,Nikkos Yogurt Arándanos Botella 230 G,Nikkos,Yogurt Arándanos,botella 230 g,0.0,1
+2440,Nikkos Yogurt Arándanos Vaso 150 G,Nikkos,Yogurt Arándanos,vaso 150 g,0.0,1
+2441,Nikkos Yogurt Fit Coco Vaso 245 G,Nikkos,Yogurt Fit Coco,vaso 245 g,0.0,1
+2442,Nikkos Yogurt Fit Frutos Rojos Vaso 245 G,Nikkos,Yogurt Fit Frutos Rojos,vaso 245 g,0.0,1
+2443,Nikkos Yogurt Fresa Vaso 150 G,Nikkos,Yogurt Fresa,vaso 150 g,0.0,1
+2444,Nikkos Yogurt Kfir Fresa Bt 100 Ml,Nikkos,Yogurt Kefir Fresa Chia,botella 100 ml,0.0,1
+2445,Nikkos Yogurt Kfir Pia Bt 100 Ml,Nikkos,Yogurt Kefir Piña,botella 100 ml,0.0,1
+2446,Nikkos Yogurt Kfir Vain Bt 100Ml,Nikkos,Yogurt Kefir Vainilla,botella 100 ml,0.0,1
+2447,Nikkos Yogurt Piña Coco Botella 230 G,Nikkos,Yogurt Piña Coco,botella 230 g,0.0,1
+2448,Niloo Suspiros Bandeja 70 G,Niloo,Suspiros,bandeja 70 g,,1
+2449,Nivea Men Invisible Byw Spray 150 Ml,Nivea,Desodorante Invisible,aerosol 150 ml,0.0,1
+2450,Nugget Betn Lquido Negro 60 Ml,Nugget,Cera Líquida Negro,botella 60 ml,0.0,1
+2451,Nutrisnacks Granola Almendras Arándanos Doypack 300 G,Nutrisnacks,Granola Almendras Arándanos,doypack 300 g,0.0,1
+2452,Nutrisnacks Granola Keto 300 G,Nutrisnacks,Granola Keto,bolsa 300 g,0.0,1
+2453,Ocean Jugo Arándano Botella 1.89 L,Ocean,Jugo Arándano,botella 1.89 l,0.0,1
+2454,Ogx Acondicionador Argn Oil 385 Ml,Ogx,Acondicionador Aceite De Argán,botella 385 ml,0.0,1
+2455,Ogx Shampoo Argn Oil 385 Ml,Ogx,Shampoo Aceite De Argán,botella 385 ml,0.0,1
+2456,Oreo Galleta Original Bolsa 324 G,Oreo,Galleta Original,bolsa 324 g,0.0,1
+2457,Pabst Blue Ribbon Cerveza 12 Unids X 330 Ml,Pabst Blue Ribbon,Cerveza,12 unids x 330 ml,1.0,1
+2458,Pacific Foods Sopa De Tomate Con Chile Cartón 946 Ml,Pacific Foods,Sopa De Tomate Con Chile,cartón 946 ml,,1
+2459,Pack Embutido Espaa El Pozo 200 G,El Pozo,Pack Embutido Español 200 G,bolsa 200 g,0.0,1
+2460,Pack Lechuga Gourmet,,Lechuga Gourmet,1 unid,0.0,1
+2461,Palancares Queso Gran Palancares Añejo Bolsa 120 G,Palancares,Queso Gran Palancares Añejo,bolsa 120 g,,1
+2462,Palancares Queso Semicurado Bolsa 200 G,Palancares,Queso Semicurado,bolsa 200 g,,1
+2463,Pan Casero 300 G,,Pan Casero,bolsa 300 g,0.0,1
+2464,Pan Chocolate 6 Uds 40 G,Ammm,Pan Chocolate,bolsa 6 unid,0.0,1
+2465,Pan Español 300 G,,Pan Español,300 g,0.0,1
+2466,Pan Especial Tostado,Ammm,Pan Especial Tostado,bolsa 200 g,0.0,1
+2467,Pan Paisano 290 G,,Pan Paisano,290 g,0.0,1
+2468,Pan Tostado Con Ajo,Ammm,Pan Tostado Con Ajo,bolsa 200 g,0.0,1
+2469,Pan Tostado Con Especias Bolsa,Ammm,Pan Tostado Con Especias Bolsa,bolsa 200 g,0.0,1
+2470,Pan Tostado Tradicional,Ammm,Pan Tostado Tradicional,bolsa 200 g,0.0,1
+2471,Panini Sobre Qatar 2022,Panini,Sobre De Stickers Qatar 2022,,0.0,1
+2472,Panini Álbum Regular Qatar 2022,Panini,Álbum Regular Qatar 2022,,0.0,1
+2473,Pantene Shampoo Y Acondicionador Bambú Botella 400 Ml + Botella 200 Ml,Pantene,Shampoo Y Acondicionador Bambú,botella 400 ml + botella 200 ml,1.0,1
+2474,Papa Mini Kg,,Papa Mini,precio por kg,0.0,1
+2475,Papa Tostada Kitty 180 G,Kitty,Papa Tostada,bolsa 180 g,0.0,1
+2476,Papa Tostada Kitty 30 G,Kitty,Papa Tostada,bolsa 30 g,0.0,1
+2477,Papitas Tostada Pa Picar 100 G,Pa'Picar,Papitas Tostada,bolsa 100 g,0.0,1
+2478,Parti Box Candela Barrotes 9,Parti Box,Candela Barrotes 9,1 unid,0.0,1
+2479,Parti Box Candela Happy Birthday 9,Parti Box,Candela Happy Birthday 9,1 unid,0.0,1
+2480,Parti Box Candela Luz,Parti Box,Candela Luz,5 unid,0.0,1
+2481,Pasqua Vino Montepulciano Botella 1.5 L,Pasqua,Vino Montepulciano,botella 1.5 l,1.0,1
+2482,Pasqua Vino Montepulciano D'Abruzzo Botella 750 Ml,Pasqua,Vino Montepulciano D'Abruzzo,botella 750 ml,0.0,1
+2483,Pasqua Vino Primitivo Salento Botella 750 Ml,Pasqua,Vino Primitivo Salento,botella 750 ml,0.0,1
+2484,Pastel Espinaca Con Hongos,,Pastel Espinaca Con Hongos,1 unid,0.0,1
+2485,Pata Negra Vino Apasionado Botella 750 Ml,Pata Negra,Vino Apasionado,botella 750 ml,1.0,1
+2486,Pata Negra Vino Crianza Botella 750 Ml,Pata Negra,Vino Crianza,botella 750 ml,1.0,1
+2487,Pata Negra Vino Reserva Valdefeñas Botella 750 Ml,Pata Negra,Vino Reserva Valdefeñas,botella 750 ml,0.0,1
+2488,Pata Negra Vino Rioja Crianza Botella 750 Ml,Pata Negra,Vino Rioja Crianza,botella 750 ml,0.0,1
+2489,Pata Negra Vino Tinto Valdepeñas Crianza Botella 750 Ml,Pata Negra,Vino Tinto Valdepeñas Crianza,botella 750 ml,1.0,1
+2490,Pedigree Adulto Razas Pequeñas 2 Kg,Pedigree,Alimento Seco Adulto Razas Pequeñas,bulto 2 kg,0.0,1
+2491,Pedigree Alimento Cachorros 2 Kg,Pedigree,Alimento Seco Cachorros,bulto 2 kg,0.0,1
+2492,Pedigree Alimento Húmedo Res Adulto 100 G,Pedigree,Alimento Húmedo Con Res Adulto,pouch 100 g,0.0,1
+2493,Pepsi Bebida Sabor Original Botella 600 Ml,Pepsi,Bebida Sabor Original,botella 600 ml,1.0,1
+2494,Pepsi Gaseosa Sabor Cola Botella 3 L,Pepsi,Gaseosa Sabor Cola,3 l,1.0,1
+2495,Pequeña Vasija Vino Malbec Syrah Botella 1.5 L,Pequeña Vasija,Vino Malbec Syrah,botella 1.5 l,0.0,1
+2496,Pera 80 Kg,,Pera,precio por kg,0.0,1
+2497,Perejil Rollo Ud,,Perejil Rollo,1 unid,0.0,1
+2498,Peñasol Sangría Original Botella 1.5 L,Peñasol,Sangría Original,botella 1.5 l,,1
+2499,Peñasol Sangría Original Cartón 1 L,Peñasol,Sangría Original,cartón 1 l,,1
+2500,Pico Gallo Fresh,,Pico De Gallo Fresh,,0.0,1
+2501,Pizza Jamón Hongos 230 G,,Pizza Jamón Y Hongos,230 g,0.0,1
+2502,Piña Dorada Ud,,Piña Dorada,1 unid,0.0,1
+2503,Piña Trozos Cubierta Chocolate 100 G,,Piña Trozos Cubierta Chocolate 100 G,,0.0,1
+2504,Plato Para Mascota 16 Onzas,,Plato Para Mascota 16 Onzas,1 unid,0.0,1
+2505,Platón Quesos Y Fiambres,,Platón Quesos Y Fiambres,1 unid,0.0,1
+2506,Platón Quesos Y Fiambres 1,,Platón Quesos Y Fiambres,1 unid,0.0,1
+2507,Platón Quesos Y Fiambres Y Choc Jockey Cooky Cream 45 G,,Platón Quesos Y Fiambres Y Chocolate Jockey Cooky Cream,,1.0,1
+2508,Pledge Limpiador Multisuperficies Lata 432 Ml,Pledge,Limpiador Multisuperficies,lata 432 ml,,1
+2509,Plenitud Protector Incontinencia Leva A Moderada 24 Unid,Plenitud,Protector Incontinencia Leva A Moderada,24 unid,1.0,1
+2510,Plenitud Ropa Interior Desechable P/M Incontinencia Intensa 8 Unid,Plenitud,Ropa Interior Desechable P/M Incontinencia Intensa,8 unid,1.0,1
+2511,Plenitud Toalla Nocturna Incontinencia Moderada A Intensa 8 Unid,Plenitud,Toalla Nocturna Incontinencia Moderada A Intensa,8 unid,1.0,1
+2512,Polipak Plato #7 Bolsa 12 Unids,Polipak,Plato #7,bolsa 12 unids,,1
+2513,Polipak Plato Grande #9 Bolsa 12 Unids,Polipak,Plato Grande #9,bolsa 12 unids,,1
+2514,Polipak Plato Hondo #6 Bolsa 12 Unids,Polipak,Plato Hondo #6,bolsa 12 unids,,1
+2515,Polipak Tenedores Bolsa 12 Unids,Polipak,Tenedores,bolsa 12 unids,,1
+2516,Polipak Vaso Fiestero #16 Bolsa 12 Unids,Polipak,Vaso Fiestero #16,bolsa 12 unids,,1
+2517,Polipak Vaso Grande #12 Bolsa 12 Unids,Polipak,Vaso Grande #12,bolsa 12 unids,,1
+2518,Polipak Vaso Mediano #9 Bolsa 12 Unids,Polipak,Vaso Mediano #9,bolsa 12 unids,,1
+2519,Polipak Vaso Plástico #5 Bolsa 12 Unids,Polipak,Vaso Plástico #5,bolsa 12 unids,,1
+2520,Pond'S Gel Aloe Fruity Hydra Fresh,Pond'S,Gel Aloe Fruity Hydra Fresh,caja 2 unids,1.0,1
+2521,Popcorners Kettle 142 G,Popcorners,Kettle Corn,bolsa 142 g,0.0,1
+2522,Porción De Queque Sabor Zanahoria 1 Unid,,Porción De Queque Sabor Zanahoria,1 unid,,1
+2523,Porción De Torta Chilena Bandeja 1 Unid,,Porción De Torta Chilena,bandeja 1 unid,,1
+2524,Portillo Vino Malbec Botella 750 Ml,Portillo,Vino Malbec,botella 750 ml,0.0,1
+2525,Powerade Bebida Energética Ion 2 Unids X 600 Ml,Powerade,Bebida Energética Ion,2 unids x 600 ml,1.0,1
+2526,Powerade Bebida Energética Ion Frutas 2 Unids X 600 Ml,Powerade,Bebida Energética Ion Frutas,2 unids x 600 ml,1.0,1
+2527,Powerade Bebida Energética Ion Naranja 2 Unids X 600 Ml,Powerade,Bebida Energética Ion Naranja,2 unids x 600 ml,1.0,1
+2528,Presto Agua Pipa Exótico 1 U,Presto,Agua Pipa Exótico,1 u,,1
+2529,Pro Platanitos Con Sal Bolsa 160 G,Pro,Platanitos Con Sal,bolsa 160 g,,1
+2530,Protocolo Vino Tempranillo Botella 750 Ml,Protocolo,Vino Tempranillo,botella 750 ml,1.0,1
+2531,Purina Bites Alpo Variedad De Sabores  Bolsa 454 G,Purina,Bites Alpo Variedad De Sabores,bolsa 454 g,,1
+2532,Purina Treats Alpo T-Bonz Sabor Porterhouse Doypack 283 G,Purina,Treats Alpo T-Bonz Sabor Porterhouse,doypack 283 g,,1
+2533,Rayun Vino Rosé Botella 750 Ml,Rayun,Vino Rosé,botella 750 ml,0.0,1
+2534,Rayun Vino Sauvignon Blanc Botella 750 Ml,Rayun,Vino Sauvignon Blanc,botella 750 ml,0.0,1
+2535,Remolacha 1 Unid,,Remolacha,1 unid,,1
+2536,Repollo Morado 1 Unid,,Repollo Morado,1 unid,,1
+2537,Ribera Del Duero Vino La Planta Botella 750 Ml,Ribera Del Duero,Vino La Planta,botella 750 ml,0.0,1
+2538,Riunite Sangría Rosada Botella 750 Ml,Riunite,Sangría Rosada,botella 750 ml,,1
+2539,Riunite Sangría Tinta Botella 750 Ml,Riunite,Sangría Tinta,botella 750 ml,,1
+2540,Roblevega Queso Manchego Empaque 200 G,Roblevega,Queso Manchego,empaque 200 g,,1
+2541,Rom Pasta Gnocchi Fresco  500 G,Roma,Pasta Gnocchi Fresco,charola 500 g,0.0,1
+2542,Rom Pasta Tornillo Tricolor 250 G,Roma,Pasta Tornillo Tricolor,empaque 250 g,0.0,1
+2543,Rosenborg Queso Brie Caja 125 G,Rosenborg,Queso Brie,caja 125 g,,1
+2544,Rossana Crema De Avellana Pote 200 G,Rossana,Crema De Avellana,pote 200 g,,1
+2545,Rucio Sangría Tinta Cartón 1 L,Rucio,Sangría Tinta,cartón 1 l,,1
+2546,Saba Tampones Flujo Abundante 10 Unids,Saba,Tampones Flujo Abundante,10 unids,,1
+2547,Saba Toalla Extra Nocturna 8 Unids,Saba,Toalla Extra Nocturna,8 unids,,1
+2548,Saba Toalla Ultradelgada Buenas Noches 10 Unids,Saba,Toalla Ultradelgada Buenas Noches,10 unids,,1
+2549,Salsa Con Carne Naturas 210 G,Natura'S,Salsa Con Carne Naturas,bolsa 210 g,0.0,1
+2550,Salsa Tomate Kern 540 G,Kern'S,Salsa De Tomate Ketchup,botella 540 ml,0.0,1
+2551,San Pellegrino Agua Gasificada Sabor Limonata Lata 330 Ml,San Pellegrino,Agua Gasificada Sabor Limonata,lata 330 ml,,1
+2552,San Pellegrino Agua Mineral Natural Botella 1 L,San Pellegrino,Agua Mineral Natural,botella 1 l,1.0,1
+2553,San Pellegrino Agua Tónica 2 Unids X 330 Ml,San Pellegrino,Agua Tónica,2 unids x 330 ml,1.0,1
+2554,San Pellegrino Agua Tónica Lata 330 Ml,San Pellegrino,Agua Tónica,lata 330 ml,,1
+2555,San Pellegrino Pack Agua Mineral Essenza Lemon 2 Unid X 330 Ml C/U,San Pellegrino,Pack Agua Mineral Essenza Lemon,2 unid x 330 ml c/u,1.0,1
+2556,San Pellegrino Pack Agua Mineral Essenza Tangerin 2 Unid X 330 Ml C/U,San Pellegrino,Pack Agua Mineral Essenza Tangerin,2 unid x 330 ml c/u,1.0,1
+2557,San Rafael Chorizo De Cerdo Con Finas Hierbas Empaque 1 Unid,San Rafael,Chorizo De Cerdo Con Finas Hierbas,empaque 1 unid,,1
+2558,San Rafael Chorizo De Cerdo Con Queso Cheddar Empaque 1 Unid,San Rafael,Chorizo De Cerdo Con Queso Cheddar,empaque 1 unid,,1
+2559,San Rafael Tocineta Ahumadaa Zar Paquete 300 G,San Rafael,Tocineta Ahumadaa Zar,paquete 300 g,0.0,1
+2560,San Telmo Vino Gran Reserva Cabernet Sauvignon Botella 750 Ml,San Telmo,Vino Gran Reserva Cabernet Sauvignon,botella 750 ml,0.0,1
+2561,San Telmo Vino Reserva Malbec Botella 750 Ml,San Telmo,Vino Reserva Malbec,botella 750 ml,0.0,1
+2562,Sangra Blanca Peasol 1 L,Peasol,Sangría Blanca,cartón 1 l,0.0,1
+2563,Santa Carolina Vino Cabernet Sauvignon Botella 750 Ml,Santa Carolina,Vino Cabernet Sauvignon,botella 750 ml,0.0,1
+2564,Santa Julia Vino Merlot Botella 750 Ml,Santa Julia,Vino Merlot,botella 750 ml,1.0,1
+2565,Santa Julia Vino Tinto Merlot Botella 750 Ml,Santa Julia,Vino Tinto Merlot,botella 750 ml,0.0,1
+2566,Santa Rita Pack Vino Cabernet Sauvignon 4 Unids X 187 Ml,Santa Rita,Pack Vino Cabernet Sauvignon,4 unids x 187 ml,0.0,1
+2567,Santa Rita Vino 120 Carmenere Botella 750 Ml,Santa Rita,Vino 120 Carmenere,botella 750 ml,0.0,1
+2568,Santa Rita Vino 120 Merlot Botella 750 Ml,Santa Rita,Vino 120 Merlot,botella 750 ml,1.0,1
+2569,Sardimar Atún Lomo En Trozos En Aceite De Oliva Lata 140 G,Sardimar,Atún Lomo En Trozos En Aceite De Oliva,lata 140 g,,1
+2570,Sardimar Sardina Ovalada Lata 415 G,Sardimar,Sardina Ovalada,lata 415 g,,1
+2571,Sbp Repelente Aerosol 200 Ml,Sbp,Repelente,spray 200 ml,1.0,1
+2572,Scott Papel Higiénico Doble Higiene 12 Rollos,Scott,Papel Higiénico Doble Higiene,12 rollos,1.0,1
+2573,Scott Paño Reutilizable Duramax 1 Rollo,Scott,Paño Reutilizable Duramax,1 rollo,1.0,1
+2574,Scott Toalla Multi-Absorbente 3 Rollos,Scott,Toalla Multi-Absorbente,3 rollos,,1
+2575,Scott Toalla Multiusos Absorbente 3 Rollos,Scott,Toalla Multiusos Absorbente,3 rollos,1.0,1
+2576,Scott Tolla De Cocina Duramax 1 Rollo,Scott,Tolla De Cocina Duramax,1 rollo,,1
+2577,Scotti Arroz Para Risotto Arborio Caja 500 G,Scotti,Arroz Para Risotto Arborio,caja 500 g,,1
+2578,Scotti Arroz Para Risotto Con Hongos Porcino Doypack 210 G,Scotti,Arroz Para Risotto Con Hongos Porcino,doypack 210 g,,1
+2579,Scotti Arroz Para Risotto Salsa Blanca Parmigiana Doypack 210 G,Scotti,Arroz Para Risotto Salsa Blanca Parmigiana,doypack 210 g,,1
+2580,Señorio De Villarica Vino Tinto Crianza Botella 750 Ml,Señorio De Villarica,Vino Tinto Crianza,botella 750 ml,0.0,1
+2581,Sierra Tequila Reposado Botella 750 Ml,Sierra,Tequila Reposado,botella 750 ml,,1
+2582,Skittles Caramelos Sabor Original Doypack 204.1 G,Skittles,Caramelos Sabor Original,doypack 204.1 g,,1
+2583,Smirnoff Infusions Watermelon & Mint Botella 750 Ml,Smirnoff,Infusions Watermelon & Mint,botella 750 ml,0.0,1
+2584,Snack Frutas Y Queso Bandeja 170 G,,Snack Frutas Y Queso,bandeja 170 g,,1
+2585,Snapple Diet Peach Té Botella 473 Ml,Snapple,Diet Peach Té,botella 473 ml,0.0,1
+2586,Snapple Jugo Kiwi Fresa Botella 473 Ml,Snapple,Jugo Kiwi Fresa,botella 473 ml,1.0,1
+2587,Snapple Jugo Sabor Uva 2 Unids X 473 Ml,Snapple,Jugo Sabor Uva,2 unids x 473 ml,1.0,1
+2588,Snapple Limonada Rosa Botella 473 Ml,Snapple,Limonada Rosa,botella 473 ml,1.0,1
+2589,Soldanza Snack Tostones Petacones Sabor Original Bolsa 200 G,Soldanza,Snack Tostones Petacones Sabor Original,bolsa 200 g,,1
+2590,Soldanza Tostones 2 Unids X 200 G,Soldanza,Tostones,2 unids x 200 g,1.0,1
+2591,Sonata Vino Cabernet Sauvignon Botella 1.5 L,Sonata,Vino Cabernet Sauvignon,botella 1.5 l,0.0,1
+2592,Spoon Pack Queque Chocolate + Barquillo Vainilla Jack´S + Helado De Vainilla Dos Pinos 1 Unid + Bolsa 750 G + Pote 499 G,Spoon,Pack Queque Chocolate + Barquillo Vainilla Jack´S + Helado De Vainilla Dos Pinos,1 unid + bolsa 750 g + pote 499 g,,1
+2593,Spoon Palitos De Queso 140 G,Spoon,Palitos De Queso,bandeja 140 g,0.0,1
+2594,Spoon Torta De Chocofresa Mediana 1.250 Kg,Spoon,Torta De Chocofresa Mediana,1.250 kg,,1
+2595,Spoon Torta De Chocolate 1.320 Kg,Spoon,Torta De Chocolate,1.320 kg,,1
+2596,Spoon Torta Pequeña De Melocotón 600 G,Spoon,Torta Pequeña De Melocotón,600 g,,1
+2597,Stella Artois Cerveza 6 Unids X 330 Ml,Stella Artois,Cerveza,6 unids x 330 ml,1.0,1
+2598,Sterilgarda Pasta De Tomate Pomodoro 500 G,Sterilgarda,Pasta De Tomate Pomodoro,caja 500 g,0.0,1
+2599,Stolichnaya Vodka Botella 750 Ml,Stolichnaya,Vodka,botella 750 ml,1.0,1
+2600,Super Perro Alimento Sabor Carne Bbq Adultos Bolsa 2 Kg,Super Perro,Alimento Sabor Carne Bbq Adultos,bolsa 2 kg,,1
+2601,Super Perro Talco Pote 110 G,Super Perro,Talco,pote 110 g,,1
+2602,Sweetwell Galleta Keto Coco Doypack 90 G,Sweetwell,Galleta Keto Coco,doypack 90 g,0.0,1
+2603,Sweetwell Galleta Keto Mantequilla De Maní Doypack 90 G,Sweetwell,Galleta Keto Mantequilla De Maní,doypack 90 g,0.0,1
+2604,Tamarindo Empaque 250 G,,Tamarindo,empaque 250 g,,1
+2605,Tanqueray Ginebra Sevilla Botella 700 Ml,Tanqueray,Ginebra Sevilla,botella 700 ml,0.0,1
+2606,Tarapaca Vino Tinto Merlot Reserva Botella 750 Ml,Tarapaca,Vino Tinto Merlot Reserva,botella 750 ml,,1
+2607,Tomate Premium 1 Kg,,Tomate Premium,1 kg,,1
+2608,Tomate Saladet Bandeja 1 Kg,,Tomate Saladet,bandeja 1 kg,,1
+2609,Tonnino Filetes De Atún Con Orégano Frasco 190 G,Tonnino,Filetes De Atún Con Orégano,frasco 190 g,,1
+2610,Tonnino Filetes De Atún En Aceite De Oliva Frasco 190 G,Tonnino,Filetes De Atún En Aceite De Oliva,frasco 190 g,,1
+2611,Tosh Galleta Maracuyá Empaque 165 G,Tosh,Galleta Maracuyá,empaque 165 g,0.0,1
+2612,Tosh Infusión Frutos Rojos Caja 24 G,Tosh,Infusión Frutos Rojos,caja 24 g,0.0,1
+2613,Tosh Infusión Hierbabuena Caja 24 G,Tosh,Infusión Hierbabuena,caja 24 g,0.0,1
+2614,Tostitos Chips De Maíz Azul Simply Organic Bolsa 255 G,Tostitos,Chips De Maíz Azul Simply Organic,bolsa 255 g,,1
+2615,Tostitos Chips De Maíz Sabor Original Bosla 283 G,Tostitos,Chips De Maíz Sabor Original,bosla 283 g,,1
+2616,Tostitos Chips De Maíz Scoops Bolsa 283 G,Tostitos,Chips De Maíz Scoops,bolsa 283 g,,1
+2617,Tosty Mezcla De Frituras Tostimix Bolsa 300 G,Tosty,Mezcla De Frituras Tostimix,bolsa 300 g,,1
+2618,Tosty Taquitos De Queso Fogoso Bolsa 170 G,Tosty,Taquitos De Queso Fogoso,bolsa 170 g,,1
+2619,Trapiche Vino Reserva Merlot Botella 750 Ml,Trapiche,Vino Reserva Merlot,botella 750 ml,1.0,1
+2620,Trapiche Vino Sauvignon Blanc Botella 750 Ml,Trapiche,Vino Sauvignon Blanc,botella 750 ml,0.0,1
+2621,Trapiche Vino Tinto Cabernet Sauvignon Reserva Botella 750 Ml,Trapiche,Vino Tinto Cabernet Sauvignon Reserva,botella 750 ml,,1
+2622,Trapiche Vino Tinto Malbec Reserva Botella 750 Ml,Trapiche,Vino Tinto Malbec Reserva,botella 750 ml,,1
+2623,Trapiche Vino Tinto Merlot Reserva Botella 2.5 L,Trapiche,Vino Tinto Merlot Reserva,botella 750 ml,,1
+2624,Trivento Vino Reserva Cabernet Malbec Botella 750 Ml,Trivento,Vino Reserva Cabernet Malbec,botella 750 ml,0.0,1
+2625,Trivento Vino Reserva Malbec Botella 750 Ml,Trivento,Vino Reserva Malbec,botella 750 ml,0.0,1
+2626,Tropical Limonadada Hierbabuena 2.5 L Limonada Con Yerbabuena Botella 2.5 L,Tropical Limonadada Hierbabuena 2.5 L,Limonada Con Yerbabuena,botella 2.5 l,,1
+2627,Tropical Pack Té Blanco Con Arándanos Cero Azúcar + Snacks Picaronas Con Chile Jack´S Botella 2.5 L + Bolsa 150 G,Tropical,Pack Té Blanco Con Arándanos Cero Azúcar + Snacks Picaronas Con Chile Jack´S,botella 2.5 l + bolsa 150 g,,1
+2628,Tropical Pack Té De Melocotón Cero Azúcar + Snacks Picaronas Familiares Con Queso Jack´S Botella 2.5 L + Bolsa 150 G,Tropical,Pack Té De Melocotón Cero Azúcar + Snacks Picaronas Familiares Con Queso Jack´S,botella 2.5 l + bolsa 150 g,,1
+2629,Tropical Pack Té Variedad De Sabores 3 Unid X 1.75 L C/U,Tropical,Pack Té Variedad De Sabores,3 unid x 1.75 l c/u,,1
+2630,Tropical Té Frío Melocotón 2 Unids X 2.5 L,Tropical,Té Frío Melocotón,2 unids x 2.5 l,1.0,1
+2631,Tropicana Jugo Naranja Calcium Botella 355 Ml,Tropicana,Jugo Naranja Calcium,botella 355 ml,0.0,1
+2632,Tropicana Jugo Naranja Con Pulpa Botella 1.53 L,Tropicana,Jugo Naranja Con Pulpa,botella 1.53 l,0.0,1
+2633,Tropicana Jugo Naranja Sin Pulpa Botella 1.53 L,Tropicana,Jugo Naranja Sin Pulpa,botella 1.53 l,0.0,1
+2634,Tropicana Jugo Naranja Sin Pulpa Botella 355 Ml,Tropicana,Jugo Naranja Sin Pulpa,botella 355 ml,0.0,1
+2635,Trululu Gomitas Oro Bolsa 90 G,Trululu,Gomitas Oro,bolsa 90 g,,1
+2636,Tío Pelón Arroz Blanco Fortificado Bolsa 1.8 Kg,Tío Pelón,Arroz Blanco Fortificado,bolsa 1.8 kg,,1
+2637,Uchuva Bandeja 200 G,,Uchuva,bandeja 200 g,,1
+2638,Undurraga Pack Vino Cabernet Sauvignon 2 Unid X 750 Ml C/U,Undurraga,Pack Vino Cabernet Sauvignon,2 unid x 750 ml c/u,1.0,1
+2639,Undurraga Pack Vino Merlot 2 Unid X 750 Ml C/U,Undurraga,Pack Vino Merlot,2 unid x 750 ml c/u,1.0,1
+2640,Undurraga Vino Brut Botella 750 Ml,Undurraga,Vino Brut,botella 750 ml,1.0,1
+2641,Undurraga Vino Merlot Botella 750 Ml,Undurraga,Vino Merlot,botella 750 ml,0.0,1
+2642,Undurraga Vino Tinto Cabernet Sauvignon Botella 750 Ml,Undurraga,Vino Tinto Cabernet Sauvignon,botella 750 ml,0.0,1
+2643,Uva Verde 500 G,,Uva Verde,500 g,,1
+2644,Vainica 500 G,,Vainica,500 g,,1
+2645,Vainica Fina 500 G,,Vainica Fina,500 g,,1
+2646,Vanish Gel Blanco Sin Cloro Doypack 450 Ml,Vanish,Gel Blanco Sin Cloro,doypack 450 ml,1.0,1
+2647,Vanish Gel Multiusos White Sin Cloro Doypack 450 Ml,Vanish,Gel Multiusos White Sin Cloro,doypack 450 ml,,1
+2648,Ventisquero Reserva Carmenere Botella 750 Ml,Ventisquero,Reserva Carmenere,botella 750 ml,0.0,1
+2649,Ventisquero Reserva Pinot Noir Botella 750 Ml,Ventisquero,Reserva Pinot Noir,botella 750 ml,0.0,1
+2650,Ventisquero Reserva Sauvignon Blanc Botella 750 Ml,Ventisquero,Reserva Sauvignon Blanc,botella 750 ml,0.0,1
+2651,Vilano Vino Roble Black  Botella 750 Ml,Vilano,Vino Roble Black,botella 750 ml,0.0,1
+2652,Vilano Vino Tinto Joven Botella 750 Ml,Vilano,Vino Tinto Joven,botella 750 ml,0.0,1
+2653,Villa Conchi Vino Cava Botella 750 Ml,Villa Conchi,Vino Cava,botella 750 ml,1.0,1
+2654,Vino Casas Patronales Gran Reserva Carmenere 750 Ml 1163,Casas Patronales,Vino Gran Reserva Carmenere,750 ml,0.0,1
+2655,Vino Moscato Spumate Botella 750 Ml,,Vino Moscato Spumate,botella 750 ml,0.0,1
+2656,Vino Tempranillo Viura Botella 750 Ml,,Vino Tempranillo Viura,botella 750 ml,0.0,1
+2657,Vivo Huevo Delivery Bandeja 15 Unids,Vivo,Huevo Delivery,bandeja 15 unids,0.0,1
+2658,Viña Juanito Vino Blanco Albariño Botella 750 Ml,Viña Juanito,Vino Blanco Albariño,botella 750 ml,0.0,1
+2659,Viña Maipo Vino Cabernet Sauvignon Merlot Botella 750 Ml,Viña Maipo,Vino Cabernet Sauvignon Merlot,botella 750 ml,0.0,1
+2660,Viña Maipo Vino Merlot Botella 1.5 L,Viña Maipo,Vino Merlot,botella 1.5 l,0.0,1
+2661,Viña Vilano Vino Roble Black Botella 750 Ml,Viña Vilano,Vino Roble Black,botella 750 ml,1.0,1
+2662,Viña Vilano Vino Tinto Joven Botella 750 Ml,Viña Vilano,Vino Tinto Joven,botella 750 ml,1.0,1
+2663,Voss Agua Mineral Sin Gas Botella 375 Ml,Voss,Agua Mineral Sin Gas,botella 375 ml,,1
+2664,Weiman Abrillantador De Pisos Botella 946 Ml,Weiman,Abrillantador De Pisos,botella 946 ml,,1
+2665,Weiman Toallitas Limpiadoras De Electrónicos Pote 1 Unid,Weiman,Toallitas Limpiadoras De Electrónicos,pote 1 unid,,1
+2666,Wente Vino Cabernet Sauvignon Botella 750 Ml,Wente,Vino Cabernet Sauvignon,botella 750 ml,1.0,1
+2667,Wente Vino Zinfandel Botella 750 Ml,Wente,Vino Zinfandel,botella 750 ml,0.0,1
+2668,Whiskas Alimento Gatitos Fillets Atún Sobre 85 G,Whiskas,Alimento Gatitos Fillets Atún,sobre 85 g,0.0,1
+2669,Whiskas Alimento Gatitos Fillets Res Sobre 85 G,Whiskas,Alimento Gatitos Fillets Res,sobre 85 g,0.0,1
+2670,Winky Paleta Milán Menta 1 Unid,Winky,Paleta Milán Menta,1 unid,0.0,1
+2671,Woodbridge Vino Blanco Zinfandel Botella 750 Ml,Woodbridge,Vino Blanco Zinfandel,botella 750 ml,0.0,1
+2672,Woodbridge Vino Zinfandel Botella 750 Ml,Woodbridge,Vino Zinfandel,botella 750 ml,0.0,1
+2673,Woodridge Vino White Zinfandel 2 Unids X 750 Ml,Woodridge,Vino White Zinfandel,2 unids x 750 ml,1.0,1
+2674,Yogurt Frutas Tropicales Yoplait Botella 235 Ml,Yogurt Frutas Tropicales,Yoplait,botella 235 ml,0.0,1
+2675,Yuca 1 Unid,,Yuca,1 unid,0.0,1
+2676,Yuquitas Crema & Cebolla Soldanza Bolsa 135 G,Yuquitas Crema & Cebolla,Soldanza,bolsa 135 g,0.0,1
+2677,Yzaguirre Vermouth Rojo Reserva Botella 1 L,Yzaguirre,Vermouth Rojo Reserva,botella 1 l,,1
+2678,Yzaguirre Vermouth Rosé Botella 1 L,Yzaguirre,Vermouth Rosé,botella 1 l,1.0,1
+2679,Yzaguirre Vermouth Rosé Reserva Botella 1 L,Yzaguirre,Vermouth Rosé Reserva,botella 1 l,,1
+2680,Zacapa Ron Ambar 12 Años Botella 750 Ml,Zacapa,Ron Ambar 12 Años,botella 750 ml,1.0,1
+2681,Zacapa Ron Centerario Botella 750 Ml,Zacapa,Ron Centerario,botella 750 ml,,1
+2682,Zacapa Ron Ámbar 12 Años Botella 750 Ml,Zacapa,Ron Ámbar 12 Años,botella 750 ml,,1
+2683,Zinio Vino Rioja Joven Botella 750 Ml,Zinio,Vino Rioja Joven,botella 750 ml,0.0,1
+2684,Zinio Vino Rosado Rioja Botella 750 Ml,Zinio,Vino Rosado Rioja,botella 750 ml,0.0,1
