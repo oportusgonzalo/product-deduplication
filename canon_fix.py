@@ -8,11 +8,14 @@ def main():
 
     df = pd.read_csv(f'canonical_data/{country}/{country}_canonical_catalog.csv')
 
+    print(f'N° initial canonical IDs: {len(list(set(df["canonical_id"])))}')
+    print(f'N° initial canonical leaders: {len(list(set(df["canonical_leader"])))}')
+    
     # to keep first canonical leaders that have been verified - remove duplicated data
     df = df.drop_duplicates(subset=['canonical_leader']).reset_index(drop=True)
 
-    print(f'N° canonical IDs: {len(list(set(df["canonical_id"])))}')
-    print(f'N° canonical leaders: {len(list(set(df["canonical_leader"])))}')
+    print(f'N° final canonical IDs: {len(list(set(df["canonical_id"])))}')
+    print(f'N° final canonical leaders: {len(list(set(df["canonical_leader"])))}')
     
     df.to_csv(f'canonical_data/{country}/{country}_canonical_catalog.csv', index=False)
 
