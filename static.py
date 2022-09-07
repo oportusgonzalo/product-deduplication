@@ -46,7 +46,8 @@ def nlp_cleaning(df, stop_words, regex_clean):
     # lemmatization
     df['item_name_token_lemma'] = df['item_name_token'].apply(lambda x: word_lemmatizer(x))
     # joining lemmas
-    df['product_name'] = df['item_name_token_lemma'].apply(lambda list_: ' '.join([word for word in list_]))
+    not_list = ['.']
+    df['product_name'] = df['item_name_token_lemma'].apply(lambda list_: ' '.join([word for word in list_ if word not in not_list]))
     # cleaning product names with regex
     df['product_name'] = df['product_name'].apply(lambda x: re.sub(regex_clean, "", x))
     return df
@@ -229,12 +230,19 @@ def extends_similarities(df_similars):
     
     return df_similars_ext
 
-def cleaning_by_package_similarity(df_similars_ext, threshold_package):
+def cleaning_by_package_similarity(df_similars_ext, threshold_package, match_col='candidate', return_barcode=False):
     print('Filtering product matches by package fuzzy ratio similarity measure..')
-    reg_package = r'(\d+x\d+\w+)|(\d+ x \d+\w+)|(\d+\.+\d+\w+)|(\d+\.+\d+ \w+)|(\d+ ml)|(\d+ g)|(\d+\w+)|(\d+ \w+)'
+    reg_promos = r'(\d+x\d+\w+)|(\d+ x \d+\w+)|(\d+ x \d+ \w+)|(\d+\w+ x \d+ \w+)|(\d+ x \d+\.\d+\w+)|(\d+ x \d+\.\d+ \w+)|(x \d+)|(x \d+g)|(x \d+ g)|(x\d+)|(\d+\w+ \d+pk)|(\d+\w+ \d+pack)|(\d+\w+ \d+ pk)|(\d+\w+ \d+ pack)|(\d+ pack)|(\d+ pk)|(x\d+ \d+g)|(x\d+ \d+0g)|'
+    reg_pack = r'(\d+\.+\d+\w+)|(\d+\.+\d+ \w+)|(\d+ ml)|(\d+ g)|(\d+\w+)|(\d+ \w+)|(0\.\d+ litre)|(\d+\.\d+ litre)|(0\.\d+l)|(\d+\.\d+ l)|(\d+\.\d+l)|(\d+l)|(\d+ cl)|(\d+cl)|(\d+0 cl)|(\d+\.\d+ kg)|(\d+ ml)|(\d+ kilo)|'
+    reg_pieces = r'(\d+ piece)|(\d+0 piece)|(\d+piece)|(\d+ piezas)|'
+    reg_sizes = r'(\d+ inch)|'
+    reg_med = r'(\d+ mg)|'
+    reg_in = r'(\d+ in \d+)'
+
+    reg_package = reg_promos + reg_pack  + reg_pieces + reg_sizes + reg_med + reg_in
     # extracting package
     df_similars_ext['package'] = package_extract(df_similars_ext, 'product_name', reg_package)
-    df_similars_ext['package_candidate'] = package_extract(df_similars_ext, 'candidate', reg_package)
+    df_similars_ext['package_candidate'] = package_extract(df_similars_ext, match_col, reg_package)
     # package similarity
     df_similars_ext['package_ratio'] = df_similars_ext.apply(lambda x: fuzz.token_sort_ratio(x['package'],\
                                                                                 x['package_candidate']), axis=1)
@@ -242,9 +250,11 @@ def cleaning_by_package_similarity(df_similars_ext, threshold_package):
     # Package filter + Column selection
     print(f'Package Threshold: {threshold_package}')
     df_clean = df_similars_ext[df_similars_ext['package_ratio'] > threshold_package].reset_index(drop=True)
-    df_clean = df_clean.loc[:, ['product_name', 'candidate']]
-    
-    return df_clean
+
+    if return_barcode:
+        return df_clean.loc[:, ['product_name', match_col, 'similarity_score', 'fuzz_ratio', 'package_ratio']]
+    else:
+        return df_clean.loc[:, ['product_name', match_col]]
 
 def product_name_replacement(df, dic_):
     df['product_name'] = df['product_name'].map(dic_)
