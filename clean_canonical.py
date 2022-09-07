@@ -21,6 +21,7 @@ def classification_accuracy(df_clean):
     df_true.label = df_true.label.str.strip().str.lower()
     print(f'Number of correct assignments: {round(df_true[df_true.label == "true"].shape[0]/len(df_true), 3)}')
 
+# maps to uuid in the case there's no canonical catalog
 def map_member_to_item_uuid(df_links):
     print('Mapping backwards each member to the UUID..')
     # open back propagation file
@@ -90,6 +91,7 @@ def canonical_catalog_concatenation(df_canonical_candidate, df_non_pareto, canon
 
     # concatenating sets
     df_potential_canonical = pd.concat([df_canonical_candidate, std_non_pareto_df], axis=0).reset_index(drop=True)
+    df_potential_canonical['canonical_leader'] = df_potential_canonical['canonical_leader'].str.strip().str.lower()
     df_potential_canonical = df_potential_canonical.sort_values(['canonical_leader', 'brand', 'name', 'package']).reset_index(drop=True)
     df_potential_canonical = df_potential_canonical.drop_duplicates('canonical_leader').reset_index(drop=True)
     
@@ -226,6 +228,9 @@ def main():
     
     else:
         print('There is no canonical catalog..')
+        # create the country directory to save the file
+        if not os.path.isdir(f'canonical_data/{country}'):
+            os.mkdir(f'canonical_data/{country}')
         # create canonical ID from scratch --> structure
         df_canonical_candidate.insert(0, 'canonical_id', range(0, len(df_canonical_candidate)))
 
