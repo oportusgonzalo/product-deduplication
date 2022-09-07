@@ -12,6 +12,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 pd.set_option('display.max_columns', 6)
 
+country = ''
 language_='en'
 match_canonical = True
 
@@ -54,9 +55,10 @@ def nlp_regex_cleaning(language_, data):
 
 def read_canonical_file_to_match():
     print('Reading canonical file to match..')
-    df_canonical = pd.read_csv('canonical_data/uk/uk_canonical_catalog.csv')
+    df_canonical = pd.read_csv(f'canonical_data/{country}/{country}_canonical_catalog.csv')
     df_canonical['canonical_leader_lower'] = df_canonical['canonical_leader'].str.lower()
     df_match = df_canonical.loc[:, ['canonical_leader_lower']].rename(columns={'canonical_leader_lower': 'canonical_leader'})
+    print(f'Initial canonical shape: {df_canonical.shape}')
     return df_canonical, df_match
 
 
@@ -82,17 +84,20 @@ def one_match_per_product(df_clean):
 
 def add_barcodes_to_canonical(df, df_one_match, df_canonical):
     print('Adding barcodes to file..')
+
+    # dictionary from raw ean --> item files to map barcodes
     ean_item_dict = dict(zip(df['product_name'], df['ean']))
-    df_one_match['ean'] = df_one_match['product_name'].map(ean_item_dict)
+    df_one_match['ean'] = df_one_match['match'].map(ean_item_dict)
 
-    print(ean_item_dict)
-    print(df_one_match)
-    print(df_one_match[df_one_match['ean'].isna()])
+    # adding barcodes into canonical set
+    product_ean_dict = dict(zip(df_one_match['product_name'], df_one_match['ean']))
+    df_canonical['ean'] = df_canonical['canonical_leader_lower'].map(product_ean_dict)
+    df_canonical.drop('canonical_leader_lower', axis=1, inplace=True)
+    
+    print(f'% canonical items without barcode: {round((df_canonical[df_canonical["ean"].isna()].shape[0] / df_canonical.shape[0]) * 100, 2)}%')
+    print(f'Final canonical shape: {df_canonical.shape}')
 
-    print(df)
-    print(df_canonical)
-
-    pass
+    return df_one_match, df_canonical
 
 
 def main():
@@ -122,8 +127,10 @@ def main():
         # rule: each product has one match (barcode)
         df_one_match = one_match_per_product(df_clean)
         # add know barcodes to canonical file
-        add_barcodes_to_canonical(df, df_one_match, df_canonical)
-        
+        df_one_match, df_canonical = add_barcodes_to_canonical(df, df_one_match, df_canonical)
+        # saving canonical set (with barcodes)
+        df_canonical.to_csv(f'canonical_data/{country}/{country}_canonical_catalog.csv', index=False)
+    
 
 
 if __name__ == "__main__":
