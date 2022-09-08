@@ -53,7 +53,7 @@ if __name__ == "__main__":
     
     country_stores_dict = {
         'uk': ['booker', 'nisa', 'costcutter', 'bestway'],
-        'cr': ['dp&az', 'ampm', 'fresh_market']
+        'cr': ['dp&az', 'ampm', 'fresh_market', 'rev_dp&az']
     }
 
     for country in ['uk', 'cr']:
