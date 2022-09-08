@@ -5,10 +5,10 @@ import pandas as pd
 country = ''
 
 
-def stats_(df_links):
+def stats_(df_links, time_):
     # stats to validate
-    print(f'N° initial canonical IDs: {len(list(set(df_links["canonical_id"])))}')
-    print(f'N° final canonical leaders: {len(list(set(df_links["canonical_id"])))}')
+    print(f'N° {time_} canonical IDs: {len(list(set(df_links["canonical_id"])))}')
+    print(f'N° {time_} canonical leaders: {len(list(set(df_links["canonical_id"])))}')
     print(f'Initial shape: {df_links.shape}')
 
 def fix_nan(df_links, df_na):
@@ -38,7 +38,7 @@ def main():
     df_links = pd.read_csv(f'canonical_data/{country}/{country}_canonical_links.csv')
 
     # stats to validate
-    stats_(df_links)
+    stats_(df_links, 'initial')
 
     # splitting the dataframe: set with nan, set with others
     df_na = df_links[df_links['canonical_leader'].isna()].reset_index(drop=True)
@@ -57,12 +57,12 @@ def main():
     
     # fixing null values in canonical_id and canonical_leader
     df_na = fix_nan(df_links, df_na)
-    
+
     # concat to links
     df_links = pd.concat([df_links, df_na], axis=0).reset_index(drop=True)
 
     # stats to validate
-    stats_(df_links)
+    stats_(df_links, 'final')
 
     # saving result
     df_links.to_csv(f'canonical_data/{country}/{country}_canonical_links.csv', index=False)
