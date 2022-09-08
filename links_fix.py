@@ -1,33 +1,68 @@
+
 import pandas as pd
+
 
 country = ''
 
-def main():
 
-    df_links = pd.read_csv(f'canonical_data/{country}/{country}_canonical_links.csv')
-    df_na = df_links[df_links['canonical_leader'].isna()].drop_duplicates('canonical_member').reset_index(drop=True)
-    df_links = df_links[~df_links['canonical_leader'].isna()].reset_index(drop=True)
-    df_links['canonical_leader'] = df_links['canonical_leader'].str.strip()
+def stats_(df_links):
+    # stats to validate
+    print(f'N° initial canonical IDs: {len(list(set(df_links["canonical_id"])))}')
+    print(f'N° final canonical leaders: {len(list(set(df_links["canonical_id"])))}')
+    print(f'Initial shape: {df_links.shape}')
 
-    df_dup = df_links.loc[:, ['canonical_id', 'canonical_leader']].drop_duplicates().reset_index(drop=True)
-    df_dup = df_dup[df_dup.duplicated(['canonical_leader'], keep=False)].sort_values('canonical_leader').reset_index(drop=True)
+def fix_nan(df_links, df_na):
+    print('Fixing columns with nan values on canonical leader column..')
+
+    df_na['canonical_leader'] = df_na['canonical_member']
+    max_id = int(df_links['canonical_id'].max())
+    na_leaders_list = list(set(df_na['canonical_leader']))
+    na_leaders_id_dict = dict(zip(na_leaders_list, range(max_id + 1, max_id + len(na_leaders_list) + 1)))
+    df_na['canonical_id'] = df_na['canonical_leader'].map(na_leaders_id_dict)
+    
+    return df_na
+
+def removing_duplicated_assignments(df_links, df_dup):
+    print('Fixing canonical leaders assigned to more than one canonical ID..')
     df_dup = df_dup.drop_duplicates('canonical_leader').reset_index(drop=True)
     dup_dict = dict(zip(df_dup['canonical_leader'], df_dup['canonical_id']))
 
     for item_, canon_id in dup_dict.items():
         df_links.loc[df_links['canonical_leader'] == item_, 'canonical_id'] = canon_id
+
+    return df_links
+
+
+def main():
+
+    df_links = pd.read_csv(f'canonical_data/{country}/{country}_canonical_links.csv')
+
+    # stats to validate
+    stats_(df_links)
+
+    # splitting the dataframe: set with nan, set with others
+    df_na = df_links[df_links['canonical_leader'].isna()].reset_index(drop=True)
+    df_links = df_links[~df_links['canonical_leader'].isna()].reset_index(drop=True)
+
+    df_links['canonical_leader'] = df_links['canonical_leader'].str.strip().str.lower()
+    df_dup = df_links.loc[:, ['canonical_id', 'canonical_leader']].drop_duplicates().reset_index(drop=True)
+
+    print(f'N° leaders with duplicated ID: {df_dup[df_dup["canonical_leader"].duplicated() == True].shape[0]}')
+
+    # verifying which canonical leaders are assigned to more than one canonical ID
+    df_dup = df_dup[df_dup.duplicated(['canonical_leader'], keep=False)].sort_values('canonical_leader').reset_index(drop=True)
+
+    if df_dup.shape[0] > 0:
+        df_links = removing_duplicated_assignments(df_links, df_dup)
     
     # fixing null values in canonical_id and canonical_leader
-    df_na['canonical_leader'] = df_na['canonical_member']
-    max_id = int(df_links['canonical_id'].max())
-    df_na['canonical_id'] = range(max_id + 1, max_id + df_na.shape[0] + 1)
+    df_na = fix_nan(df_links, df_na)
     
     # concat to links
     df_links = pd.concat([df_links, df_na], axis=0).reset_index(drop=True)
 
     # stats to validate
-    print(f'N° canonical IDs: {len(list(set(df_links["canonical_id"])))}')
-    print(f'N° canonical leaders: {len(list(set(df_links["canonical_id"])))}')
+    stats_(df_links)
 
     # saving result
     df_links.to_csv(f'canonical_data/{country}/{country}_canonical_links.csv', index=False)
