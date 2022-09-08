@@ -146,8 +146,8 @@ def links_concatenation(canonical_links_df, df_direct, df_back, df_non_pareto, d
     if df_direct.shape[0] > 0:
         df_direct['agent_verified'] = 1
         for col in ['canonical_leader', 'canonical_member']:
-            df_direct[col] = df_direct[col].str.title()
-        
+            df_direct[col] = df_direct[col].str.strip().str.lower()
+
         # removing direct matches UUIDs already on canonical links
         canonical_links_df, df_direct = remove_direct_matches_on_canonical_links(canonical_links_df, df_direct)
         # making sure direct matches assigned canonical IDs are the same as in canonical links file
