@@ -10,14 +10,12 @@ from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-pd.set_option('display.max_columns', 6)
-
 country = ''
 language_='en'
 match_canonical = True
 
 
-def read_barcode_files():
+def read_uk_barcode_files():
     print('Reading barcode files..')
     df = pd.DataFrame()
     # reading files with barcode content
@@ -37,6 +35,42 @@ def read_barcode_files():
     df = df.sort_values(by=['item_name']).reset_index(drop=True)
     
     return df
+
+def just_one_barcode(df_na, df_latam):
+    print('Randomly selecting one barcode per product..')
+
+    # removiendo brackets
+    df_na['barcodes'] = df_na['barcodes'].apply(lambda x: re.sub(r'(\{)|(\})', '', x)).astype(str)
+    df_latam['barcodes'] = df_latam['barcodes'].apply(lambda x: re.sub(r'(\{)|(\})', '', x)).astype(str)
+
+    # seleccionamos un barcode por producto (USE PANDAS EXPLODE)
+    df_na['barcodes'] = df_na['barcodes'].str.split(',').str[0]
+    df_latam['barcodes'] = df_latam['barcodes'].str.split(',').str[0]
+
+    return df_na, df_latam
+
+def read_cornershop_barcode_files():
+    print('Reading Cornershop barcode files..')
+
+    # reading files
+    df_na = pd.read_csv('barcodes_input/barcodes_NA.csv')
+    df_latam = pd.read_csv('barcodes_input/barcodes_LATAM.csv')
+    df_na.columns = df_na.columns.str.strip().str.lower()
+    df_latam.columns = df_latam.columns.str.strip().str.lower()
+
+    # removing names with nan and selecting useful columns
+    df_na = df_na[~df_na['name'].isna()].reset_index(drop=True).drop('country', axis=1)
+    df_latam = df_latam[~df_latam['name'].isna()].reset_index(drop=True).drop('country', axis=1)
+    df_latam = df_latam[~df_latam['barcodes'].isna()].reset_index(drop=True)
+
+    # as products may have > 1 barcode, we randomly select 1
+    df_na, df_latam = just_one_barcode(df_na, df_latam)
+
+    # renaming columns for consistency
+    df_na = df_na.rename(columns={'barcodes': 'ean', 'name': 'item_name'}).loc[:, ['ean', 'item_name']]
+    df_latam = df_latam.rename(columns={'barcodes': 'ean', 'name': 'item_name'}).loc[:, ['ean', 'item_name']]
+    
+    return df_na, df_latam
 
 def nlp_regex_cleaning(language_, data):
     print('NLP + Regex product name cleaning..')
@@ -101,8 +135,16 @@ def add_barcodes_to_canonical(df, df_one_match, df_canonical):
 
 
 def main():
-    # reading all sources of barcodes
-    df = read_barcode_files()
+    
+    # reading all sources of barcodes (depending on country)
+    if language_ == 'en':
+        df = read_uk_barcode_files()
+        df_na, df_latam = read_cornershop_barcode_files()
+        df = pd.concat([df, df_na], axis=0).drop_duplicates().reset_index(drop=True)
+    else:
+        df_na, df_latam = read_cornershop_barcode_files()
+        df = df_latam.copy()
+
     # cleaning item names
     df = nlp_regex_cleaning(language_, df)
 
