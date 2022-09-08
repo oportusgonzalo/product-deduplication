@@ -2,13 +2,6 @@
 import pandas as pd
 
 
-stores_to_review = {
-    'booker': 'uk', 
-    'nisa':'uk',
-    'costcutter': 'uk',
-    'dp&az': 'cr',
-    'ampm': 'cr'
-    }
 
 def read_back_propagation_file(store, country):
     return pd.read_csv(f'back_propagation/{country}/raw_vs_clean_{country}_{store}_products_85_75.csv')
@@ -32,11 +25,11 @@ def agent_unverified(canonical_links_df):
     print(f'Number of products not verified by agents: {not_verified_df.shape[0]}')
     print(f'Percentage of products not verified by agents: {round(not_verified_df.shape[0]/canonical_links_df.shape[0], 3)}')
 
-def main():
-    print('Validation statistics coming up..')
+def main(country, country_stores_dict):
+    print(f'Validation statistics for {country.title()} coming up..')
 
     df_raw = pd.DataFrame()
-    for store, country in stores_to_review.items():
+    for store in country_stores_dict[country]:
         df_temp = read_back_propagation_file(store, country)
         df_raw = pd.concat([df_raw, df_temp], axis=0).reset_index(drop=True)
     
@@ -57,4 +50,12 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    
+    country_stores_dict = {
+        'uk': ['booker', 'nisa', 'costcutter', 'bestway'],
+        'cr': ['dp&az', 'ampm', 'fresh_market']
+    }
+
+    for country in ['uk', 'cr']:
+        main(country, country_stores_dict)
+        print()
