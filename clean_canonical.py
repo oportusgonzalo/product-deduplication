@@ -117,6 +117,28 @@ def canonical_catalog_concatenation(df_canonical_candidate, df_non_pareto, canon
         new_canonical_df = canonical_df.copy()
         return new_canonical_df, candidate_name_id_dict
 
+def remove_direct_matches_on_canonical_links(canonical_links_df, df_direct):
+    print('Removing direct matches UUIDs already on canonical links..') 
+    
+    canonical_links_uuids_list = list(set(canonical_links_df['item_uuid']))
+    print(f'N° direct matches UUIDs already on canonical links: {df_direct[df_direct["item_uuid"].isin(canonical_links_uuids_list)].shape[0]}')
+    df_direct = df_direct[~df_direct['item_uuid'].isin(canonical_links_uuids_list)].reset_index(drop=True)
+    
+    return canonical_links_df, df_direct
+
+def ensuring_leaders_id_on_direct_set(canonical_links_df, df_to_fix):
+    print(f'Making sure assigned canonical IDs are the same as in canonical links file..')
+
+    leaders_id_dict = dict(zip(canonical_links_df['canonical_leader'], canonical_links_df['canonical_id']))
+    
+    for leader_, id_ in leaders_id_dict.items():
+        df_to_fix.loc[df_to_fix['canonical_leader'] == leader_, 'canonical_id'] = id_
+    
+    df_to_fix = df_to_fix.drop_duplicates().reset_index(drop=True)
+
+    return df_to_fix
+
+
 def links_concatenation(canonical_links_df, df_direct, df_back, df_non_pareto, df_links, updated_canonical_dict):
     print('Adding new links to canonical links table..')
 
@@ -125,9 +147,13 @@ def links_concatenation(canonical_links_df, df_direct, df_back, df_non_pareto, d
         df_direct['agent_verified'] = 1
         for col in ['canonical_leader', 'canonical_member']:
             df_direct[col] = df_direct[col].str.title()
+        
+        # removing direct matches UUIDs already on canonical links
+        canonical_links_df, df_direct = remove_direct_matches_on_canonical_links(canonical_links_df, df_direct)
+        # making sure direct matches assigned canonical IDs are the same as in canonical links file
+        df_direct = ensuring_leaders_id_on_direct_set(canonical_links_df, df_direct)
+        # concatenating sets
         new_canonical_links_df = pd.concat([canonical_links_df, df_direct], axis=0).reset_index(drop=True)
-        # OJO: porque al concatenar eliminariamos duplicados?
-        new_canonical_links_df = new_canonical_links_df.drop_duplicates('item_uuid').reset_index(drop=True)
     else:
         new_canonical_links_df = canonical_links_df.copy()
 
@@ -144,17 +170,23 @@ def links_concatenation(canonical_links_df, df_direct, df_back, df_non_pareto, d
     df_non_pareto.rename(columns={'leader': 'canonical_leader', 'member': 'canonical_member'}, inplace=True)
     df_links.rename(columns={'member': 'canonical_member'}, inplace=True)
 
+    # making sure columns to map are standardized
+    df_non_pareto['canonical_leader'] = df_non_pareto['canonical_leader'].str.strip().str.lower()
+    df_links['canonical_leader'] = df_links['canonical_leader'].str.strip().str.lower()
+
     # using canonical IDs on the updated version of the canonical catalog to map on the links
-    df_non_pareto['canonical_id'] = df_non_pareto['canonical_leader'].map(updated_canonical_dict)
-    df_links['canonical_id'] = df_links['canonical_leader'].map(updated_canonical_dict)
+    df_applicants = pd.concat([df_non_pareto, df_links], axis=0).reset_index(drop=True)
+    df_applicants = df_applicants.drop_duplicates().reset_index(drop=True)
+    df_applicants['canonical_id'] = df_applicants['canonical_leader'].map(updated_canonical_dict)
 
     # re-organizing
-    df_non_pareto = df_non_pareto.loc[:, ['item_uuid', 'item_name', 'canonical_id', 'canonical_leader', 'canonical_member', 'agent_verified']]
-    df_links = df_links.loc[:, ['item_uuid', 'item_name', 'canonical_id', 'canonical_leader', 'canonical_member', 'agent_verified']]
+    df_applicants = df_applicants.loc[:, ['item_uuid', 'item_name', 'canonical_id', 'canonical_leader', 'canonical_member', 'agent_verified']]
+
+    # making sure applicants assigned canonical IDs are the same as in canonical links file
+    df_applicants = ensuring_leaders_id_on_direct_set(new_canonical_links_df, df_applicants)
 
     # merging all into same dataframe
-    new_canonical_links_df = pd.concat([new_canonical_links_df, df_non_pareto], axis=0).reset_index(drop=True)
-    new_canonical_links_df = pd.concat([new_canonical_links_df, df_links], axis=0).reset_index(drop=True)
+    new_canonical_links_df = pd.concat([new_canonical_links_df, df_applicants], axis=0).reset_index(drop=True)
 
     new_canonical_links_df = new_canonical_links_df.drop_duplicates('item_uuid').reset_index(drop=True)
 
@@ -162,6 +194,8 @@ def links_concatenation(canonical_links_df, df_direct, df_back, df_non_pareto, d
   
 
 def main():
+
+    print(f'Processing {parent_chain.title()} merchant from {country.title()}..')
 
     df = pd.read_csv(f'agents_clean/{country}/agents_clean_{country}_{parent_chain}.csv')
     df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
@@ -209,6 +243,10 @@ def main():
         # appending data to the item canonical links DB; uses: canonical_links_df, df_direct, df_back, df_non_pareto, and df_links
         print('Reading canonical links file..')
         canonical_links_df = pd.read_csv(f'canonical_data/{country}/{country}_canonical_links.csv')
+        # standardize canonical links (if not generates duplicates)
+        for col in ['canonical_leader', 'canonical_member']:
+            canonical_links_df[col] = canonical_links_df[col].str.strip().str.lower()
+
         # when there are no direct matches, the file isn't created
         if os.path.exists(f'bivariate_outputs/{country}/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv'):
             df_direct = pd.read_csv(f'bivariate_outputs/{country}/{parent_chain}/direct_matches_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
