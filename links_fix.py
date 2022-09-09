@@ -8,7 +8,7 @@ country = ''
 def stats_(df_links, time_):
     # stats to validate
     print(f'N° {time_} canonical IDs: {len(list(set(df_links["canonical_id"])))}')
-    print(f'N° {time_} canonical leaders: {len(list(set(df_links["canonical_id"])))}')
+    print(f'N° {time_} canonical leaders: {len(list(set(df_links["canonical_leader"])))}')
     print(f'Initial shape: {df_links.shape}')
 
 def fix_nan(df_links, df_na):
