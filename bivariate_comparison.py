@@ -25,9 +25,9 @@ from nltk.corpus import stopwords
 
 # DEFINITIONS
 
-# parameters (MUST DO! -- are used to specify the outputs name)
+# parameters
 country = ''
-parent_chain = '' # lower case and "clean"
+parent_chain = ''
 item_column = 'item_name'
 language_ = 'en'
 
