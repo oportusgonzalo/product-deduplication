@@ -196,17 +196,23 @@ def fixes_nan_on_canonical_links(new_canonical_links_df):
     print('Fixing NaN values on canonical ID / canonical leader columns..')
 
     # splitting data: set with nan's / others
-    df_na = new_canonical_links_df[new_canonical_links_df['canonical_leader'].isna()].reset_index(drop=True)
+    df_na = new_canonical_links_df[(new_canonical_links_df['canonical_id'].isna())|(new_canonical_links_df['canonical_leader'].isna())].reset_index(drop=True)
+    print(f'N° of NaN IDs: {df_na["canonical_id"].drop_duplicates().shape[0]}')
     print(f'N° of NaN leaders: {df_na["canonical_leader"].drop_duplicates().shape[0]}')
-    new_canonical_links_df = new_canonical_links_df[~new_canonical_links_df['canonical_leader'].isna()].reset_index(drop=True)
+    new_canonical_links_df = new_canonical_links_df[~(new_canonical_links_df['canonical_id'].isna())|~(new_canonical_links_df['canonical_leader'].isna())].reset_index(drop=True)
 
     # leaders will be the members
     df_na['canonical_leader'] = df_na['canonical_member']
-    # create ID for unique leaders and map on df_na
+
+    # replace on ID if the leader has been already mapped
+    actual_ids_dict = dict(zip(new_canonical_links_df['canonical_leader'], new_canonical_links_df['canonical_id']))
+    df_na['canonical_id'] = df_na['canonical_leader'].map(actual_ids_dict)
+    
+    # create ID for leaders that are still nan
+    na_leaders_list = list(set(df_na[df_na['canonical_id'].isna()]['canonical_leader']))
     max_id = int(new_canonical_links_df['canonical_id'].max())
-    na_leaders_list = list(set(df_na['canonical_leader']))
     na_leaders_id_dict = dict(zip(na_leaders_list, range(max_id + 1, max_id + len(na_leaders_list) + 1)))
-    df_na['canonical_id'] = df_na['canonical_leader'].map(na_leaders_id_dict)
+    df_na['canonical_id'] = df_na['canonical_leader'].replace(na_leaders_id_dict)
 
     # verify if any of the nan leaders is already linked
     leaders_already_linked_list = list(set(new_canonical_links_df['canonical_leader']))
