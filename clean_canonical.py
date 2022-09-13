@@ -44,7 +44,7 @@ def map_member_to_item_uuid(df_links):
     return new_links_df
 
 def assign_ids_to_candidates(canonical_df, df_canonical_candidate):
-    max_canonical_id = canonical_df['canonical_id'].max()
+    max_canonical_id = int(canonical_df['canonical_id'].max())
 
     # assign unique IDs
     df_canonical_candidate.insert(0, 'canonical_id', range(max_canonical_id + 1, max_canonical_id + len(df_canonical_candidate) + 1))
@@ -64,11 +64,27 @@ def standardize_format(new_canonical_data, new_canonical_links):
     
     return new_canonical_data, new_canonical_links
 
+def initial_cleaning_to_standardize(df):
+    print('Initial Cleaning..')
 
-def nan_members_to_name(df_links):
+    # splitting sets to clean nans
+    df_na = df[df['canonical_leader'].isna()]
+    print(f'N° rows with NaN: {df_na.shape[0]}')
+    df = df[~df['canonical_leader'].isna()]
+
+    # leaders will be equal to members
+    df_na['canonical_leader'] = df_na['member']
+
+    # concat to global set
+    df = pd.concat([df, df_na], axis=0).reset_index(drop=True)
+
+    return df
+
+
+def nan_members_to_name(df_fixing):
     print('Replacing members with nan value but true assignment by leader..')
-    df_links.loc[(df_links['member'].isna())&(df_links['label'] == 'true'), 'member'] = df_links.loc[(df_links['member'].isna())&(df_links['label'] == 'true'), 'canonical_leader']
-    return df_links
+    df_fixing.loc[(df_fixing['member'].isna())&(df_fixing['label'] == 'true'), 'member'] = df_fixing.loc[(df_fixing['member'].isna())&(df_fixing['label'] == 'true'), 'canonical_leader']
+    return df_fixing
 
 def cleaning_non_pareto_dataframe(df_non_pareto):
     print('Cleaning the non-pareto set..')
@@ -225,6 +241,21 @@ def fixes_nan_on_canonical_links(new_canonical_links_df):
 
     return new_canonical_links_df
 
+def add_missing_links_to_canonical(df_canonical_candidate, new_links_df):
+    print('Adding new canonical items generated after fixing NaNs..')
+
+    on_canonical_list = list(set(df_canonical_candidate['canonical_leader']))
+    links_not_canonical_df = new_links_df[~new_links_df['canonical_leader'].isin(on_canonical_list)]
+
+    if links_not_canonical_df.shape[0] > 0:
+        df_to_add = new_links_df.loc[:, ['canonical_id', 'canonical_leader', 'agent_verified']]
+        df_to_add[['brand', 'name', 'package', 'promotion']] = [np.nan, np.nan, np.nan, 0]
+        df_to_add = df_to_add.loc[:, ['canonical_id', 'canonical_leader', 'brand', 'name', 'package', 'promotion', 'agent_verified']]
+        df_canonical_candidate = pd.concat([df_canonical_candidate, df_to_add], axis=0).reset_index(drop=True)
+
+    return df_canonical_candidate, new_links_df
+
+
 def main():
 
     print(f'Processing {parent_chain.title()} merchant from {country.title()}..')
@@ -243,8 +274,13 @@ def main():
     print(f'Agents output shape: {df.shape}')
     print(f'Initial number of members: {len(df["member"].unique())}')
 
+    # as we may have inconsistencies and nans we will pre-process the file
+    df = initial_cleaning_to_standardize(df)
+
+    # fixing members that have nan (after agents work)
+    df = nan_members_to_name(df)
+
     df_canonical_candidate = df.loc[:, ['canonical_leader', 'brand', 'name', 'package', 'promotion']]
-    df_canonical_candidate = df_canonical_candidate[~df_canonical_candidate['canonical_leader'].isna()].copy()
     df_canonical_candidate = df_canonical_candidate.drop_duplicates('canonical_leader').reset_index(drop=True)
     df_canonical_candidate['agent_verified'] = 1
    
@@ -254,9 +290,6 @@ def main():
     # links database structure
     df_links = df.loc[:, ['member', 'canonical_leader', 'label']]
     df_links['agent_verified'] = 1
-
-    # fixing members that have nan (after agents work)
-    df_links = nan_members_to_name(df_links)
     df_links.drop('label', axis=1, inplace=True)
 
     # ask for existance of a canonical catalog file
@@ -294,6 +327,9 @@ def main():
         # fixing nan values on canonical ID or canonical leader
         new_canonical_links_df = fixes_nan_on_canonical_links(new_canonical_links_df)
 
+        # as fixing nan's on links may lead to "new" canonical items, we must verify / add to canonical
+        new_canonical_df, new_canonical_links_df = add_missing_links_to_canonical(new_canonical_df, new_canonical_links_df)
+
         # saving datasets
         print('Saving canonical files..')
         new_canonical_df.to_csv(f'canonical_data/{country}/{country}_canonical_catalog.csv', index=False)
@@ -321,6 +357,9 @@ def main():
         # fixing nan values on canonical ID or canonical leader
         new_links_df = fixes_nan_on_canonical_links(new_links_df)
 
+        # as fixing nan's on links may lead to "new" canonical items, we must verify / add to canonical
+        df_canonical_candidate, new_links_df = add_missing_links_to_canonical(df_canonical_candidate, new_links_df)
+        
         # saving datasets
         print('Saving canonical files..')
         df_canonical_candidate.to_csv(f'canonical_data/{country}/{country}_canonical_catalog.csv', index=False)
