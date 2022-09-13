@@ -90,11 +90,14 @@ def nlp_regex_cleaning(language_, data):
 def read_canonical_file_to_match():
     print('Reading canonical file to match..')
     df_canonical = pd.read_csv(f'canonical_data/{country}/{country}_canonical_catalog.csv')
-    df_canonical['canonical_leader_lower'] = df_canonical['canonical_leader'].str.lower()
-    df_match = df_canonical.loc[:, ['canonical_leader_lower']].rename(columns={'canonical_leader_lower': 'canonical_leader'})
     print(f'Initial canonical shape: {df_canonical.shape}')
-    return df_canonical, df_match
+    return df_canonical
 
+def preparing_set_to_match(df_canonical):
+    print('Selecting canonical items to match..')
+    df_canonical['canonical_leader_lower'] = df_canonical['canonical_leader'].str.strip().str.lower()
+    df_match = df_canonical.loc[:, ['canonical_leader_lower']].rename(columns={'canonical_leader_lower': 'canonical_leader'})
+    return df_match
 
 def product_set_for_similarity(df, df_match):
     print('Concatenating items without barcode with items to match..')
@@ -133,14 +136,43 @@ def add_barcodes_to_canonical(df, df_one_match, df_canonical):
 
     return df_one_match, df_canonical
 
+def direct_matches_back_door(df, df_canonical):
+    print('Identifying direct matches: items with known eans --> canonical..')
+
+    df_links = pd.read_csv(f'canonical_data/{country}/{country}_canonical_links.csv')
+        
+    # useful data structures to compare / map
+    ean_products_list = list(set(df['item_name']))
+    ean_item_dict = dict(zip(df['item_name'], df['ean']))
+
+    # selection of useful columns
+    df_match = df_links.loc[:, ['item_name', 'canonical_id', 'canonical_leader']]
+    df_match = df_match.drop_duplicates().reset_index(drop=True)
+
+    # identify item names that match directly with items on dataframe with barcodes
+    df_direct_match = df_match[df_match['item_name'].isin(ean_products_list)].reset_index(drop=True)
+    df_direct_match['ean'] = df_direct_match['item_name'].map(ean_item_dict)
+
+    # dictionary to map canonical items to barcodes / list to remove matches from set
+    canonical_id_ean_dict = dict(zip(df_direct_match['canonical_id'], df_direct_match['ean']))
+    leaders_matched_list = list(set(df_direct_match['canonical_leader']))
+    print(f'N° direct matches to canonical: {len(leaders_matched_list)}')
+
+    # saves matches on different dataframe and removes them from canonical set to match
+    df_leaders_matched = df_canonical[df_canonical['canonical_leader'].isin(leaders_matched_list)].reset_index(drop=True)
+    df_leaders_matched['ean'] = df_leaders_matched['canonical_id'].map(canonical_id_ean_dict)
+    df_canonical = df_canonical[~df_canonical['canonical_leader'].isin(leaders_matched_list)].reset_index(drop=True)
+
+    return df_canonical, df_leaders_matched
+
 
 def main():
     
     # reading all sources of barcodes (depending on country)
     if language_ == 'en':
         df = read_uk_barcode_files()
-        df_na, df_latam = read_cornershop_barcode_files()
-        df = pd.concat([df, df_na], axis=0).drop_duplicates().reset_index(drop=True)
+        #df_na, df_latam = read_cornershop_barcode_files()
+        #df = pd.concat([df, df_na], axis=0).drop_duplicates().reset_index(drop=True)
     else:
         df_na, df_latam = read_cornershop_barcode_files()
         df = df_latam.copy()
@@ -148,12 +180,14 @@ def main():
     # cleaning item names
     df = nlp_regex_cleaning(language_, df)
 
-    print('Duplication')
-    print(df[df.duplicated(['product_name'], keep=False)].sort_values('product_name'))
-
     # reading file to match
     if match_canonical:
-        df_canonical, df_match = read_canonical_file_to_match()
+        print('Matching canonical set..')
+        df_canonical = read_canonical_file_to_match()
+        # mapping and removing direct matches
+        df_canonical, df_leaders_matched = direct_matches_back_door(df, df_canonical)
+        # selecting products to match
+        df_match = preparing_set_to_match(df_canonical)
         # concatenating products to single column to calculate similarities
         df_product_set = product_set_for_similarity(df, df_match)
         # # Appying TF-IDF method
