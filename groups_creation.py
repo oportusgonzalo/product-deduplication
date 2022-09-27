@@ -72,6 +72,8 @@ def raw_vs_clean_name_mapping(df_nlp, item_name_image_dict):
     # adding image_url column
     df_back_propagation['image_url'] = df_back_propagation['item_name'].map(item_name_image_dict)
     clean_product_image_dict = dict(zip(df_back_propagation['product_name'], df_back_propagation['image_url']))
+    if not os.path.isdir(f'back_propagation/{country}'):
+        os.mkdir(f'back_propagation/{country}')
     df_back_propagation.to_csv(f'back_propagation/{country}/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
     return df_back_propagation, clean_product_image_dict
     
@@ -225,6 +227,8 @@ def main():
     groups_df['image_url'] = groups_df['member'].map(clean_product_image_dict)
     
     # Saving results
+    if not os.path.isdir(f'bivariate_outputs/{country}'):
+        os.mkdir(f'bivariate_outputs/{country}')
     if not os.path.isdir(f'bivariate_outputs/{country}/{parent_chain}'):
         os.mkdir(f'bivariate_outputs/{country}/{parent_chain}')
 
