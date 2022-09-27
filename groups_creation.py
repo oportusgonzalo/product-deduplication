@@ -4,6 +4,7 @@ import numpy as np
 import re
 import time
 import sys
+import os
 from fuzzywuzzy import fuzz
 import logging
 
@@ -26,9 +27,9 @@ from static import remove_duplication_for_uuid
 
 # DEFINITIONS
 
-# parameters (MUST DO! -- are used to specify the outputs name)
+# parameters
 country = ''
-parent_chain = '' # lower case and "clean"
+parent_chain = ''
 item_column = 'item_name'
 language_ = 'en'
 
@@ -44,7 +45,7 @@ def read_and_select():
     data = pd.read_csv(f'data/{country}/{country}_{parent_chain}_uuid_name.csv')
     # dict to map item_name with image_url:
     item_name_image_dict = dict(zip(data['item_name'], data['image_url']))
-    data = data.loc[:, ['item_uuid', 'item_name']]
+    data = data.loc[:, ['item_uuid', 'item_name', 'number_sku_sold']]
     print(f'Initial dataframe shape: {data.shape}')
     print(f'Initial unique products - messy: {len(data["item_name"].unique())}')
      
@@ -219,10 +220,15 @@ def main():
     # concatenating groups to global dataframe
     groups_df, track_df = groups_concatenation(df_clean, df_similars, index_product_dict)
 
-    # Saving results
+    # re-organizing
     groups_df = groups_df.sort_values(by=['leader', 'member']).reset_index(drop=True)
     groups_df['image_url'] = groups_df['member'].map(clean_product_image_dict)
-    groups_df.to_csv(f'outputs/groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    
+    # Saving results
+    if not os.path.isdir(f'bivariate_outputs/{country}/{parent_chain}'):
+        os.mkdir(f'bivariate_outputs/{country}/{parent_chain}')
+
+    groups_df.to_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
 
     # Complete run time
     t_complete = gets_time() - t_initial
