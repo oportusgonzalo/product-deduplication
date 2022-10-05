@@ -67,9 +67,10 @@ if __name__ == "__main__":
     
     country_stores_dict = {
         'uk': ['booker', 'nisa', 'costcutter', 'bestway', 'rev_nisa', 'rev_costcutter', 'rev_bestway', 'rev_booker', 'keresley_news', 'tulsi_news', 'all_in_hornchurch', 'cricklewood', 'montrose_street'],
-        'cr': ['dp&az', 'ampm', 'fresh_market', 'rev_dp&az', 'rev_ampm', 'rev_fresh_market', 'farmavalue', 'fciabombacr', 'dos_pinos_cr', 'musicr', 'peqmundo']
+        'cr': ['dp&az', 'ampm', 'fresh_market', 'rev_dp&az', 'rev_ampm', 'rev_fresh_market', 'farmavalue', 'fciabombacr', 'dos_pinos_cr', 'musicr', 'peqmundo'],
+        'za': ['brands1']
     }
 
-    for country in ['uk', 'cr']:
+    for country in ['uk', 'cr', 'za']:
         main(country, country_stores_dict)
         print()
