@@ -76,6 +76,26 @@ def raw_vs_clean_name_mapping(df_nlp, item_name_image_dict):
         os.mkdir(f'back_propagation/{country}')
     df_back_propagation.to_csv(f'back_propagation/{country}/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
     return df_back_propagation, clean_product_image_dict
+
+def pareto_products(data):
+    print(f'Identifying the products that represent the 80% of the sales..')
+
+    pareto_df = data.loc[:, ['product_name', 'number_sku_sold']]
+    pareto_df = pareto_df.drop_duplicates().reset_index(drop=True)
+
+    # grouping to aggregate units sold
+    pareto_df = pareto_df.groupby('product_name').agg({'number_sku_sold': sum}).reset_index()
+    pareto_df = pareto_df.sort_values(by='number_sku_sold', ascending=False).reset_index(drop=True)
+
+    # cumulative aggregations to filter 80/20
+    pareto_df['cumulate'] = pareto_df["number_sku_sold"].cumsum()
+    pareto_df["cum_percentage"] = (pareto_df['cumulate'] / pareto_df["number_sku_sold"].sum()) * 100
+
+    pareto_set = list(set(pareto_df[pareto_df['cum_percentage'] <= 80]['product_name']))
+    print(f'Number of products that represent Pareto 80/20: {len(pareto_set)}')
+    print(f'Percentage of products that represent Pareto 80/20: {round(len(pareto_set)/len(pareto_df["product_name"].unique()), 3)}')
+
+    return pareto_set
     
 
 def tf_idf_method(df_nlp):
@@ -193,6 +213,38 @@ def groups_concatenation(df_clean, df_similars, index_product_dict):
 
     return groups_df, track_df
 
+def extracting_pareto_groups(groups_df, pareto_set):
+    print(f'Extracing groups where pareto members are assigned..')
+    
+    groups_in_pareto = list(set(groups_df[(groups_df['leader'].isin(pareto_set))|(groups_df['member'].isin(pareto_set))]['group_id']))
+    
+    pareto_groups_df = groups_df[groups_df['group_id'].isin(groups_in_pareto)].reset_index(drop=True)
+    non_pareto_groups_df = groups_df[~groups_df['group_id'].isin(groups_in_pareto)].reset_index(drop=True)
+
+    print(f'Pareto dataframe shape to be reviewed by agents: {pareto_groups_df.shape[0]}')
+
+    return pareto_groups_df, non_pareto_groups_df
+
+def validate_products_missing(data_nlp, pareto_groups_df, non_pareto_groups_df, direct_matches_df):
+    print(f"Validating that we haven't lost products in the process..")
+    
+    if direct_matches_df.shape[0] > 0:
+        added_products = list(set(pareto_groups_df['member'])) + list(set(non_pareto_groups_df['member'])) + list(set(direct_matches_df['canonical_member']))
+    else:
+        added_products = list(set(pareto_groups_df['member'])) + list(set(non_pareto_groups_df['member']))
+
+    number_products_not_added = len(list(set(data_nlp[~data_nlp['product_name'].isin(added_products)]['product_name'])))
+    print(f'Number of products lost in the process: {number_products_not_added}')
+
+def validate_products_missing(data_nlp, pareto_groups_df, non_pareto_groups_df):
+    print(f"Validating that we haven't lost products in the process..")
+    
+    added_products = list(set(pareto_groups_df['member'])) + list(set(non_pareto_groups_df['member']))
+
+    number_products_not_added = len(list(set(data_nlp[~data_nlp['product_name'].isin(added_products)]['product_name'])))
+    print(f'Number of products lost in the process: {number_products_not_added}')
+
+
 def main():
     # Initial time
     t_initial = gets_time()
@@ -204,6 +256,8 @@ def main():
     df_nlp = nlp_regex_cleaning(language_, data)
     # saving raw product name - clean product name (post NLP + regex) mapping
     df_back_propagation, clean_product_image_dict = raw_vs_clean_name_mapping(df_nlp, item_name_image_dict)
+     # identifies the 20% of the products that represent the 80% of the sales
+    pareto_set = pareto_products(data)
 
     # Appying TF-IDF method
     df_tf, tf_idf_matrix = tf_idf_method(df_nlp)
@@ -222,9 +276,11 @@ def main():
     # concatenating groups to global dataframe
     groups_df, track_df = groups_concatenation(df_clean, df_similars, index_product_dict)
 
-    # re-organizing
+    # re-organizing and removing non pareto products
     groups_df = groups_df.sort_values(by=['leader', 'member']).reset_index(drop=True)
     groups_df['image_url'] = groups_df['member'].map(clean_product_image_dict)
+
+    pareto_groups_df, non_pareto_groups_df = extracting_pareto_groups(groups_df, pareto_set)
     
     # Saving results
     if not os.path.isdir(f'bivariate_outputs/{country}'):
@@ -233,13 +289,20 @@ def main():
         os.mkdir(f'bivariate_outputs/{country}/{parent_chain}')
 
     groups_df.to_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    pareto_groups_df.to_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+    non_pareto_groups_df.to_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv', index=False)
+
+    # verifying if products were lost in the process
+    validate_products_missing(df_nlp, pareto_groups_df, non_pareto_groups_df)
 
     # Complete run time
     t_complete = gets_time() - t_initial
     print(f'Time to run the script: {round(t_complete/60, 3)} minutes!')
     print('Success!')
 
-    return groups_df, track_df, df_back_propagation
+    return pareto_groups_df, non_pareto_groups_df, df_back_propagation, track_df
+    
+
 
 if __name__ == "__main__":
     main()
