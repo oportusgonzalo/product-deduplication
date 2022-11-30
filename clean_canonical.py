@@ -340,16 +340,66 @@ def main():
         # create the country directory to save the file
         if not os.path.isdir(f'canonical_data/{country}'):
             os.mkdir(f'canonical_data/{country}')
+        
+        # adding non pareto dataframe to first version of canonical catalog
+        if country == 'us&ca':
+            df_non_pareto = pd.read_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
+             # standardizing non pareto dataframe
+            std_non_pareto_df = cleaning_non_pareto_dataframe(df_non_pareto)
+
+            # concatenating sets
+            df_canonical_candidate = pd.concat([df_canonical_candidate, std_non_pareto_df], axis=0).reset_index(drop=True)
+            df_canonical_candidate['canonical_leader'] = df_canonical_candidate['canonical_leader'].str.strip().str.lower()
+            df_canonical_candidate = df_canonical_candidate.sort_values(['canonical_leader', 'brand', 'name', 'package']).reset_index(drop=True)
+            df_canonical_candidate = df_canonical_candidate.drop_duplicates('canonical_leader').reset_index(drop=True)
+
         # create canonical ID from scratch --> structure
         df_canonical_candidate.insert(0, 'canonical_id', range(0, len(df_canonical_candidate)))
 
         # dictionary to assign IDs on link dataset
         candidate_name_id_dict = dict(zip(df_canonical_candidate['canonical_leader'], df_canonical_candidate['canonical_id']))
-        df_links['canonical_id'] = df_links['canonical_leader'].map(candidate_name_id_dict)
-        df_links = df_links.loc[:, ['member', 'canonical_id', 'canonical_leader', 'agent_verified']]
 
-        # mapping members back to item_uuid: | item_uuid | item_name | canonical_id | canonical_leader | canonical_member |
-        new_links_df = map_member_to_item_uuid(df_links)
+        # adding non pareto dataframe to first version of canonical links
+        if country == 'us&ca':
+            # reading back propagation file
+            df_back = pd.read_csv(f'back_propagation/{country}/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv')
+
+            # selecting useful columns (more clarity of the join)
+            df_back = df_back.drop('image_url', axis=1)
+            df_non_pareto = df_non_pareto.drop(['group_id', 'image_url'], axis=1)
+            df_non_pareto['agent_verified'] = 0
+
+            # merge to match item_uuids with canonical ids (format: item_uuid-item_name-canonical_id-canonical-leader-canonical_member-agent-verified)
+            df_non_pareto = df_non_pareto.merge(df_back, how='inner', left_on='member', right_on='product_name')
+            df_links = df_links.drop_duplicates('member').reset_index(drop=True)
+            df_links = df_links.merge(df_back, how='inner', left_on='member', right_on='product_name')
+
+            # clean-up
+            df_non_pareto.rename(columns={'leader': 'canonical_leader', 'member': 'canonical_member'}, inplace=True)
+            df_links.rename(columns={'member': 'canonical_member'}, inplace=True)
+
+            # making sure columns to map are standardized
+            df_non_pareto['canonical_leader'] = df_non_pareto['canonical_leader'].str.strip().str.lower()
+            df_links['canonical_leader'] = df_links['canonical_leader'].str.strip().str.lower()
+
+            # using canonical IDs on the updated version of the canonical catalog to map on the links
+            df_non_pareto = df_non_pareto.loc[:, ['canonical_leader', 'canonical_member', 'agent_verified', 'item_uuid', 'item_name', 'product_name']]
+            df_links = df_links.loc[:, ['canonical_leader', 'canonical_member', 'agent_verified', 'item_uuid', 'item_name', 'product_name']]
+            
+            df_applicants = pd.concat([df_non_pareto, df_links], axis=0).reset_index(drop=True)
+            df_applicants = df_applicants.drop_duplicates().reset_index(drop=True)
+            df_applicants['canonical_id'] = df_applicants['canonical_leader'].map(candidate_name_id_dict)
+
+            # re-organizing
+            df_applicants = df_applicants.loc[:, ['item_uuid', 'item_name', 'canonical_id', 'canonical_leader', 'canonical_member', 'agent_verified']]
+            new_links_df = df_applicants.copy()
+
+        else:
+            df_links['canonical_id'] = df_links['canonical_leader'].map(candidate_name_id_dict)
+            df_links = df_links.loc[:, ['member', 'canonical_id', 'canonical_leader', 'agent_verified']]
+
+            # mapping members back to item_uuid: | item_uuid | item_name | canonical_id | canonical_leader | canonical_member |
+            new_links_df = map_member_to_item_uuid(df_links)
 
         # better format to dataframes
         df_canonical_candidate, new_links_df = standardize_format(df_canonical_candidate, new_links_df)
@@ -359,12 +409,12 @@ def main():
 
         # as fixing nan's on links may lead to "new" canonical items, we must verify / add to canonical
         df_canonical_candidate, new_links_df = add_missing_links_to_canonical(df_canonical_candidate, new_links_df)
-        
+
         # saving datasets
         print('Saving canonical files..')
         df_canonical_candidate.to_csv(f'canonical_data/{country}/{country}_canonical_catalog.csv', index=False)
         new_links_df.to_csv(f'canonical_data/{country}/{country}_canonical_links.csv', index=False)
-    
+        
     print('Success!')
 
 
