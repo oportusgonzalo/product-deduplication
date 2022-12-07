@@ -302,9 +302,8 @@ def remove_duplication_for_uuid(data):
     identify_duplication_df = data.groupby('item_uuid').agg({'item_name': 'count'}).reset_index().sort_values(by='item_name', ascending=False).reset_index(drop=True)
     number_uuids_more_than_1 = identify_duplication_df[identify_duplication_df['item_name'] > 1].drop_duplicates('item_uuid').reset_index(drop=True).shape[0]
     print(f"Number of UUIDs assigned to more than 1 product: {number_uuids_more_than_1}")
-
+    
     # aggregates and sorts values
-    data['number_sku_sold'] = 1
     duplicated_df = data.groupby(['item_uuid', 'item_name']).agg({'number_sku_sold': sum}).reset_index()
     duplicated_df = duplicated_df.sort_values(by=['item_uuid', 'number_sku_sold'], ascending=False).reset_index(drop=True)
 
@@ -316,7 +315,5 @@ def remove_duplication_for_uuid(data):
     
     print(f'Dataframe shape at this stage of the process (remove duplicated uuids): {duplicated_df.shape}')
 
-    # print number of duplicated (same as initial of function)
-    
     return duplicated_df
 
