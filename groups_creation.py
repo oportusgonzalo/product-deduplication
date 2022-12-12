@@ -36,6 +36,7 @@ language_ = 'en'
 # hiperparameters
 threshold_products = 85
 threshold_package = 75
+threshold_pareto = 94
 
 
 def read_and_select():
@@ -48,7 +49,7 @@ def read_and_select():
     data = data.loc[:, ['item_uuid', 'item_name', 'number_sku_sold']]
     print(f'Initial dataframe shape: {data.shape}')
     print(f'Initial unique products - messy: {len(data["item_name"].unique())}')
-     
+
     return data, item_name_image_dict
 
 def nlp_regex_cleaning(language_, data):
@@ -77,7 +78,7 @@ def raw_vs_clean_name_mapping(df_nlp, item_name_image_dict):
     df_back_propagation.to_csv(f'back_propagation/{country}/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv', index=False)
     return df_back_propagation, clean_product_image_dict
 
-def pareto_products(data):
+def pareto_products(data, threshold_pareto):
     print(f'Identifying the products that represent the 80% of the sales..')
 
     pareto_df = data.loc[:, ['product_name', 'number_sku_sold']]
@@ -91,7 +92,7 @@ def pareto_products(data):
     pareto_df['cumulate'] = pareto_df["number_sku_sold"].cumsum()
     pareto_df["cum_percentage"] = (pareto_df['cumulate'] / pareto_df["number_sku_sold"].sum()) * 100
 
-    pareto_set = list(set(pareto_df[pareto_df['cum_percentage'] <= 80]['product_name']))
+    pareto_set = list(set(pareto_df[pareto_df['cum_percentage'] <= threshold_pareto]['product_name']))
     print(f'Number of products that represent Pareto 80/20: {len(pareto_set)}')
     print(f'Percentage of products that represent Pareto 80/20: {round(len(pareto_set)/len(pareto_df["product_name"].unique()), 3)}')
 
@@ -257,8 +258,8 @@ def main():
     # saving raw product name - clean product name (post NLP + regex) mapping
     df_back_propagation, clean_product_image_dict = raw_vs_clean_name_mapping(df_nlp, item_name_image_dict)
      # identifies the 20% of the products that represent the 80% of the sales
-    pareto_set = pareto_products(data)
-
+    pareto_set = pareto_products(data, threshold_pareto)
+    
     # Appying TF-IDF method
     df_tf, tf_idf_matrix = tf_idf_method(df_nlp)
     # Applying cosine similarity to detect most similar products (potential group)
@@ -306,14 +307,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-
-
