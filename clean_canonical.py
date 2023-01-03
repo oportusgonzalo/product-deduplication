@@ -342,7 +342,7 @@ def main():
             os.mkdir(f'canonical_data/{country}')
         
         # adding non pareto dataframe to first version of canonical catalog
-        if country == 'us&ca':
+        if country in ['us&ca', 'ads_usa', 'ads_ca', 'ads_uk']:
             df_non_pareto = pd.read_csv(f'bivariate_outputs/{country}/{parent_chain}/bivariate_non_pareto_groups_{country}_{parent_chain}_{threshold_products}_{threshold_package}.csv')
              # standardizing non pareto dataframe
             std_non_pareto_df = cleaning_non_pareto_dataframe(df_non_pareto)
@@ -360,7 +360,7 @@ def main():
         candidate_name_id_dict = dict(zip(df_canonical_candidate['canonical_leader'], df_canonical_candidate['canonical_id']))
 
         # adding non pareto dataframe to first version of canonical links
-        if country == 'us&ca':
+        if country in ['us&ca', 'ads_usa', 'ads_ca', 'ads_uk']:
             # reading back propagation file
             df_back = pd.read_csv(f'back_propagation/{country}/raw_vs_clean_{country}_{parent_chain}_products_{threshold_products}_{threshold_package}.csv')
 
