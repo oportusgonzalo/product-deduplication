@@ -34,9 +34,9 @@ item_column = 'item_name'
 language_ = 'en'
 
 # hiperparameters
-threshold_products = 85
-threshold_package = 75
-threshold_pareto = 94
+threshold_products = 95
+threshold_package = 90
+threshold_pareto = 100
 
 
 def read_and_select():

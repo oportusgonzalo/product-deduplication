@@ -1,6 +1,7 @@
 
 import pandas as pd
 import numpy as np
+import os
 
 from static import *
 
@@ -17,9 +18,9 @@ language_ = ''
 def reading_files():
     print('Reading files..')
 
-    df_canonical = pd.read_csv(f'missing/{country}/{country}_canonical_catalog.csv')
-    df_links = pd.read_csv(f'missing/{country}/{country}_canonical_links.csv')
-    df_missing = pd.read_csv(f'missing/{country}_missing_{parent_chain}.csv')
+    df_canonical = pd.read_csv(f'canonical_data/{country}/{country}_canonical_catalog.csv')
+    df_links = pd.read_csv(f'canonical_data/{country}/{country}_canonical_links.csv')
+    df_missing = pd.read_csv(f'missing/{country}/{country}_missing_{parent_chain}.csv')
 
     return df_canonical, df_links, df_missing
 
@@ -136,8 +137,11 @@ def main():
     df_new_links = linking_new_members_to_canonical(new_canonical_df, df_links, df_members_on_canonical, df_members_not_canonical)
 
     # saving outputs
-    new_canonical_df.to_csv(f'missing/{country}_canonical_catalog.csv', index=False)
-    df_new_links.to_csv(f'missing/{country}_canonical_links.csv', index=False) 
+    if not os.path.isdir(f'missing/{country}'):
+        os.mkdir(f'missing/{country}')
+
+    new_canonical_df.to_csv(f'missing/{country}/{country}_canonical_catalog.csv', index=False)
+    df_new_links.to_csv(f'missing/{country}/{country}_canonical_links.csv', index=False)
     
 
 

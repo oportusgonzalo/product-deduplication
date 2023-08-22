@@ -35,8 +35,8 @@ language_ = 'en'
 canonical_file = 'canonical_catalog'
 
 # hiperparameters
-threshold_products = 85
-threshold_package = 75
+threshold_products = 95
+threshold_package = 85
 
 
 def read_and_select():
@@ -89,7 +89,7 @@ def pareto_products(data):
     pareto_df['cumulate'] = pareto_df["number_sku_sold"].cumsum()
     pareto_df["cum_percentage"] = (pareto_df['cumulate'] / pareto_df["number_sku_sold"].sum()) * 100
 
-    pareto_set = list(set(pareto_df[pareto_df['cum_percentage'] <= 80]['product_name']))
+    pareto_set = list(set(pareto_df[pareto_df['cum_percentage'] <= 90]['product_name']))
     print(f'Number of products that represent Pareto 80/20: {len(pareto_set)}')
     print(f'Percentage of products that represent Pareto 80/20: {round(len(pareto_set)/len(pareto_df["product_name"].unique()), 3)}')
 
