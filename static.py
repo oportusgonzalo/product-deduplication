@@ -25,6 +25,7 @@ def clean_text(df, col_name, new_col_name):
     # column values to lower case
     df[new_col_name] = df[col_name].str.lower().str.strip()
     # removes special characters
+    df = df[~df[new_col_name].isna()].reset_index(drop=True)
     df[new_col_name] = df[new_col_name].apply(lambda x: re.sub(r"(@[A-Za-z0-9]+)|([^0-9A-Za-z.% \t])", "", x))
     return df
 
@@ -49,7 +50,9 @@ def nlp_cleaning(df, stop_words, regex_clean):
     not_list = ['.']
     df['product_name'] = df['item_name_token_lemma'].apply(lambda list_: ' '.join([word for word in list_ if word not in not_list]))
     # cleaning product names with regex
-    df['product_name'] = df['product_name'].apply(lambda x: re.sub(regex_clean, "", x))
+    if regex_clean:
+        regex_clean = r'(pm \d+\w+)|(pm \d+\.\d+)|(pm\d+\.\d+)|(\d+ pmp)|(pm\d+)|( \.+)|(pmp\d+.\d+)|(\d+pmp)|(pmp \d+)|(\d+.\d+ pm)'
+        df['product_name'] = df['product_name'].apply(lambda x: re.sub(regex_clean, "", x))
     return df
 
 def cosine_similarity(A, B, ntop, lower_bound=0):
