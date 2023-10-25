@@ -19,7 +19,7 @@ from nltk.corpus import stopwords
 
 # parameters
 country = 'ucpc'
-parent_chain = 'alcoholic'
+parent_chain = 'us_fruits_and_veggies'
 item_column = 'item_name'
 language_ = 'en'
 
@@ -59,6 +59,7 @@ def nlp_regex_cleaning(language_, data):
     df_nlp = nlp_cleaning(data, stop_words, regex_clean=False)
 
     print(f'Percentage of unique products after NLP: {round(len(df_nlp.product_name.unique())/len(df_nlp.item_name.unique()), 3)}')
+    print(f'# of unique products after NLP: {len(df_nlp.product_name.unique())}')
 
     # saving relation between product name & package for later
     clean_name_to_package_dict = dict(zip(df_nlp['product_name'], df_nlp['package']))
@@ -154,8 +155,11 @@ def cleaning_by_package_similarity(df_similars_ext, clean_name_to_package_dict):
     df_clean = df_clean.loc[:, ['product_name', 'candidate']]
 
     print(f'# possible duplicated products: {df_clean.shape[0]}')
+
+    # preserving the similarity thresholds
+    df_thresholds = df_similars_ext.loc[:, ['product_name', 'candidate', 'fuzz_ratio', 'package_ratio']]
     
-    return df_clean
+    return df_clean, df_thresholds
 
 def creating_product_index_name_mapping_dict(df_tf):
     print('Transforming product names into integers for computational purposes..')
@@ -215,9 +219,49 @@ def replacing_with_raw_data(groups_df, clean_name_to_uuid_dict, clean_name_to_ra
 
     # selecting columns
     output_df = groups_df.loc[:, ['winner_entity_uuid', 'winner_name', 'loser_entity_uuid', 'loser_name']]
+    
+    return output_df
+
+def duplicates_by_exact_product_name(df_nlp, groups_df, clean_name_to_raw_name_dict, output_df):
+    print('Identifying entities sharing the same product name..')
+
+    print(f"# cases: {df_nlp[df_nlp.duplicated(['product_name'], keep=False)].shape[0]}")
+
+    # flagging winner products on duped set
+    df_duped_name = df_nlp[df_nlp.duplicated(['product_name'], keep=False)][['item_uuid', 'item_name', 'product_name']].reset_index(drop=True)
+    entities_already_winners = list(set(groups_df['winner_entity_uuid']))
+    df_duped_name.loc[df_duped_name['item_uuid'].isin(entities_already_winners), 'is_winner'] = 1
+    df_duped_name = df_duped_name.sort_values(['is_winner', 'product_name']).reset_index(drop=True)
+
+    # separating the first record of each set from the rest
+    df_rest = df_duped_name[df_duped_name.duplicated(['product_name'], keep='first')].sort_values('product_name').reset_index(drop=True)
+    first_duped_entities = list(set(df_rest['item_uuid']))
+    df_first = df_duped_name[~df_duped_name['item_uuid'].isin(first_duped_entities)].sort_values('product_name').reset_index(drop=True)
+
+    # merging datasets to create winner to loser relationships
+    df_first.columns = [f'first_{col_}' for col_ in df_first.columns]
+    df_rest.columns = [f'rest_{col_}' for col_ in df_rest.columns]
+    df_merge = df_first.merge(df_rest, how='inner', left_on='first_product_name', right_on='rest_product_name')
+
+    # mapping raw name
+    df_merge['winner_name'] = df_merge['first_product_name'].map(clean_name_to_raw_name_dict)
+    df_merge['loser_name'] = df_merge['rest_product_name'].map(clean_name_to_raw_name_dict)
+
+    # selecting columns and mapping to output df
+    df_merge = df_merge.loc[:, ['first_item_uuid', 'winner_name', 'rest_item_uuid', 'loser_name']]
+    df_merge.rename(columns={'first_item_uuid': 'winner_entity_uuid', 'rest_item_uuid': 'loser_entity_uuid'}, inplace=True)
+
+    output_df = pd.concat([output_df, df_merge], axis=0).reset_index(drop=True)
+    output_df = output_df.sort_values('winner_name').reset_index(drop=True)
+
     print(f'# duplicates / relations to handle: {output_df.shape[0]}')
     
     return output_df
+
+def adding_thresholds_to_final_result(output_df, df_thresholds):
+    print('Adding thresholds to final result..')
+
+    output_df = output_df.merge(df_thresholds, how='left', left_on='')
 
 
 def main():
@@ -243,7 +287,7 @@ def main():
     df_similars_ext = extends_similarities(df_similars)
 
     # calculating fuzzy ratios between product packages, keeping similarities above threshold_package
-    df_clean = cleaning_by_package_similarity(df_similars_ext, clean_name_to_package_dict)
+    df_clean, df_thresholds = cleaning_by_package_similarity(df_similars_ext, clean_name_to_package_dict)
 
     # dictionaries to map product_name --> index
     product_index_dict, index_product_dict = creating_product_index_name_mapping_dict(df_tf)
@@ -256,10 +300,12 @@ def main():
 
     # replacing duplicated products output with raw data
     output_df = replacing_with_raw_data(groups_df, clean_name_to_uuid_dict, clean_name_to_raw_name_dict)
-
+    
+    # identifying entities sharing the same product name
+    output_df = duplicates_by_exact_product_name(df_nlp, groups_df, clean_name_to_raw_name_dict, output_df)
+    
     # saving results
     output_df.to_csv(f'~/Downloads/heuristic_duplicates/output_{country}_{parent_chain}_duplicates.csv', index=False)
-        
 
 
 if __name__ == "__main__":
