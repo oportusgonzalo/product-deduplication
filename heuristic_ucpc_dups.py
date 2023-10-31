@@ -24,7 +24,7 @@ item_column = 'item_name'
 language_ = 'en'
 
 # hiperparameters
-threshold_products = 95
+threshold_products = 80
 threshold_package = 90
 
 
@@ -97,7 +97,7 @@ def cosine_similarity_calculation(df_tf, tf_idf_matrix):
 
     return matches_df
 
-def fuzzy_ratios(matches_df):
+def fuzzy_ratios(matches_df, clean_name_to_uuid_dict):
     print('Fuzzy ratios calculation..')
     print(f'Product Threshold: {threshold_products}')
 
@@ -206,8 +206,12 @@ def groups_concatenation(df_clean, df_similars, index_product_dict):
 
     return groups_df, track_df
 
-def replacing_with_raw_data(groups_df, clean_name_to_uuid_dict, clean_name_to_raw_name_dict):
+def replacing_with_raw_data(groups_df, clean_name_to_uuid_dict, clean_name_to_raw_name_dict, df_thresholds):
     print('Replacing duplicated products output with raw data..')
+
+    # mapping similarity measures
+    groups_df = groups_df.merge(df_thresholds, how='left', left_on=['winner', 'loser'], right_on=['product_name', 'candidate'])
+    groups_df.drop(['product_name', 'candidate'], axis=1, inplace=True)
 
     # mapping entity UUIDs
     groups_df['winner_entity_uuid'] = groups_df['winner'].map(clean_name_to_uuid_dict)
@@ -218,9 +222,9 @@ def replacing_with_raw_data(groups_df, clean_name_to_uuid_dict, clean_name_to_ra
     groups_df['loser_name'] = groups_df['loser'].map(clean_name_to_raw_name_dict)
 
     # selecting columns
-    output_df = groups_df.loc[:, ['winner_entity_uuid', 'winner_name', 'loser_entity_uuid', 'loser_name']]
-    
-    return output_df
+    output_df = groups_df.loc[:, ['winner_entity_uuid', 'winner_name', 'loser_entity_uuid', 'loser_name', 'fuzz_ratio', 'package_ratio']]
+
+    return output_df, groups_df
 
 def duplicates_by_exact_product_name(df_nlp, groups_df, clean_name_to_raw_name_dict, output_df):
     print('Identifying entities sharing the same product name..')
@@ -249,13 +253,14 @@ def duplicates_by_exact_product_name(df_nlp, groups_df, clean_name_to_raw_name_d
 
     # selecting columns and mapping to output df
     df_merge = df_merge.loc[:, ['first_item_uuid', 'winner_name', 'rest_item_uuid', 'loser_name']]
+    df_merge[['fuzz_ratio', 'package_ratio']] = [1, 1]
     df_merge.rename(columns={'first_item_uuid': 'winner_entity_uuid', 'rest_item_uuid': 'loser_entity_uuid'}, inplace=True)
 
     output_df = pd.concat([output_df, df_merge], axis=0).reset_index(drop=True)
     output_df = output_df.sort_values('winner_name').reset_index(drop=True)
 
     print(f'# duplicates / relations to handle: {output_df.shape[0]}')
-    
+
     return output_df
 
 def adding_thresholds_to_final_result(output_df, df_thresholds):
@@ -281,7 +286,7 @@ def main():
     matches_df = cosine_similarity_calculation(df_tf, tf_idf_matrix)
 
     # Calculating fuzzy ratios and keeping products with similarity above threshold_products
-    df_similars = fuzzy_ratios(matches_df) 
+    df_similars = fuzzy_ratios(matches_df, clean_name_to_uuid_dict) 
 
     # extending product similarities: A similar to B, and B similar to D; then A, B, and D are similars
     df_similars_ext = extends_similarities(df_similars)
@@ -299,7 +304,7 @@ def main():
     groups_df, track_df = groups_concatenation(df_clean, df_similars, index_product_dict)
 
     # replacing duplicated products output with raw data
-    output_df = replacing_with_raw_data(groups_df, clean_name_to_uuid_dict, clean_name_to_raw_name_dict)
+    output_df, groups_df = replacing_with_raw_data(groups_df, clean_name_to_uuid_dict, clean_name_to_raw_name_dict, df_thresholds)
     
     # identifying entities sharing the same product name
     output_df = duplicates_by_exact_product_name(df_nlp, groups_df, clean_name_to_raw_name_dict, output_df)
