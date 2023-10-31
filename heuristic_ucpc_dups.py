@@ -310,7 +310,7 @@ def main():
     output_df = duplicates_by_exact_product_name(df_nlp, groups_df, clean_name_to_raw_name_dict, output_df)
     
     # saving results
-    output_df.to_csv(f'~/Downloads/heuristic_duplicates/output_{country}_{parent_chain}_duplicates.csv', index=False)
+    output_df.to_csv(f'~/Downloads/heuristic_duplicates/{threshold_products}_output_{country}_{parent_chain}_duplicates.csv', index=False)
 
 
 if __name__ == "__main__":
