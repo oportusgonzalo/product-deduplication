@@ -24,7 +24,7 @@ item_column = 'item_name'
 language_ = 'en'
 
 # hiperparameters
-threshold_products = 80
+threshold_products = 90
 threshold_package = 90
 
 
@@ -144,13 +144,14 @@ def cleaning_by_package_similarity(df_similars_ext, clean_name_to_package_dict):
     # adding the package
     df_similars_ext['package'] = df_similars_ext['product_name'].map(clean_name_to_package_dict)
     df_similars_ext['package_candidate'] = df_similars_ext['candidate'].map(clean_name_to_package_dict)
-    
+
     # package similarity
     df_similars_ext['package_ratio'] = df_similars_ext.apply(lambda x: fuzz.token_sort_ratio(x['package'],\
                                                                                 x['package_candidate']), axis=1)
                                                                                 
     # Package filter + Column selection
     print(f'Package Threshold: {threshold_package}')
+    df_similars_ext = df_similars_ext[df_similars_ext['package_ratio'] > threshold_package].reset_index(drop=True)
     df_clean = df_similars_ext[df_similars_ext['package_ratio'] > threshold_package].reset_index(drop=True)
     df_clean = df_clean.loc[:, ['product_name', 'candidate']]
 
@@ -158,7 +159,7 @@ def cleaning_by_package_similarity(df_similars_ext, clean_name_to_package_dict):
 
     # preserving the similarity thresholds
     df_thresholds = df_similars_ext.loc[:, ['product_name', 'candidate', 'fuzz_ratio', 'package_ratio']]
-    
+
     return df_clean, df_thresholds
 
 def creating_product_index_name_mapping_dict(df_tf):
@@ -173,7 +174,7 @@ def product_name_replacement(df, dic_):
     df['candidate'] = df['candidate'].map(dic_)
     return df
 
-def groups_concatenation(df_clean, df_similars, index_product_dict):
+def groups_concatenation(df_clean, index_product_dict):
     print('Concatenating groups to global DF..')
 
     # list of products
@@ -209,10 +210,6 @@ def groups_concatenation(df_clean, df_similars, index_product_dict):
 def replacing_with_raw_data(groups_df, clean_name_to_uuid_dict, clean_name_to_raw_name_dict, df_thresholds):
     print('Replacing duplicated products output with raw data..')
 
-    # mapping similarity measures
-    groups_df = groups_df.merge(df_thresholds, how='left', left_on=['winner', 'loser'], right_on=['product_name', 'candidate'])
-    groups_df.drop(['product_name', 'candidate'], axis=1, inplace=True)
-
     # mapping entity UUIDs
     groups_df['winner_entity_uuid'] = groups_df['winner'].map(clean_name_to_uuid_dict)
     groups_df['loser_entity_uuid'] = groups_df['loser'].map(clean_name_to_uuid_dict)
@@ -222,7 +219,7 @@ def replacing_with_raw_data(groups_df, clean_name_to_uuid_dict, clean_name_to_ra
     groups_df['loser_name'] = groups_df['loser'].map(clean_name_to_raw_name_dict)
 
     # selecting columns
-    output_df = groups_df.loc[:, ['winner_entity_uuid', 'winner_name', 'loser_entity_uuid', 'loser_name', 'fuzz_ratio', 'package_ratio']]
+    output_df = groups_df.loc[:, ['winner_entity_uuid', 'winner_name', 'loser_entity_uuid', 'loser_name']]
 
     return output_df, groups_df
 
@@ -253,7 +250,6 @@ def duplicates_by_exact_product_name(df_nlp, groups_df, clean_name_to_raw_name_d
 
     # selecting columns and mapping to output df
     df_merge = df_merge.loc[:, ['first_item_uuid', 'winner_name', 'rest_item_uuid', 'loser_name']]
-    df_merge[['fuzz_ratio', 'package_ratio']] = [1, 1]
     df_merge.rename(columns={'first_item_uuid': 'winner_entity_uuid', 'rest_item_uuid': 'loser_entity_uuid'}, inplace=True)
 
     output_df = pd.concat([output_df, df_merge], axis=0).reset_index(drop=True)
@@ -262,11 +258,6 @@ def duplicates_by_exact_product_name(df_nlp, groups_df, clean_name_to_raw_name_d
     print(f'# duplicates / relations to handle: {output_df.shape[0]}')
 
     return output_df
-
-def adding_thresholds_to_final_result(output_df, df_thresholds):
-    print('Adding thresholds to final result..')
-
-    output_df = output_df.merge(df_thresholds, how='left', left_on='')
 
 
 def main():
@@ -301,7 +292,7 @@ def main():
     df_clean = product_name_replacement(df_clean, product_index_dict)
 
     # concatenating groups to global dataframe
-    groups_df, track_df = groups_concatenation(df_clean, df_similars, index_product_dict)
+    groups_df, track_df = groups_concatenation(df_clean, index_product_dict)
 
     # replacing duplicated products output with raw data
     output_df, groups_df = replacing_with_raw_data(groups_df, clean_name_to_uuid_dict, clean_name_to_raw_name_dict, df_thresholds)
