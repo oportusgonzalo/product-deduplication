@@ -18,14 +18,18 @@ from nltk.corpus import stopwords
 # DEFINITIONS
 
 # parameters
-country = 'ucpc'
-parent_chain = 'us_fruits_and_veggies'
+country = ''
+parent_chain = ''
 item_column = 'item_name'
 language_ = 'en'
 
+'''
+- Adjust to remove duplicates with PLUs in both sides
+'''
+
 # hiperparameters
-threshold_products = 90
-threshold_package = 90
+threshold_products = 95
+threshold_package = 95
 
 
 def read_and_select():
@@ -55,6 +59,8 @@ def nlp_regex_cleaning(language_, data):
         stop_words = stopwords.words('english')
     elif language_ == 'es':
         stop_words = stopwords.words('spanish')
+    elif language_ == 'pt':
+        stop_words = stopwords.words('portuguese')
 
     df_nlp = nlp_cleaning(data, stop_words, regex_clean=False)
 
@@ -66,7 +72,7 @@ def nlp_regex_cleaning(language_, data):
     clean_name_to_uuid_dict = dict(zip(df_nlp['product_name'], df_nlp['item_uuid']))
     clean_name_to_raw_name_dict = dict(zip(df_nlp['product_name'], df_nlp['raw_item_name']))
 
-    return df_nlp.loc[:, ['item_uuid', 'item_name', 'product_name', 'package']], clean_name_to_package_dict, clean_name_to_uuid_dict, clean_name_to_raw_name_dict
+    return df_nlp.loc[:, ['item_uuid', 'raw_item_name', 'item_name', 'product_name', 'package']], clean_name_to_package_dict, clean_name_to_uuid_dict, clean_name_to_raw_name_dict
 
 def tf_idf_method(df_nlp):
     print('Applying TF-IDF method..')
@@ -226,31 +232,29 @@ def replacing_with_raw_data(groups_df, clean_name_to_uuid_dict, clean_name_to_ra
 def duplicates_by_exact_product_name(df_nlp, groups_df, clean_name_to_raw_name_dict, output_df):
     print('Identifying entities sharing the same product name..')
 
-    print(f"# cases: {df_nlp[df_nlp.duplicated(['product_name'], keep=False)].shape[0]}")
+    print(f"# cases: {df_nlp[df_nlp.duplicated(['raw_item_name'], keep=False)].shape[0]}")
+
+    df_nlp[['item_uuid', 'raw_item_name', 'item_name', 'product_name']]
 
     # flagging winner products on duped set
-    df_duped_name = df_nlp[df_nlp.duplicated(['product_name'], keep=False)][['item_uuid', 'item_name', 'product_name']].reset_index(drop=True)
+    df_duped_name = df_nlp[df_nlp.duplicated(['raw_item_name'], keep=False)][['item_uuid', 'raw_item_name']].reset_index(drop=True)
     entities_already_winners = list(set(groups_df['winner_entity_uuid']))
     df_duped_name.loc[df_duped_name['item_uuid'].isin(entities_already_winners), 'is_winner'] = 1
-    df_duped_name = df_duped_name.sort_values(['is_winner', 'product_name']).reset_index(drop=True)
+    df_duped_name = df_duped_name.sort_values(['is_winner', 'raw_item_name']).reset_index(drop=True)
 
     # separating the first record of each set from the rest
-    df_rest = df_duped_name[df_duped_name.duplicated(['product_name'], keep='first')].sort_values('product_name').reset_index(drop=True)
+    df_rest = df_duped_name[df_duped_name.duplicated(['raw_item_name'], keep='first')].sort_values('raw_item_name').reset_index(drop=True)
     first_duped_entities = list(set(df_rest['item_uuid']))
-    df_first = df_duped_name[~df_duped_name['item_uuid'].isin(first_duped_entities)].sort_values('product_name').reset_index(drop=True)
+    df_first = df_duped_name[~df_duped_name['item_uuid'].isin(first_duped_entities)].sort_values('raw_item_name').reset_index(drop=True)
 
     # merging datasets to create winner to loser relationships
     df_first.columns = [f'first_{col_}' for col_ in df_first.columns]
     df_rest.columns = [f'rest_{col_}' for col_ in df_rest.columns]
-    df_merge = df_first.merge(df_rest, how='inner', left_on='first_product_name', right_on='rest_product_name')
-
-    # mapping raw name
-    df_merge['winner_name'] = df_merge['first_product_name'].map(clean_name_to_raw_name_dict)
-    df_merge['loser_name'] = df_merge['rest_product_name'].map(clean_name_to_raw_name_dict)
+    df_merge = df_first.merge(df_rest, how='inner', left_on='first_raw_item_name', right_on='rest_raw_item_name')
 
     # selecting columns and mapping to output df
-    df_merge = df_merge.loc[:, ['first_item_uuid', 'winner_name', 'rest_item_uuid', 'loser_name']]
-    df_merge.rename(columns={'first_item_uuid': 'winner_entity_uuid', 'rest_item_uuid': 'loser_entity_uuid'}, inplace=True)
+    df_merge = df_merge.loc[:, ['first_item_uuid', 'first_raw_item_name', 'rest_item_uuid', 'rest_raw_item_name']]
+    df_merge.rename(columns={'first_item_uuid': 'winner_entity_uuid', 'rest_item_uuid': 'loser_entity_uuid', 'first_raw_item_name': 'winner_name', 'rest_raw_item_name': 'loser_name'}, inplace=True)
 
     output_df = pd.concat([output_df, df_merge], axis=0).reset_index(drop=True)
     output_df = output_df.sort_values('winner_name').reset_index(drop=True)
