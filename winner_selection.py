@@ -16,11 +16,16 @@ def reading_files():
 
     # heuristic output
     df_output = pd.read_csv(f'{path_to_heuristic_output}.csv')
+    df_winner = df_output.loc[:, ['winner_entity_uuid', 'winner_name']].rename(columns={'winner_entity_uuid': 'entity_uuid', 'winner_name': 'name'})
+    df_loser = df_output.loc[:, ['loser_entity_uuid', 'loser_name']].rename(columns={'loser_entity_uuid': 'entity_uuid', 'loser_name': 'name'})
+    df_output.drop(['winner_name', 'loser_name'], axis=1, inplace=True)
+    df_entity_name = pd.concat([df_winner, df_loser], axis=0).reset_index(drop=True)
+    df_entity_name = df_entity_name.drop_duplicates().reset_index(drop=True)
 
     # score input
     df_score = pd.read_csv(f'{path_to_score_input}.csv')
 
-    return df_output, df_score
+    return df_output, df_entity_name, df_score
 
 def calculating_score(df_score):
     print('Calculating a score for each entity: completeness, # linked, & scans')
@@ -85,19 +90,72 @@ def calculating_score(df_score):
 
     return df_score
 
+def verifies_highest_score_entity(df_output, df_score):
+    print('For each duped group: verifies which entity has the highest score..')
+
+    df_groups = pd.DataFrame(columns=['winner_entity_uuid', 'loser_entity_uuid'])
+    # iterating over each group: leaders lead
+    for winner_ in df_output['winner_entity_uuid'].unique(): 
+        df_temp = df_output[df_output['winner_entity_uuid'] == winner_].reset_index(drop=True)
+
+        # concatenate winner & loser entities into a single column to merge scores
+        combined_series = pd.concat([df_temp['winner_entity_uuid'], df_temp['loser_entity_uuid']], axis=0, ignore_index=True)
+        df_combined = pd.DataFrame(combined_series, columns=['entity_uuid'])
+        df_combined = df_combined.drop_duplicates().reset_index(drop=True)
+        df_combined['winner?'] = 0
+        df_combined.loc[0, 'winner?'] = 1
+
+        # merging scores
+        df_combined = df_combined.merge(df_score, how='left', on='entity_uuid')
+        df_combined.loc[df_combined['score'].isna(), 'score'] = 0
+
+        # identify the max score
+        max_index = df_combined['score'].idxmax()
+        df_combined['max_score_entity'] = df_combined.loc[max_index, 'entity_uuid']
+
+        # re-grouping with new leader and concatenating to global groups DF
+        df_new_grouping = df_combined.drop(['winner?', 'score'], axis=1).rename(columns={'max_score_entity': 'winner_entity_uuid', 'entity_uuid': 'loser_entity_uuid'})
+        df_new_grouping = df_new_grouping.loc[:, ['winner_entity_uuid', 'loser_entity_uuid']]
+        df_new_grouping = df_new_grouping[df_new_grouping['winner_entity_uuid'] != df_new_grouping['loser_entity_uuid']].reset_index(drop=True)
+        df_groups = pd.concat([df_groups, df_new_grouping], axis=0).reset_index(drop=True)
+
+    return df_groups
+
+def additional_data(df_groups, df_entity_name):
+    print('Adding product names as for agents to review..')
+
+    # adding winner product name
+    df_groups = df_groups.merge(df_entity_name, how='left', left_on='winner_entity_uuid', right_on='entity_uuid')
+    df_groups.rename(columns={'name': 'winner_name'}, inplace=True)
+    df_groups.drop('entity_uuid', axis=1, inplace=True)
+
+    # adding loser product name
+    df_groups = df_groups.merge(df_entity_name, how='left', left_on='loser_entity_uuid', right_on='entity_uuid')
+    df_groups.rename(columns={'name': 'loser_name'}, inplace=True)
+    df_groups.drop('entity_uuid', axis=1, inplace=True)
+
+    # organizing
+    df_groups = df_groups.loc[:, ['winner_entity_uuid', 'winner_name', 'loser_entity_uuid', 'loser_name']]
+
+    return df_groups
 
 
 def main():
 
     # reading heuristic output
-    df_output, df_score = reading_files()
+    df_output, df_entity_name, df_score = reading_files()
 
     # calculating a score for each entity: completeness, # linked, & scans
     df_score = calculating_score(df_score)
 
+    # for each duped group: verifies which entity has the highest score
+    df_groups = verifies_highest_score_entity(df_output, df_score)
 
-    print(df_output)
-    print(df_score)
+    # adding product names as for agents to review
+    df_groups = additional_data(df_groups, df_entity_name)
+
+    # saving result
+    df_groups.to_csv(f'{path_to_score_input}_strategic_winner.csv', index=False)
 
 
 if __name__ == '__main__':
