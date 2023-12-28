@@ -150,7 +150,7 @@ def main():
     df_groups = additional_data(df_groups, df_entity_name)
 
     # saving result
-    df_groups.to_csv(f'{path_to_score_input}_strategic_winner.csv', index=False)
+    df_groups.to_csv(f'{path_to_heuristic_output}_strategic_winner.csv', index=False)
 
 
 if __name__ == '__main__':
