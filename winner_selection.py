@@ -2,13 +2,8 @@
 import pandas as pd
 
 
-path_to_heuristic_output = '~/Downloads/heuristic_duplicates/95_output_br_ucpc_duplicates'
-path_to_score_input = '~/Downloads/ucpc_score_input'
-
-'''STEPS:
-1. For each group, verify which has the highest score
-2. Save the highest score entity in a different column (new winner)
-'''
+path_to_heuristic_output = ''
+path_to_score_input = ''
 
 
 def reading_files():
